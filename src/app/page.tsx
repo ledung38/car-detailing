@@ -3,38 +3,45 @@ import Home from "@/modules/home";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Professional Cleaning Services in Sydney",
+  title: "SKY NICE Mobile Car Detailing Sydney | Premium Auto Care",
   description:
-    "N&T Spotless Cleaning provides professional house, restaurant, and commercial cleaning services in Sydney. Deep cleaning, regular maintenance, end of lease cleaning. 2000+ happy clients.",
+    "SKY NICE offers professional mobile car detailing in Sydney. We come to you with premium products & certified detailers. Full detail, interior clean, ceramic coating & more. 500+ happy clients.",
   keywords: [
-    "cleaning services Sydney",
-    "N&T Spotless Cleaning",
-    "house cleaning",
-    "professional cleaners Sydney",
-    "deep cleaning",
-    "restaurant cleaning",
-    "end of lease cleaning",
-    "residential cleaning",
-    "commercial cleaning",
-    "window cleaning",
-    "regular cleaning",
-    "affordable cleaning Sydney",
-    "eco friendly cleaning services",
+    "car detailing Sydney",
+    "mobile car wash Sydney",
+    "auto detailing",
+    "car cleaning Sydney",
+    "professional car detailers",
+    "ceramic coating",
+    "interior car cleaning",
+    "car polishing",
+    "SKY NICE",
+    "vehicle detailing",
+    "paint protection",
+    "car maintenance Sydney",
   ],
   openGraph: {
-    title: "Professional Cleaning Services in Sydney",
+    title: "SKY NICE Mobile Car Detailing Sydney | Premium Auto Care",
     description:
-      "N&T Spotless Cleaning provides professional house, restaurant, and commercial cleaning services in Sydney.",
-    url: "https://www.spotlesscleaningsydney.com",
+      "Professional mobile car detailing in Sydney. We come to you with premium products & certified detailers. Full detail, ceramic coating & more.",
+    url: "https://www.skynicemobiledetailing.com.au",
     type: "website",
     images: [
       {
-        url: "https://www.spotlesscleaningsydney.com/screenshot-wide.png",
+        url: "https://www.skynicemobiledetailing.com.au/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "N&T Spotless Cleaning - Sydney",
+        alt: "SKY NICE Mobile Car Detailing Sydney",
       },
     ],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+    },
   },
 };
 

@@ -5,6 +5,7 @@ import { MENU_ITEMS } from "@/components/layouts/contants";
 import { NavLink } from "@/components/layouts/Header/NavLink";
 import {
   Button,
+  Container,
   Tooltip,
   TooltipContent,
   TooltipTrigger,
@@ -117,7 +118,7 @@ export const Header = () => {
     <>
       {/* Header */}
       <header
-        className={`fixed top-0 left-0 right-0 z-50 transition-all bg-white dark:bg-[#0B1220]  duration-500 ${
+        className={`fixed top-0 left-0 right-0 z-50 transition-all bg-white   dark:bg-[#0B1220]  duration-500 ${
           isScrolled
             ? "bg-white backdrop-blur-xl shadow-2xl"
             : isHome
@@ -126,7 +127,7 @@ export const Header = () => {
         }`}
         ref={ref}
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <Container className="py-0">
           <div className="flex items-center justify-between h-20">
             {/* Logo - Premium Design */}
             <AnimateDiv
@@ -292,14 +293,6 @@ export const Header = () => {
                 </AnimateButton>
               </AnimateDiv>
 
-              <AnimateDiv
-                initial={{ opacity: 0.8, scale: 0.8 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.4, delay: 0.5 }}
-              >
-                <ModeToggle />
-              </AnimateDiv>
-
               {/* Mobile Menu Button - Premium Style */}
               <AnimateButton
                 initial={{ opacity: 0.8, scale: 0.8 }}
@@ -307,7 +300,7 @@ export const Header = () => {
                 transition={{ duration: 0.4, delay: 0.55 }}
                 onClick={toggleMobileMenu}
                 className={
-                  "lg:hidden inline-flex items-center justify-center p-2 rounded-lg text-secondary hover:bg-secondary/20 transition-all duration-200 active:bg-secondary/30"
+                  "lg:hidden inline-flex items-center justify-center p-2 rounded-lg text-primary hover:bg-primary/20 transition-all duration-200 active:bg-primary/30"
                 }
               >
                 {isMobileMenuOpen ? (
@@ -318,7 +311,7 @@ export const Header = () => {
               </AnimateButton>
             </div>
           </div>
-        </div>
+        </Container>
 
         {/* Mobile Navigation - Premium Design */}
         {isMobileMenuOpen && (
@@ -337,7 +330,7 @@ export const Header = () => {
                 <a href="tel:0433263105" className="block">
                   <Button className="w-full flex gap-2 bg-white text-primary font-semibold hover:bg-blue-50 transition-all duration-200 py-3 rounded-lg shadow-md">
                     <PhoneIcon className="[&_path]:stroke-primary size-5" />
-                    <span className="text-white">0433263105</span>
+                    <span className="text-primary">0433263105</span>
                   </Button>
                 </a>
                 <Button
@@ -356,7 +349,7 @@ export const Header = () => {
       </header>
 
       {/* Spacing untuk fixed header */}
-      <div className="h-20" />
+      {/* <div className="h-20 bg-transparent" /> */}
     </>
   );
 };

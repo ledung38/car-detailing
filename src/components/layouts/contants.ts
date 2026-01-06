@@ -5,34 +5,29 @@ export const MENU_ITEMS = [
     key: Routes.HOME,
     label: "Home",
   },
-
   {
     key: Routes.SERVICE,
-    label: "Service",
+    label: "Services",
     children: [
       {
-        label: "End of Lease Cleaning",
-        key: Routes.SERVICE_END_OF_LEASE_CLEANING,
+        label: "Mini Package",
+        key: Routes.SERVICE_MINI,
       },
       {
-        label: "Regular Cleaning",
-        key: Routes.SERVICE_REGULAR_CLEANING,
+        label: "Interior Package",
+        key: Routes.SERVICE_INTERIOR,
       },
       {
-        label: "Deep Cleaning",
-        key: Routes.SERVICE_DEEP_CLEANING,
+        label: "Full Detail Package",
+        key: Routes.SERVICE_FULL_DETAIL,
       },
       {
-        label: "Restaurant Cleaning",
-        key: Routes.SERVICE_RESTAURANT_CLEANING,
+        label: "Enhancement Package",
+        key: Routes.SERVICE_ENHANCEMENT,
       },
       {
-        label: "Airbnb Cleaning",
-        key: Routes.SERVICE_AIRBNB_CLEANING,
-      },
-      {
-        label: "Mould Cleaning",
-        key: Routes.SERVICE_MOULD_CLEANING,
+        label: "Ceramic Coating",
+        key: Routes.SERVICE_CERAMIC,
       },
     ],
   },
@@ -42,6 +37,10 @@ export const MENU_ITEMS = [
   },
   {
     key: Routes.ABOUT_US,
-    label: "About us",
+    label: "About Us",
+  },
+  {
+    key: Routes.BOOKING,
+    label: "Booking",
   },
 ];

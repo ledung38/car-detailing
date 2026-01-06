@@ -20,32 +20,32 @@ const geistMono = Geist_Mono({
 });
 
 // Base metadata
-const baseUrl = "https://www.spotlesscleaningsydney.com";
-const siteName = "N&T Spotless Cleaning";
+const baseUrl = "https://www.skynicemobiledetailing.com.au";
+const siteName = "SKY NICE Mobile Car Detailing Sydney";
 const description =
-  "Professional cleaning services in Sydney. Deep cleaning, regular maintenance, end of lease cleaning, restaurant and mould cleaning. 2000+ happy clients, 8+ years experience.";
+  "SKY NICE offers professional mobile car detailing in Sydney. We come to you with premium eco-friendly products & certified detailers. Full detail, interior clean, ceramic coating & more. 500+ happy clients, 5-star rated.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
   title: {
-    default: `${siteName} - Professional Cleaning Services in Sydney`,
+    default: `${siteName} | Premium Auto Care`,
     template: `%s | ${siteName}`,
   },
   description,
   authors: [
     {
-      name: "N&T Spotless Cleaning",
+      name: "SKY NICE Mobile Car Detailing",
       url: baseUrl,
     },
   ],
-  creator: "N&T Spotless Cleaning",
-  publisher: "N&T Spotless Cleaning",
+  creator: "SKY NICE Mobile Car Detailing",
+  publisher: "SKY NICE Mobile Car Detailing",
 
   // Open Graph
   openGraph: {
     type: "website",
     url: baseUrl,
-    title: `${siteName} - Professional Cleaning Services in Sydney`,
+    title: `${siteName} | Premium Auto Care`,
     description,
     siteName,
     images: [
@@ -53,7 +53,7 @@ export const metadata: Metadata = {
         url: `/screenshot-wide.png`,
         width: 1200,
         height: 630,
-        alt: `${siteName} - Professional Cleaning`,
+        alt: `${siteName} - Mobile Car Detailing`,
       },
     ],
     locale: "en_AU",
@@ -62,10 +62,10 @@ export const metadata: Metadata = {
   // Twitter Card
   twitter: {
     card: "summary_large_image",
-    title: `${siteName} - Professional Cleaning Services in Sydney`,
+    title: `${siteName} | Premium Auto Care`,
     description,
     images: [`/screenshot-wide.png`],
-    creator: "@NTspotlesscleaning",
+    creator: "@SkyNiceDetail",
   },
 
   // Additional SEO

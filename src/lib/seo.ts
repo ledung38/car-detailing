@@ -124,7 +124,7 @@ export const getLocalBusinessSchema = () => ({
 export const getServiceSchema = (
   name: string,
   description: string,
-  price?: string
+  price?: string,
 ) => ({
   "@context": "https://schema.org",
   "@type": "Service",
@@ -148,7 +148,7 @@ export const getServiceSchema = (
  * Generate structured data for BreadcrumbList
  */
 export const getBreadcrumbSchema = (
-  items: Array<{ name: string; url: string }>
+  items: Array<{ name: string; url: string }>,
 ) => ({
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
@@ -167,7 +167,7 @@ export const generateMetaTags = (
   title: string,
   description: string,
   keywords: string[],
-  ogImage?: string
+  ogImage?: string,
 ) => ({
   title,
   description,

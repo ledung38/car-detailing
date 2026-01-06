@@ -1,7 +1,7 @@
 // app/service/[slug]/page.tsx
 
 import ServiceComponent from "@/modules/service";
-import services from "@/modules/service/contants";
+import { SERVICES } from "@/modules/service/contants";
 import { notFound } from "next/navigation";
 
 export async function generateMetadata({ params }) {
@@ -9,7 +9,7 @@ export async function generateMetadata({ params }) {
   const siteUrl =
     process.env.NEXT_PUBLIC_SITE_URL ||
     "https://www.spotlesscleaningsydney.com";
-  const service = services[slug];
+  const service = SERVICES[slug];
 
   // Nếu slug không tồn tại -> fallback metadata an toàn
   if (!service) {
@@ -50,7 +50,7 @@ export default async function ServiceDetails({ params }) {
   const { slug } = await params;
 
   // Lấy thông tin dịch vụ từ data
-  const service = services[slug];
+  const service = SERVICES[slug];
 
   //   console.log("services", services);
   if (!service) {

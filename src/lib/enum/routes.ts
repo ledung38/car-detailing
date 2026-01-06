@@ -1,13 +1,16 @@
-export enum Routes {
-  HOME = "/",
-  SERVICE = "/service",
-  SERVICE_END_OF_LEASE_CLEANING = "/service/end-of-lease-cleaning",
-  SERVICE_REGULAR_CLEANING = "/service/regular-cleaning",
-  SERVICE_DEEP_CLEANING = "/service/deep-cleaning",
-  SERVICE_RESTAURANT_CLEANING = "/service/restaurant-cleaning",
-  SERVICE_AIRBNB_CLEANING = "/service/airbnb-cleaning",
-  SERVICE_MOULD_CLEANING = "/service/mould-cleaning",
-  PRICING = "/pricing",
-  ABOUT_US = "/about-us",
-  BOOKING = "/booking",
-}
+// constants/routes.ts
+export const Routes = {
+  HOME: "/",
+  SERVICE: "/service",
+  SERVICE_MINI: "/service/mini-package",
+  SERVICE_INTERIOR: "/service/interior-package",
+  SERVICE_FULL_DETAIL: "/service/full-detail-package",
+  SERVICE_ENHANCEMENT: "/service/enhancement-package",
+  SERVICE_CERAMIC: "/service/ceramic-coating",
+  PRICING: "/pricing",
+  ABOUT_US: "/about-us",
+  BOOKING: "/booking",
+  CONTACT: "/contact",
+};
+
+export const ROUTES = Routes;

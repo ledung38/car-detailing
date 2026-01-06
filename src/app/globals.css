@@ -96,291 +96,104 @@ link[rel="preload"] {
 }
 
 :root {
-  --radius: 0.625rem;
+  /* ====== Core Brand Theme ====== */
+  --radius: 0.75rem;
 
-  /* 🎨 Base surface */
-  --background: oklch(0.98 0.01 240);
-  --foreground: oklch(0.15 0.02 240);
+  --background: oklch(10% 0.01 260);
+  --foreground: oklch(92% 0.02 250);
 
-  /* 🧊 Surfaces (card, popover) */
-  --card: oklch(0.99 0.005 240);
-  --card-foreground: oklch(0.18 0.015 240);
-  --popover: oklch(0.99 0.005 240);
-  --popover-foreground: oklch(0.15 0.015 240);
+  /* ====== Surfaces ====== */
+  --card: oklch(15% 0.015 260);
+  --card-foreground: oklch(96% 0.02 250);
+  --popover: oklch(12% 0.015 260);
+  --popover-foreground: oklch(100% 0 0);
 
-  /* 💙 Primary (Apple blue #0A84FF) */
-  --primary: oklch(0.68 0.22 250);
-  --primary-foreground: oklch(0.99 0.01 250);
+  /* ====== Primary Colors (Brand Blue) ====== */
+  --primary: oklch(65% 0.22 250);
+  --primary-foreground: oklch(99% 0 0);
 
-  /* 💜 Secondary (một chút tím nhẹ để phối cùng) */
-  --secondary: oklch(0.78 0.19 75); /* vàng ấm */
-  --secondary-foreground: oklch(0.98 0.01 85); /* text sáng trên vàng */
+  /* ====== Secondary Colors (Graphite Gray) ====== */
+  --secondary: oklch(25% 0.015 250);
+  --secondary-foreground: oklch(83% 0.02 250);
 
-  /* 💚 Success / ⚠️ Warning / 🔥 Error / ℹ️ Info */
-  --success: oklch(0.7 0.22 145);
-  --success-foreground: oklch(0.99 0.01 145);
-  --warning: oklch(0.83 0.22 85);
-  --warning-foreground: oklch(0.2 0.02 85);
-  --info: oklch(0.7 0.22 250);
-  --info-foreground: oklch(0.99 0.01 250);
-  --destructive: oklch(0.6 0.24 25);
+  /* ====== Status Colors ====== */
+  --success: oklch(70% 0.17 145);
+  --success-foreground: oklch(100% 0 0);
 
-  /* 🎚 Neutral colors */
-  --muted: oklch(0.93 0.01 240);
-  --muted-foreground: oklch(0.52 0.02 240);
-  --accent: oklch(0.95 0.02 240);
-  --accent-foreground: oklch(0.18 0.02 240);
+  --warning: oklch(80% 0.18 80);
+  --warning-foreground: oklch(18% 0.02 260);
 
-  /* 🧱 Structure colors */
-  --border: oklch(0.88 0.01 240);
-  --input: oklch(0.96 0.01 240);
-  --ring: oklch(0.68 0.22 250);
+  --info: oklch(70% 0.2 250);
+  --info-foreground: oklch(99% 0 0);
 
-  /* 🚫 Disabled states */
-  --disabled: oklch(0.94 0.01 240);
-  --disabled-foreground: oklch(0.68 0.01 240);
+  --destructive: oklch(63% 0.22 27);
+  --destructive-foreground: oklch(99% 0 0);
 
-  /* 📊 Chart palette (themed around blue) */
-  --chart-1: oklch(0.68 0.22 250);
-  --chart-2: oklch(0.7 0.22 145);
-  --chart-3: oklch(0.75 0.22 310);
-  --chart-4: oklch(0.8 0.18 85);
-  --chart-5: oklch(0.55 0.2 25);
+  /* ====== Muted & Accent ====== */
+  --muted: oklch(28% 0.015 260);
+  --muted-foreground: oklch(73% 0.02 260);
 
-  /* 🧭 Sidebar / Navigation */
-  --sidebar: oklch(0.97 0.01 240);
-  --sidebar-foreground: oklch(0.18 0.02 240);
-  --sidebar-primary: oklch(0.68 0.22 250);
-  --sidebar-primary-foreground: oklch(0.99 0.01 250);
-  --sidebar-accent: oklch(0.73 0.22 310);
-  --sidebar-accent-foreground: oklch(0.99 0.01 310);
-  --sidebar-border: oklch(0.9 0.01 240);
-  --sidebar-ring: oklch(0.68 0.22 250);
+  --accent: oklch(68% 0.21 245);
+  --accent-foreground: oklch(99% 0 0);
 
-  /* ✨ Gradients */
+  /* ====== Borders & Inputs ====== */
+  --border: oklch(25% 0.015 260);
+  --input: oklch(27% 0.015 260);
+  --ring: oklch(65% 0.22 250);
+
+  /* ====== Disabled ====== */
+  --disabled: oklch(30% 0.015 260);
+  --disabled-foreground: oklch(63% 0.01 260);
+
+  /* ====== Charts (Analytics / Dashboard Use) ====== */
+  --chart-1: oklch(65% 0.22 250); /* brand blue */
+  --chart-2: oklch(68% 0.21 245); /* cyan accent */
+  --chart-3: oklch(70% 0.14 175); /* teal */
+  --chart-4: oklch(80% 0.18 80); /* amber */
+  --chart-5: oklch(63% 0.22 27); /* red */
+
+  /* ====== Sidebar ====== */
+  --sidebar: oklch(10% 0.01 260);
+  --sidebar-foreground: oklch(92% 0.02 250);
+  --sidebar-primary: oklch(65% 0.22 250);
+  --sidebar-primary-foreground: oklch(99% 0 0);
+  --sidebar-accent: oklch(68% 0.21 245);
+  --sidebar-accent-foreground: oklch(99% 0 0);
+  --sidebar-border: oklch(20% 0.01 260);
+  --sidebar-ring: oklch(65% 0.22 250);
+
+  /* ====== Gradients ====== */
   --gradient-primary: linear-gradient(
-    135deg,
-    oklch(0.68 0.22 250) 0%,
-    oklch(0.55 0.22 250) 100%
+    90deg,
+    oklch(68% 0.21 245),
+    oklch(65% 0.22 250)
   );
   --foreground-gradient-primary: linear-gradient(
     90deg,
-    oklch(0.68 0.22 250) 0%,
-    oklch(0.54 0.22 250) 100%
+    oklch(95% 0.02 240),
+    oklch(89% 0.015 250)
   );
+
   --gradient-accent: linear-gradient(
-    151deg,
-    oklch(0.73 0.22 310) 2%,
-    oklch(0.68 0.2 310 / 0.5) 50%,
-    oklch(0.75 0.22 310) 99%
-  );
-  --foreground-gradient-accent: linear-gradient(
-    120deg,
-    oklch(0.73 0.22 310) 0%,
-    oklch(0.6 0.22 310) 100%
-  );
-  --gradient-border: linear-gradient(
-    151deg,
-    #ffffff 2%,
-    rgba(10, 132, 255, 0.3) 50%,
-    #ffffff 99%
-  );
-  --foreground-gradient-border: linear-gradient(
-    90deg,
-    oklch(0.68 0.22 250) 0%,
-    oklch(0.55 0.22 250) 100%
-  );
-}
-
-[data-theme="dark"] {
-  --radius: 0.625rem;
-
-  /* 🌌 Base surface */
-  --background: oklch(0.14 0.02 250);
-  --foreground: oklch(0.97 0.02 250);
-
-  /* 🧊 Surfaces (card, popover) */
-  --card: oklch(0.17 0.015 250);
-  --card-foreground: oklch(0.96 0.02 250);
-  --popover: oklch(0.18 0.015 250);
-  --popover-foreground: oklch(0.96 0.02 250);
-
-  /* 💙 Primary (Spotless blue) */
-  --primary: oklch(0.72 0.22 250);
-  --primary-foreground: oklch(0.12 0.02 250);
-
-  /* 💜 Secondary (ấm, tương phản nhẹ) */
-  --secondary: oklch(0.78 0.22 85);
-  --secondary-foreground: oklch(0.12 0.02 85);
-
-  /* 💚 Success / ⚠️ Warning / 🔥 Error / ℹ️ Info */
-  --success: oklch(0.72 0.22 145);
-  --success-foreground: oklch(0.12 0.02 145);
-  --warning: oklch(0.82 0.22 85);
-  --warning-foreground: oklch(0.15 0.02 85);
-  --info: oklch(0.7 0.22 250);
-  --info-foreground: oklch(0.15 0.02 250);
-  --destructive: oklch(0.65 0.25 25);
-
-  /* 🎚 Neutral colors */
-  --muted: oklch(0.22 0.01 250);
-  --muted-foreground: oklch(0.72 0.02 250);
-  --accent: oklch(0.26 0.02 250);
-  --accent-foreground: oklch(0.95 0.02 250);
-
-  /* 🧱 Structure colors */
-  --border: oklch(0.28 0.015 250);
-  --input: oklch(0.22 0.01 250);
-  --ring: oklch(0.68 0.22 250);
-
-  /* 🚫 Disabled states */
-  --disabled: oklch(0.24 0.01 250);
-  --disabled-foreground: oklch(0.55 0.02 250);
-
-  /* 📊 Chart palette (adjusted for dark) */
-  --chart-1: oklch(0.72 0.22 250);
-  --chart-2: oklch(0.72 0.22 145);
-  --chart-3: oklch(0.78 0.22 310);
-  --chart-4: oklch(0.8 0.2 85);
-  --chart-5: oklch(0.65 0.22 25);
-
-  /* 🧭 Sidebar / Navigation */
-  --sidebar: oklch(0.17 0.015 250);
-  --sidebar-foreground: oklch(0.92 0.02 250);
-  --sidebar-primary: oklch(0.72 0.22 250);
-  --sidebar-primary-foreground: oklch(0.12 0.02 250);
-  --sidebar-accent: oklch(0.75 0.22 310);
-  --sidebar-accent-foreground: oklch(0.12 0.02 310);
-  --sidebar-border: oklch(0.24 0.015 250);
-  --sidebar-ring: oklch(0.68 0.22 250);
-
-  /* ✨ Gradients */
-  --gradient-primary: linear-gradient(
     135deg,
-    oklch(0.72 0.22 250) 0%,
-    oklch(0.55 0.22 250) 100%
-  );
-  --foreground-gradient-primary: linear-gradient(
-    90deg,
-    oklch(0.72 0.22 250) 0%,
-    oklch(0.55 0.22 250) 100%
-  );
-  --gradient-accent: linear-gradient(
-    151deg,
-    oklch(0.75 0.22 310) 2%,
-    oklch(0.68 0.2 310 / 0.6) 50%,
-    oklch(0.78 0.22 310) 99%
+    oklch(65% 0.22 250),
+    oklch(68% 0.21 245)
   );
   --foreground-gradient-accent: linear-gradient(
-    120deg,
-    oklch(0.75 0.22 310) 0%,
-    oklch(0.58 0.22 310) 100%
-  );
-  --gradient-border: linear-gradient(
-    151deg,
-    rgba(255, 255, 255, 0.2) 2%,
-    oklch(0.68 0.22 250 / 0.3) 50%,
-    rgba(255, 255, 255, 0.1) 99%
-  );
-  --foreground-gradient-border: linear-gradient(
-    90deg,
-    oklch(0.72 0.22 250) 0%,
-    oklch(0.55 0.22 250) 100%
-  );
-}
-
-[data-theme="spring"] {
-  --radius: 0.625rem;
-
-  --background: oklch(0.97 0.03 340); /* hồng phấn nhạt */
-  --foreground: oklch(0.22 0.02 345); /* chữ đậm vừa phải */
-
-  --card: oklch(0.98 0.02 340);
-  --card-foreground: oklch(0.25 0.02 345);
-
-  --popover: oklch(0.99 0.02 340);
-  --popover-foreground: oklch(0.25 0.02 345);
-
-  --primary: oklch(0.75 0.18 340); /* hồng đào sáng */
-  --primary-foreground: oklch(0.99 0.01 340);
-
-  --secondary: oklch(0.75 0.12 180); /* xanh ngọc nhạt */
-  --secondary-foreground: oklch(0.99 0.01 180);
-
-  --success: oklch(0.7 0.18 145);
-  --success-foreground: oklch(0.99 0.01 145);
-
-  --warning: oklch(0.8 0.16 85);
-  --warning-foreground: oklch(0.25 0.02 85);
-
-  --info: oklch(0.68 0.14 240);
-  --info-foreground: oklch(0.99 0.01 240);
-
-  --muted: oklch(0.93 0.02 340);
-  --muted-foreground: oklch(0.45 0.02 345);
-
-  --accent: oklch(0.9 0.04 320); /* hồng sữa pha tím */
-  --accent-foreground: oklch(0.25 0.02 320);
-
-  --destructive: oklch(0.58 0.22 25);
-  --border: oklch(0.86 0.015 340);
-  --input: oklch(0.86 0.015 340);
-  --ring: oklch(0.75 0.18 340);
-
-  --disabled: oklch(0.93 0.01 340);
-  --disabled-foreground: oklch(0.6 0.01 340);
-
-  --chart-1: oklch(0.75 0.18 340);
-  --chart-2: oklch(0.75 0.12 180);
-  --chart-3: oklch(0.8 0.16 95);
-  --chart-4: oklch(0.6 0.2 35);
-  --chart-5: oklch(0.65 0.16 320);
-
-  --sidebar: oklch(0.96 0.02 340);
-  --sidebar-foreground: oklch(0.25 0.02 345);
-  --sidebar-primary: oklch(0.75 0.18 340);
-  --sidebar-primary-foreground: oklch(0.99 0.01 340);
-  --sidebar-accent: oklch(0.75 0.12 180);
-  --sidebar-accent-foreground: oklch(0.99 0.01 180);
-  --sidebar-border: oklch(0.88 0.015 340);
-  --sidebar-ring: oklch(0.75 0.18 340);
-
-  --gradient-primary: linear-gradient(
     135deg,
-    oklch(0.75 0.18 340) 0%,
-    oklch(0.75 0.12 180) 100%
-  );
-  --foreground-gradient-primary: linear-gradient(
-    90deg,
-    oklch(0.75 0.18 340) 0%,
-    oklch(0.75 0.12 180) 100%
-  );
-
-  --gradient-accent: linear-gradient(
-    145deg,
-    oklch(0.78 0.16 310) 0%,
-    oklch(0.82 0.14 45 / 0.7) 45%,
-    oklch(0.75 0.18 340) 100%
-  );
-
-  --foreground-gradient-accent: linear-gradient(
-    120deg,
-    oklch(0.82 0.14 45) 0%,
-    oklch(0.75 0.18 340) 100%
+    oklch(99% 0 0),
+    oklch(93% 0.01 250)
   );
 
   --gradient-border: linear-gradient(
-    151deg,
-    oklch(0.68 0.14 240) 0%,
-    oklch(0.9 0.04 320) 50%,
-    oklch(0.75 0.18 340) 100%
+    90deg,
+    oklch(65% 0.22 250),
+    oklch(68% 0.21 245)
   );
-
   --foreground-gradient-border: linear-gradient(
     90deg,
-    oklch(0.68 0.14 240) 0%,
-    oklch(0.9 0.04 320) 50%,
-    oklch(0.75 0.18 340) 100%
+    oklch(93% 0.015 250),
+    oklch(96% 0.02 250)
   );
 }
 

@@ -1,7 +1,7 @@
 import { Metadata } from "next";
 import { Routes } from "@/lib/enum/routes";
 import ServiceComponent from "@/modules/service";
-import services from "@/modules/service/contants";
+import { SERVICES } from "@/modules/service/contants";
 
 export const metadata: Metadata = {
   title: "Our Services - N&T Spotless Cleaning",
@@ -41,7 +41,7 @@ export const metadata: Metadata = {
 export default function ServicePage() {
   return (
     <ServiceComponent
-      data={services["regular-cleaning"]}
+      data={SERVICES["regular-cleaning"]}
       slug="regular-cleaning"
     />
   );

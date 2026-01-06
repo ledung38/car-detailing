@@ -49,13 +49,13 @@ export const BookingWizard: React.FC = () => {
       const data = await res.json();
       if (data?.success) {
         message.success(
-          "Your cleaning service booking has been successfully created!"
+          "Your cleaning service booking has been successfully created!",
         );
         setCurrentStep(currentStep + 1);
         form.reset();
       } else {
         message.error(
-          "Something went wrong. Please try again or contact support."
+          "Something went wrong. Please try again or contact support.",
         );
       }
     } catch (error: any) {
