@@ -11,6 +11,10 @@ import {
   Clock,
   CheckCircle2,
 } from "lucide-react";
+import SectionTitle from "@/components/common/SectionTitle";
+import { AnimateDiv } from "@/components/common/Animate";
+import { ArrowRightIcon } from "@/components/icons";
+import Image from "next/image";
 
 interface ServicePackage {
   id: string;
@@ -26,6 +30,72 @@ interface ServicePackage {
   features: string[];
   highlight?: boolean;
 }
+
+interface ServiceCardProps {
+  path: string;
+  title: string;
+  description: string;
+}
+const ServiceCard: React.FC<ServiceCardProps> = ({
+  path,
+  title,
+  description,
+}) => {
+  const link = `/service/${title.toLowerCase().replaceAll(" ", "-")}`;
+  return (
+    <Link
+      href={link}
+      className="group block focus:outline-none focus-visible:ring-2 focus-visible:ring-primary rounded-2xl"
+    >
+      <AnimateDiv
+        variants={{
+          hidden: { opacity: 0, y: 20 },
+          visible: {
+            opacity: 1,
+            y: 0,
+            transition: { duration: 0.3, ease: "easeOut" },
+          },
+        }}
+        whileHover={{ y: -8, transition: { duration: 0.2 } }}
+        className="relative rounded-2xl bg-card border border-border/50 hover:border-primary/50 transition-all duration-300 overflow-hidden"
+      >
+        {/* Background gradient - Disabled on mobile */}
+        <AnimateDiv
+          className={`absolute inset-0 bg-gradient-to-br primary opacity-0 group-hover:opacity-5 transition-opacity duration-300 hidden sm:block`}
+        />
+
+        {/* Nội dung */}
+        <div>
+          <Image
+            src={"/favicon.png"}
+            alt={title}
+            width={500}
+            height={500}
+            className="w-full h-auto object-cover"
+            quality={75}
+          />
+
+          <div className="relative z-10 p-6">
+            <h3 className="text-xl font-semibold text-foreground mb-3 group-hover:text-primary transition-colors">
+              {title}
+            </h3>
+
+            <p className="text-foreground/60 leading-relaxed mb-4">
+              {description}
+            </p>
+
+            {/* CTA text (nằm trong link luôn) */}
+            <div className="inline-flex items-center gap-2 text-primary font-medium text-sm hover:ml-1 transition-all duration-300">
+              <span className="sr-only">Learn more about {title}</span>
+              <span aria-hidden="true">Learn more</span>
+              <ArrowRightIcon className="w-5 h-5 [&_path]:stroke-primary" />
+            </div>
+          </div>
+        </div>
+      </AnimateDiv>
+    </Link>
+  );
+};
 
 const ServicesOverview = () => {
   const services: ServicePackage[] = [
@@ -113,12 +183,6 @@ const ServicesOverview = () => {
 
   return (
     <section className="relative py-20 lg:py-32 overflow-hidden">
-      {/* Background Elements */}
-      <div className="absolute inset-0 -z-10">
-        <div className="absolute top-20 right-10 w-72 h-72 bg-accent/15 rounded-full blur-3xl opacity-40" />
-        <div className="absolute bottom-10 left-10 w-96 h-96 bg-primary/10 rounded-full blur-3xl opacity-30" />
-      </div>
-
       <Container>
         {/* Section Header */}
         <motion.div
@@ -128,12 +192,7 @@ const ServicesOverview = () => {
           whileInView="visible"
           viewport={{ once: true, amount: 0.3 }}
         >
-          <motion.p
-            variants={itemVariants}
-            className="text-primary font-semibold"
-          >
-            Premium Service Packages
-          </motion.p>
+          <SectionTitle title="Our Services" variants={itemVariants} />
           <motion.h2
             variants={itemVariants}
             className="text-4xl lg:text-5xl font-bold text-foreground"
@@ -151,13 +210,32 @@ const ServicesOverview = () => {
 
         {/* Services Grid */}
         <motion.div
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 mb-12"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.2 }}
         >
           {services.map((service) => (
+            <motion.div
+              key={service.id}
+              variants={itemVariants}
+              className={`group relative rounded-2xl  transition-all duration-300 cursor-pointer ${
+                service.highlight
+                  ? "bg-gradient-to-br from-primary/20 to-accent/20  shadow-lg lg:scale-105"
+                  : "bg-card  hover:shadow-lg"
+              }`}
+              whileHover={{ y: -8 }}
+            >
+              <ServiceCard
+                path={"/favicon.png"}
+                title={service.name}
+                description={service.description}
+              />
+            </motion.div>
+          ))}
+
+          {/* {services.map((service) => (
             <motion.div
               key={service.id}
               variants={itemVariants}
@@ -168,19 +246,16 @@ const ServicesOverview = () => {
               }`}
               whileHover={{ y: -8 }}
             >
-              {/* Highlight Badge */}
               {service.highlight && (
                 <div className="absolute -top-4 left-8 bg-primary text-primary-foreground text-xs font-bold px-3 py-1 rounded-full">
                   Most Popular
                 </div>
               )}
 
-              {/* Icon */}
               <div className="mb-4 p-3 bg-primary/20 rounded-lg w-fit group-hover:bg-primary/30 transition-colors">
                 <div className="text-primary">{service.icon}</div>
               </div>
 
-              {/* Service Name & Duration */}
               <h3 className="text-xl font-bold text-foreground mb-2">
                 {service.name}
               </h3>
@@ -192,7 +267,6 @@ const ServicesOverview = () => {
                 {service.description}
               </p>
 
-              {/* Features */}
               <div className="space-y-2 mb-6">
                 {service.features.slice(0, 3).map((feature, idx) => (
                   <div
@@ -210,7 +284,6 @@ const ServicesOverview = () => {
                 )}
               </div>
 
-              {/* Pricing */}
               <div className="mb-6 pb-6 border-t border-primary/20">
                 <p className="text-xs text-foreground/50 uppercase mb-2">
                   Starting from
@@ -227,7 +300,6 @@ const ServicesOverview = () => {
                 </div>
               </div>
 
-              {/* CTA Button */}
               <Link href="/booking" className="w-full">
                 <Button
                   className={`w-full font-semibold rounded-lg transition-all ${
@@ -240,7 +312,7 @@ const ServicesOverview = () => {
                 </Button>
               </Link>
             </motion.div>
-          ))}
+          ))} */}
         </motion.div>
 
         {/* Extensions Section */}
