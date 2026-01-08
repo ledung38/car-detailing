@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 
 import { motion } from "motion/react";
@@ -5,70 +6,84 @@ import { ArrowRightIcon } from "@/components/icons";
 import { useAppRouter } from "@/hooks/useAppRouter";
 import { Routes } from "@/lib/enum/routes";
 import Image from "next/image";
+import { Container } from "@/components/ui";
 
 // Compact Banner for Secondary Pages
 export const CompatHome = () => {
   const router = useAppRouter();
 
   return (
-    <div>
-      <Image
-        src={"/logo_header_v3.png"}
-        width={1920}
-        height={1080}
-        alt="background"
-        className="absolute inset-0 w-full h-full object-cover object-left-center max-sm:object-left"
-        loading="lazy"
-      />
-      <div className="absolute inset-0 bg-black/20" />
+    <div className="relative min-h-[350px] overflow-hidden flex items-center">
+      {/* Background Image - Right Side */}
+      <div className="absolute inset-0">
+        <Image
+          src={"/compat_home.png"}
+          width={1920}
+          height={1080}
+          alt="Professional car detailing service background"
+          className="absolute inset-0 w-full h-full object-cover object-right max-md:object-center"
+          priority
+        />
+      </div>
 
       {/* Content */}
-      <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <motion.h3
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="text-4xl sm:text-5xl font-black text-white mb-4 tracking-tight"
-        >
-          312312312312312
-        </motion.h3>
-
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className="text-lg sm:text-xl text-blue-100 max-w-2xl mx-auto"
-        >
-          312312312312312
-        </motion.p>
-
-        {/* Breadcrumb-like Navigation */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.6, delay: 0.4 }}
-          className="mt-8 group"
-        >
-          <button
-            className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm border border-white/30 rounded-full px-6 py-3 text-white font-semibold hover:bg-white/30 transition-all duration-300"
-            onClick={() => router.push(Routes.BOOKING)}
+      <Container className="relative z-10 w-full h-full mx-auto flex items-center ">
+        <div className="w-full md:w-1/2  ">
+          {/* Label */}
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5 }}
+            className="mb-6 "
           >
-            <span>{textButton}</span>
-            <ArrowRightIcon className="group-hover:translate-x-1 transition-transform duration-300" />
-          </button>
-        </motion.div>
-      </div>
-      {/* Floating Shapes - Hidden on mobile */}
-      <motion.div
-        className="absolute top-0 right-0 w-72 h-72 bg-cyan-400/10 rounded-full blur-3xl hidden sm:block"
-        animate={{ x: [0, 30, 0], y: [0, 30, 0] }}
-        transition={{ duration: 6, repeat: Infinity }}
-      />
-      <motion.div
-        className="absolute bottom-0 left-0 w-72 h-72 bg-blue-400/10 rounded-full blur-3xl hidden sm:block"
-        animate={{ x: [0, -30, 0], y: [0, -30, 0] }}
-        transition={{ duration: 6, repeat: Infinity }}
-      />
+            <span className="text-xs sm:text-sm uppercase tracking-widest text-blue-300 font-semibold">
+              Premium Car Detailing Service
+            </span>
+          </motion.div>
+
+          {/* Main Heading */}
+          <motion.h3
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="text-3xl sm:text-3xl  font-black text-white mb-6 tracking-tight leading-tight"
+          >
+            Professional Car Detailing Excellence
+          </motion.h3>
+
+          {/* Description */}
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="text-base sm:text-lg text-gray-300 max-w-xl mb-8 leading-relaxed"
+          >
+            Expert automotive detailing services that restore and protect your
+            vehicle's paint, interior, and exterior. Certified professionals
+            using premium products for guaranteed results.
+          </motion.p>
+
+          {/* CTA Button */}
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+            className="flex items-center gap-4"
+          >
+            <button
+              className="inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/40 px-8 py-3 text-white font-bold text-sm uppercase tracking-wider transition-all duration-300 hover:border-white/60"
+              onClick={() => router.push(Routes.BOOKING)}
+            >
+              <span>Book Your Detail</span>
+              <ArrowRightIcon className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
+            </button>
+          </motion.div>
+        </div>
+      </Container>
+
+      {/* Decorative Elements */}
+      <div className="absolute top-10 right-10 w-32 h-32 border border-white/10 rounded-full opacity-30"></div>
+      <div className="absolute bottom-20 right-1/4 w-48 h-48 border border-white/5 rounded-full opacity-20"></div>
     </div>
   );
 };

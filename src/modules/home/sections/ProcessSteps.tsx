@@ -178,44 +178,6 @@ const ProcessSteps = () => {
           ))}
         </motion.div>
 
-        {/* Detailed Timeline */}
-        <motion.div
-          className="mt-12 space-y-6"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.1 }}
-        >
-          <h3 className="text-2xl font-bold text-foreground text-center mb-8">
-            Timeline Example: Mini Package (90 mins)
-          </h3>
-
-          <div className="space-y-4">
-            {[
-              { time: "0-10 min", task: "Arrival & setup" },
-              { time: "10-40 min", task: "Exterior wash, dry & detailing" },
-              { time: "40-75 min", task: "Interior vacuum & cleaning" },
-              { time: "75-90 min", task: "Final touches & inspection" },
-            ].map((item, idx) => (
-              <motion.div
-                key={idx}
-                className="flex items-center gap-4 p-6 rounded-xl bg-card border border-primary/20 hover:border-primary/50 transition-colors"
-                whileHover={{ x: 4 }}
-              >
-                <div className="w-20 h-12 rounded-lg bg-primary/20 flex items-center justify-center flex-shrink-0">
-                  <span className="font-bold text-primary text-sm">
-                    {item.time}
-                  </span>
-                </div>
-                <div className="flex-1">
-                  <p className="font-semibold text-foreground">{item.task}</p>
-                </div>
-                <CheckCircle2 className="w-5 h-5 text-accent flex-shrink-0" />
-              </motion.div>
-            ))}
-          </div>
-        </motion.div>
-
         {/* CTA Section */}
         <motion.div
           className="mt-16 text-center p-12 rounded-2xl bg-gradient-to-r from-primary/10 to-accent/10 border border-primary/20"

@@ -7,6 +7,7 @@ import ProcessSteps from "./sections/ProcessSteps";
 import Testimonials from "./sections/Testimonials";
 import FAQ from "./sections/FAQ";
 import FinalCTA from "./sections/FinalCTA";
+import CompatHome from "@/modules/home/sections/CompatHome";
 
 export const Home: React.FC = () => {
   return (
@@ -15,6 +16,7 @@ export const Home: React.FC = () => {
       <ServicesOverview />
       <WhyChooseUs />
       <BeforeAfterGallery />
+      <CompatHome />
       <ProcessSteps />
       <Testimonials />
       {/* <FAQ /> */}
