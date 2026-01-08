@@ -2,6 +2,17 @@
 import { Container } from "@/components/ui";
 import { motion } from "motion/react";
 import { ChevronRight } from "lucide-react";
+import Image from "next/image";
+import { useState, useMemo } from "react";
+import SectionTitle from "@/components/common/SectionTitle";
+
+interface GalleryImage {
+  id: string;
+  src: string;
+  alt: string;
+  title: string;
+  type: string;
+}
 
 interface BeforeAfterItem {
   id: string;
@@ -12,6 +23,141 @@ interface BeforeAfterItem {
 }
 
 const BeforeAfterGallery = () => {
+  const [isExpanded, setIsExpanded] = useState(false);
+
+  // Gallery data structure - prepared for actual image URLs
+  const galleryData: GalleryImage[] = [
+    // Column 1
+    {
+      id: "1-1",
+      src: "/images/gallery/col1-img1.jpg",
+      alt: "Car before full detail package - heavy dust and water spots",
+      title: "Complete Transformation",
+      type: "Full Detail Package",
+    },
+    {
+      id: "1-2",
+      src: "/images/gallery/col1-img2.jpg",
+      alt: "Car after full detail package - mirror-like finish",
+      title: "Complete Transformation",
+      type: "Full Detail Package",
+    },
+    {
+      id: "1-3",
+      src: "/images/gallery/col1-img3.jpg",
+      alt: "Car interior before cleaning - dirty upholstery",
+      title: "Deep Interior Clean",
+      type: "Interior Package",
+    },
+    {
+      id: "1-4",
+      src: "/images/gallery/col1-img4.jpg",
+      alt: "Car interior after cleaning - pristine interior",
+      title: "Deep Interior Clean",
+      type: "Interior Package",
+    },
+
+    // Column 2
+    {
+      id: "2-1",
+      src: "/images/gallery/col2-img1.jpg",
+      alt: "Paint before restoration - swirl marks and oxidation",
+      title: "Paint Restoration",
+      type: "Enhancement Package",
+    },
+    {
+      id: "2-2",
+      src: "/images/gallery/col2-img2.jpg",
+      alt: "Paint after restoration - professional polish shine",
+      title: "Paint Restoration",
+      type: "Enhancement Package",
+    },
+    {
+      id: "2-3",
+      src: "/images/gallery/col2-img3.jpg",
+      alt: "Car exterior before quick detail - daily grime buildup",
+      title: "Quick Detail",
+      type: "Mini Package",
+    },
+    {
+      id: "2-4",
+      src: "/images/gallery/col2-img4.jpg",
+      alt: "Car exterior after quick detail - fresh and clean",
+      title: "Quick Detail",
+      type: "Mini Package",
+    },
+
+    // Column 3
+    {
+      id: "3-1",
+      src: "/images/gallery/col3-img1.jpg",
+      alt: "Luxury vehicle before detailing service",
+      title: "Complete Transformation",
+      type: "Full Detail Package",
+    },
+    {
+      id: "3-2",
+      src: "/images/gallery/col3-img2.jpg",
+      alt: "Luxury vehicle after detailing - professional results",
+      title: "Complete Transformation",
+      type: "Full Detail Package",
+    },
+    {
+      id: "3-3",
+      src: "/images/gallery/col3-img3.jpg",
+      alt: "Red car interior before cleaning service",
+      title: "Deep Interior Clean",
+      type: "Interior Package",
+    },
+    {
+      id: "3-4",
+      src: "/images/gallery/col3-img4.jpg",
+      alt: "Red car interior after cleaning - pristine condition",
+      title: "Deep Interior Clean",
+      type: "Interior Package",
+    },
+
+    // Column 4
+    {
+      id: "4-1",
+      src: "/images/gallery/col4-img1.jpg",
+      alt: "Vehicle body before paint correction and polish",
+      title: "Paint Restoration",
+      type: "Enhancement Package",
+    },
+    {
+      id: "4-2",
+      src: "/images/gallery/col4-img2.jpg",
+      alt: "Vehicle body after paint correction - gleaming finish",
+      title: "Paint Restoration",
+      type: "Enhancement Package",
+    },
+    {
+      id: "4-3",
+      src: "/images/gallery/col4-img3.jpg",
+      alt: "Car undercarriage before detailing",
+      title: "Quick Detail",
+      type: "Mini Package",
+    },
+    {
+      id: "4-4",
+      src: "/images/gallery/col4-img4.jpg",
+      alt: "Car undercarriage after detailing - clean and fresh",
+      title: "Quick Detail",
+      type: "Mini Package",
+    },
+  ];
+
+  // Organize images by columns
+  const columnedGallery = useMemo(() => {
+    const columns = [[], [], [], []] as GalleryImage[][];
+    galleryData.forEach((img, idx) => {
+      const columnIndex = Math.floor(idx / 4);
+      columns[columnIndex]?.push(img);
+    });
+    return columns;
+  }, []);
+
   const gallery: BeforeAfterItem[] = [
     {
       id: "1",
@@ -80,12 +226,8 @@ const BeforeAfterGallery = () => {
           whileInView="visible"
           viewport={{ once: true, amount: 0.3 }}
         >
-          <motion.p
-            variants={itemVariants}
-            className="text-primary font-semibold"
-          >
-            Results You Can See
-          </motion.p>
+          <SectionTitle variants={itemVariants} title="Results You Can See" />
+
           <motion.h2
             variants={itemVariants}
             className="text-4xl lg:text-5xl font-bold text-foreground"
@@ -101,130 +243,78 @@ const BeforeAfterGallery = () => {
           </motion.p>
         </motion.div>
 
-        {/* Gallery Grid */}
-        <motion.div
-          className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12"
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.2 }}
-        >
-          {gallery.map((item) => (
-            <motion.div
-              key={item.id}
-              variants={itemVariants}
-              className="group relative overflow-hidden rounded-2xl"
-              whileHover={{ scale: 1.02 }}
-            >
-              {/* Container */}
-              <div className="relative h-96 bg-card border border-primary/20 rounded-2xl overflow-hidden">
-                {/* Before/After Slider Background */}
-                <div className="absolute inset-0 bg-gradient-to-b from-primary/10 to-accent/10 flex items-center justify-center">
-                  <div className="text-center space-y-4">
-                    {/* Placeholder for Images */}
-                    <div className="grid grid-cols-2 gap-4 w-full h-full">
-                      {/* Before Side */}
-                      <div className="bg-gradient-to-br from-slate-700 to-slate-900 flex flex-col items-center justify-center p-6 relative border-r border-primary/30">
-                        <div className="w-16 h-16 bg-slate-800 rounded-full mb-4 flex items-center justify-center">
-                          <span className="text-3xl">🚗</span>
-                        </div>
-                        <p className="font-semibold text-foreground text-sm">
-                          Before
-                        </p>
-                        <p className="text-xs text-foreground/60 mt-2 text-center">
-                          {item.beforeText}
-                        </p>
-                      </div>
+        {/* Gallery Grid Container */}
+        <div className="relative mb-12">
+          {!isExpanded && (
+            <div className="absolute inset-0 z-1 bg-gradient-to-t from-background via-background/20 to-transparent pointer-events-none" />
+          )}
 
-                      {/* After Side */}
-                      <div className="bg-gradient-to-br from-primary/30 to-accent/20 flex flex-col items-center justify-center p-6">
-                        <div className="w-16 h-16 bg-primary/40 rounded-full mb-4 flex items-center justify-center ring-2 ring-primary/50">
-                          <span className="text-3xl">✨</span>
-                        </div>
-                        <p className="font-semibold text-foreground text-sm">
-                          After
-                        </p>
-                        <p className="text-xs text-foreground/60 mt-2 text-center">
-                          {item.afterText}
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Content Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent flex flex-col justify-end p-6">
-                  <div className="space-y-2">
-                    <p className="text-xs text-primary font-semibold uppercase">
-                      {item.type}
-                    </p>
-                    <h3 className="text-xl font-bold text-foreground">
-                      {item.title}
-                    </h3>
-                  </div>
-
-                  {/* View Gallery Button */}
-                  <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-all">
-                    <div className="p-2 bg-primary/20 rounded-full backdrop-blur-sm border border-primary/30 group-hover:bg-primary/30 transition-colors">
-                      <ChevronRight className="w-5 h-5 text-primary" />
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </motion.div>
-          ))}
-        </motion.div>
-
-        {/* Gallery Stats */}
-        <motion.div
-          className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.3 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-        >
-          {[
-            { number: "1000+", label: "Cars Detailed" },
-            { number: "99%", label: "Satisfaction Rate" },
-            { number: "5★", label: "Average Rating" },
-          ].map((stat, idx) => (
-            <div
-              key={idx}
-              className="p-8 rounded-xl bg-card border border-primary/20 text-center hover:border-primary/50 transition-colors"
-            >
-              <p className="text-4xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent mb-2">
-                {stat.number}
-              </p>
-              <p className="text-foreground/70 font-medium">{stat.label}</p>
-            </div>
-          ))}
-        </motion.div>
-
-        {/* CTA Section */}
-        <motion.div
-          className="text-center p-8 lg:p-12 rounded-2xl bg-gradient-to-r from-primary/10 to-accent/10 border border-primary/20"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-        >
-          <h3 className="text-2xl font-bold text-foreground mb-4">
-            Want to See More?
-          </h3>
-          <p className="text-foreground/70 mb-6 max-w-2xl mx-auto">
-            Check out our complete gallery of transformations on Instagram
-            @SkyNice_Detailing to see more amazing before & after results.
-          </p>
-          <a
-            href="https://www.instagram.com/SkyNice_Detailing/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-6 py-3 bg-primary hover:bg-primary/90 text-primary-foreground font-semibold rounded-lg transition-all"
+          <motion.div
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3 "
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
           >
-            View Full Gallery
-            <ChevronRight className="w-4 h-4" />
-          </a>
-        </motion.div>
+            {columnedGallery.map((column, colIndex) => (
+              <motion.div
+                key={`gallery-col-${colIndex}`}
+                className="relative flex flex-col gap-3 overflow-hidden"
+                variants={itemVariants}
+              >
+                {/* Gallery Images */}
+                <div
+                  className={`flex flex-col gap-3 transition-all duration-500 ${
+                    isExpanded ? "max-h-none" : "max-h-[1000px] overflow-hidden"
+                  }`}
+                >
+                  {column.map((image) => (
+                    <motion.article
+                      key={image.id}
+                      className="relative overflow-hidden rounded-lg bg-muted aspect-square flex-shrink-0 group"
+                      variants={itemVariants}
+                      whileHover={{ y: -4 }}
+                    >
+                      <Image
+                        src={image.src}
+                        alt={image.alt}
+                        fill
+                        className="object-cover group-hover:scale-105 transition-transform duration-300"
+                        sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                        loading="lazy"
+                      />
+                      {/* Image Overlay - Semantic Info */}
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-3">
+                        <div className="text-white text-xs line-clamp-2">
+                          <p className="font-semibold">{image.title}</p>
+                          <p className="text-white/80">{image.type}</p>
+                        </div>
+                      </div>
+                    </motion.article>
+                  ))}
+                </div>
+              </motion.div>
+            ))}
+          </motion.div>
+
+          <motion.div
+            className={`flex justify-center z-1000 absolute bottom-10 left-1/2 -translate-x-1/2 ${isExpanded && "!-bottom-20"}`}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
+            <button
+              onClick={() => setIsExpanded((prev) => !prev)}
+              className="inline-flex items-center justify-center gap-2 px-8 py-3 rounded-lg bg-accent text-accent-foreground font-semibold hover:bg-accent/90 transition-colors duration-300"
+              aria-label="Show all gallery images"
+            >
+              {isExpanded ? "Show Less" : "Show All"}
+              <ChevronRight className="w-5 h-5" />
+            </button>
+          </motion.div>
+        </div>
+
+        {/* Show All Button */}
       </Container>
     </section>
   );

@@ -11,47 +11,81 @@ import {
   TrendingUp,
   Clock,
 } from "lucide-react";
+import SectionTitle from "@/components/common/SectionTitle";
+import { AnimateDiv } from "@/components/common/Animate";
+import { TickIcon } from "@/components/icons";
 
 interface BenefitCard {
-  icon: React.ReactNode;
   title: string;
   description: string;
 }
 
+const FeatureItem = ({
+  title,
+  description,
+  delay,
+}: {
+  title: string;
+  description: string;
+  delay: number;
+}) => {
+  return (
+    <AnimateDiv
+      initial={{ opacity: 0, x: -20 }}
+      whileInView={{ opacity: 1, x: 0 }}
+      transition={{ duration: 0.5, delay }}
+      viewport={{ once: true }}
+      className="flex items-start gap-4 group"
+    >
+      <AnimateDiv
+        whileHover={{ scale: 1.2, rotate: 360 }}
+        transition={{ duration: 0.5 }}
+        className="flex-shrink-0 mt-1"
+      >
+        <div className="flex items-center justify-center group-hover:scale-110 transition-all duration-300">
+          <TickIcon className="size-8 shrink-0 " />
+        </div>
+      </AnimateDiv>
+      <div className="flex-1">
+        <h3 className="text-lg sm:text-xl font-bold text-foreground mb-1 group-hover:text-primary">
+          {title}
+        </h3>
+        <p className="text-md sm:text-lg text-muted-foreground leading-relaxed">
+          {description}
+        </p>
+      </div>
+    </AnimateDiv>
+  );
+};
+
 const WhyChooseUs = () => {
   const benefits: BenefitCard[] = [
     {
-      icon: <Zap className="w-6 h-6" />,
       title: "Mobile Convenience",
       description:
         "We come to you. No need to drive to a garage, just relax while we detail your car at home.",
     },
     {
-      icon: <Shield className="w-6 h-6" />,
       title: "Professional Grade",
       description:
         "Certified detailers with 5+ years experience using premium products and latest techniques.",
     },
     {
-      icon: <Heart className="w-6 h-6" />,
       title: "Customer First",
       description:
         "Pay only after you're satisfied. Your happiness is our priority and guarantee.",
     },
     {
-      icon: <Trophy className="w-6 h-6" />,
       title: "Eco-Friendly",
       description:
         "100% biodegradable products that are safe for your car and the environment.",
     },
     {
-      icon: <Clock className="w-6 h-6" />,
       title: "Flexible Schedule",
       description:
         "Book at your convenience. Monday to Sunday, 8AM to 6PM. Weekend appointments welcome.",
     },
     {
-      icon: <TrendingUp className="w-6 h-6" />,
       title: "Guaranteed Quality",
       description:
         "Premium finishes backed by our satisfaction guarantee on every service.",
@@ -95,12 +129,8 @@ const WhyChooseUs = () => {
           whileInView="visible"
           viewport={{ once: true, amount: 0.3 }}
         >
-          <motion.p
-            variants={itemVariants}
-            className="text-primary font-semibold"
-          >
-            Why SKY NICE
-          </motion.p>
+          <SectionTitle title="Why Sky Nice" />
+
           <motion.h2
             variants={itemVariants}
             className="text-4xl lg:text-5xl font-bold text-foreground"
@@ -116,44 +146,44 @@ const WhyChooseUs = () => {
           </motion.p>
         </motion.div>
 
-        {/* Benefits Grid */}
-        <motion.div
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12"
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.2 }}
-        >
-          {benefits.map((benefit, idx) => (
-            <motion.div
-              key={idx}
-              variants={itemVariants}
-              className="group relative p-8 rounded-2xl bg-card border border-primary/20 hover:border-primary/50 transition-all duration-300 hover:shadow-lg"
-              whileHover={{ y: -5 }}
-            >
-              {/* Icon Background */}
-              <div className="absolute top-6 right-6 w-12 h-12 bg-primary/10 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity" />
+        {/* Features Grid - 2 columns */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 mb-16 sm:mb-20 max-sm:gap-4">
+          {/* Left Column - Features List */}
+          <AnimateDiv
+            initial={{ opacity: 0, x: -40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+            className="space-y-4"
+          >
+            {benefits.slice(0, 3).map((feature, idx) => (
+              <FeatureItem
+                key={idx}
+                title={feature.title}
+                description={feature.description}
+                delay={idx * 0.1}
+              />
+            ))}
+          </AnimateDiv>
 
-              {/* Icon */}
-              <div className="p-3 bg-primary/20 rounded-lg w-fit mb-4 group-hover:bg-primary/30 transition-colors">
-                <div className="text-primary">{benefit.icon}</div>
-              </div>
-
-              {/* Content */}
-              <h3 className="text-xl font-bold text-foreground mb-2">
-                {benefit.title}
-              </h3>
-              <p className="text-foreground/70 leading-relaxed">
-                {benefit.description}
-              </p>
-
-              {/* Check Icon Accent */}
-              <div className="absolute bottom-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity">
-                <CheckCircle2 className="w-5 h-5 text-accent" />
-              </div>
-            </motion.div>
-          ))}
-        </motion.div>
+          {/* Right Column - Features List */}
+          <AnimateDiv
+            initial={{ opacity: 0, x: 40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+            className="space-y-4"
+          >
+            {benefits.slice(3, 6).map((feature, idx) => (
+              <FeatureItem
+                key={idx + 3}
+                title={feature.title}
+                description={feature.description}
+                delay={idx * 0.1}
+              />
+            ))}
+          </AnimateDiv>
+        </div>
 
         {/* Trust Section */}
         <motion.div

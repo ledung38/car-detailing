@@ -316,7 +316,7 @@ const ServicesOverview = () => {
         </motion.div>
 
         {/* Extensions Section */}
-        <motion.div
+        {/* <motion.div
           className="bg-card border border-primary/20 rounded-2xl p-8 lg:p-12"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -354,28 +354,7 @@ const ServicesOverview = () => {
               ))}
             </div>
           </div>
-        </motion.div>
-
-        {/* CTA Section */}
-        <motion.div
-          className="mt-12 text-center"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-        >
-          <p className="text-foreground/70 mb-4">
-            Ceramic Coating Package available upon quote
-          </p>
-          <Link href="/booking">
-            <Button
-              size="lg"
-              className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold rounded-lg"
-            >
-              Get Your Quote Now
-            </Button>
-          </Link>
-        </motion.div>
+        </motion.div> */}
       </Container>
     </section>
   );

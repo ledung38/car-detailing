@@ -17,7 +17,7 @@ export const Home: React.FC = () => {
       <BeforeAfterGallery />
       <ProcessSteps />
       <Testimonials />
-      <FAQ />
+      {/* <FAQ /> */}
       <FinalCTA />
     </main>
   );
