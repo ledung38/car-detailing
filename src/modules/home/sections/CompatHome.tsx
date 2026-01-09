@@ -17,7 +17,7 @@ export const CompatHome = () => {
       {/* Background Image - Right Side */}
       <div className="absolute inset-0">
         <Image
-          src={"/compat_home.png"}
+          src={"/compat_home4.png"}
           width={1920}
           height={1080}
           alt="Professional car detailing service background"
@@ -28,7 +28,7 @@ export const CompatHome = () => {
 
       {/* Content */}
       <Container className="relative z-10 w-full h-full mx-auto flex items-center ">
-        <div className="w-full md:w-1/2  ">
+        <div className="w-full md:w-1/2 py-10 ">
           {/* Label */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
@@ -46,7 +46,7 @@ export const CompatHome = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-3xl sm:text-3xl  font-black text-white mb-6 tracking-tight leading-tight"
+            className="text-3xl sm:text-4xl  font-black text-white mb-6 tracking-tight leading-tight"
           >
             Professional Car Detailing Excellence
           </motion.h3>

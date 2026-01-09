@@ -112,8 +112,7 @@ link[rel="preload"] {
   --primary: oklch(65% 0.22 250);
   --primary-foreground: oklch(99% 0 0);
 
-  /* ====== Secondary Colors (Graphite Gray) ====== */
-  --secondary: oklch(25% 0.015 250);
+  --secondary: oklch(0.78 0.19 75);
   --secondary-foreground: oklch(83% 0.02 250);
 
   /* ====== Status Colors ====== */

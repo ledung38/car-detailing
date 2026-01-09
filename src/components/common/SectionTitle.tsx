@@ -1,3 +1,4 @@
+"use client";
 // SectionTitle.tsx
 import React from "react";
 import { cn } from "@/lib/utils";
@@ -19,7 +20,7 @@ const SectionTitle: React.FC<SectionTitleProps> = ({
     <Tag
       className={cn(
         "relative inline-block text-primary text-xl md:text-2xl font-bold tracking-wide",
-        className,
+        className
       )}
       {...props}
     >

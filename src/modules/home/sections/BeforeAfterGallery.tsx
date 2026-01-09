@@ -210,14 +210,14 @@ const BeforeAfterGallery = () => {
   };
 
   return (
-    <section className="relative py-20 lg:py-32 overflow-hidden">
+    <section className="relative py-20 overflow-hidden bg-white">
       {/* Background Elements */}
       <div className="absolute inset-0 -z-10">
         <div className="absolute top-0 right-20 w-96 h-96 bg-accent/15 rounded-full blur-3xl opacity-40" />
         <div className="absolute bottom-0 left-0 w-96 h-96 bg-primary/10 rounded-full blur-3xl opacity-30" />
       </div>
 
-      <Container>
+      <Container className="bg-background rounded-4xl py-10">
         {/* Section Header */}
         <motion.div
           className="text-center space-y-4 mb-16"
@@ -298,7 +298,7 @@ const BeforeAfterGallery = () => {
           </motion.div>
 
           <motion.div
-            className={`flex justify-center z-1000 absolute bottom-10 left-1/2 -translate-x-1/2 ${isExpanded && "!-bottom-20"}`}
+            className={`flex justify-center z-10 absolute bottom-10 left-1/2 -translate-x-1/2 ${isExpanded && "!-bottom-20"}`}
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}

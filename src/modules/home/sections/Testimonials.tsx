@@ -2,6 +2,10 @@
 import { Container } from "@/components/ui";
 import { motion } from "motion/react";
 import { Star, Quote } from "lucide-react";
+import SectionTitle from "@/components/common/SectionTitle";
+import { AnimateDiv } from "@/components/common/Animate";
+import ListComment from "@/modules/home/sections/components/ListComment";
+import { ratingsExample } from "@/modules/home/contants";
 
 interface Testimonial {
   id: string;
@@ -92,7 +96,7 @@ const Testimonials = () => {
   };
 
   return (
-    <section className="relative py-20 lg:py-32 overflow-hidden">
+    <section className="relative py-20 lg:py-32 overflow-hidden bg-gradient-to-b from-white to-primary/80">
       {/* Background */}
       <div className="absolute inset-0 -z-10">
         <div className="absolute top-0 left-10 w-96 h-96 bg-primary/15 rounded-full blur-3xl opacity-40" />
@@ -108,21 +112,17 @@ const Testimonials = () => {
           whileInView="visible"
           viewport={{ once: true, amount: 0.3 }}
         >
-          <motion.p
-            variants={itemVariants}
-            className="text-primary font-semibold"
-          >
-            Customer Testimonials
-          </motion.p>
+          <SectionTitle variants={itemVariants} title="Customer Testimonials" />
+
           <motion.h2
             variants={itemVariants}
-            className="text-4xl lg:text-5xl font-bold text-foreground"
+            className="text-4xl lg:text-5xl font-bold text-background"
           >
             Loved by Our Clients
           </motion.h2>
           <motion.p
             variants={itemVariants}
-            className="text-lg text-foreground/60 max-w-2xl mx-auto"
+            className="text-lg text-muted max-w-2xl mx-auto"
           >
             Real feedback from real customers who've experienced our premium
             detailing service.
@@ -130,47 +130,20 @@ const Testimonials = () => {
         </motion.div>
 
         {/* Testimonials Grid */}
-        <motion.div
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12"
-          variants={containerVariants}
+        <AnimateDiv
+          variants={{
+            hidden: { opacity: 0, transform: "scale(0.9)" },
+            visible: { opacity: 1, transform: "scale(1)" },
+          }}
           initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.2 }}
+          animate={"visible"}
+          className="w-full"
+          transition={{ type: "spring", delay: 0.5 }}
         >
-          {testimonials.map((testimonial) => (
-            <motion.div
-              key={testimonial.id}
-              variants={itemVariants}
-              className="group relative p-8 rounded-2xl bg-card border border-primary/20 hover:border-primary/50 transition-all duration-300 hover:shadow-lg"
-              whileHover={{ y: -8 }}
-            >
-              {/* Quote Icon */}
-              <div className="absolute top-4 right-4 opacity-20 group-hover:opacity-40 transition-opacity">
-                <Quote className="w-8 h-8 text-primary" />
-              </div>
-
-              {/* Rating */}
-              <div className="mb-4">{renderStars(testimonial.rating)}</div>
-
-              {/* Content */}
-              <p className="text-foreground/70 mb-6 leading-relaxed italic">
-                "{testimonial.content}"
-              </p>
-
-              {/* Author */}
-              <div className="pt-6 border-t border-primary/20">
-                <p className="font-bold text-foreground">{testimonial.name}</p>
-                <p className="text-sm text-foreground/60">{testimonial.car}</p>
-                <p className="text-xs text-foreground/50 mt-1">
-                  {testimonial.role}
-                </p>
-              </div>
-            </motion.div>
-          ))}
-        </motion.div>
-
+          <ListComment data={ratingsExample} />
+        </AnimateDiv>
         {/* Stats Section */}
-        <motion.div
+        {/* <motion.div
           className="grid grid-cols-1 md:grid-cols-3 gap-6 py-12 rounded-2xl bg-gradient-to-r from-primary/10 to-accent/10 border border-primary/20 px-8 lg:px-12"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -194,21 +167,21 @@ const Testimonials = () => {
               <p className="text-foreground/70 font-medium">{stat.label}</p>
             </motion.div>
           ))}
-        </motion.div>
+        </motion.div> */}
 
         {/* Social Proof */}
         <motion.div
-          className="mt-12 p-8 rounded-2xl bg-card border border-primary/20"
+          className="mt-12 p-8 rounded-2xl bg-white"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
           <div className="text-center space-y-4">
-            <h3 className="text-2xl font-bold text-foreground">
+            <h3 className="text-2xl font-bold text-primary">
               Follow Us & See More
             </h3>
-            <p className="text-foreground/70 max-w-2xl mx-auto">
+            <p className="text-muted max-w-2xl mx-auto">
               Check out our Instagram @SkyNice_Detailing for more customer
               reviews, before & after galleries, and exclusive detailing tips.
             </p>

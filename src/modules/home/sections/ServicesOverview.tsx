@@ -15,6 +15,7 @@ import SectionTitle from "@/components/common/SectionTitle";
 import { AnimateDiv } from "@/components/common/Animate";
 import { ArrowRightIcon } from "@/components/icons";
 import Image from "next/image";
+import { SERVICES } from "@/modules/service/contants";
 
 interface ServicePackage {
   id: string;
@@ -57,13 +58,8 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
           },
         }}
         whileHover={{ y: -8, transition: { duration: 0.2 } }}
-        className="relative rounded-2xl bg-card border border-border/50 hover:border-primary/50 transition-all duration-300 overflow-hidden"
+        className="relative rounded-2xl bg-card border border-border/20 hover:border-primary/50 transition-all duration-300 overflow-hidden"
       >
-        {/* Background gradient - Disabled on mobile */}
-        <AnimateDiv
-          className={`absolute inset-0 bg-gradient-to-br primary opacity-0 group-hover:opacity-5 transition-opacity duration-300 hidden sm:block`}
-        />
-
         {/* Nội dung */}
         <div>
           <Image
@@ -74,21 +70,21 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
             className="w-full h-auto object-cover"
             quality={75}
           />
-
-          <div className="relative z-10 p-6">
-            <h3 className="text-xl font-semibold text-foreground mb-3 group-hover:text-primary transition-colors">
+          <div className="relative z-10 p-6 bg-gradient-to-t from-background via-card/50 to-card/0">
+            <h3 className="text-xl font-semibold text-center text-foreground mb-3 group-hover:text-primary transition-colors">
               {title}
             </h3>
-
-            <p className="text-foreground/60 leading-relaxed mb-4">
+            <p className="text-foreground/60 leading-relaxed mb-4 ">
               {description}
             </p>
 
             {/* CTA text (nằm trong link luôn) */}
-            <div className="inline-flex items-center gap-2 text-primary font-medium text-sm hover:ml-1 transition-all duration-300">
-              <span className="sr-only">Learn more about {title}</span>
-              <span aria-hidden="true">Learn more</span>
-              <ArrowRightIcon className="w-5 h-5 [&_path]:stroke-primary" />
+            <div className="flex justify-center ">
+              <div className="inline-flex items-center rounded gap-2 px-4 py-2 text-white group-hover:text-white font-medium text-sm hover:ml-1 transition-all duration-300 bg-muted group-hover:bg-primary ">
+                <span className="sr-only">Learn more about {title}</span>
+                <span aria-hidden="true">Learn more</span>
+                <ArrowRightIcon className="w-5 h-5 [&_path]:stroke-white" />
+              </div>
             </div>
           </div>
         </div>
@@ -98,69 +94,6 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
 };
 
 const ServicesOverview = () => {
-  const services: ServicePackage[] = [
-    {
-      id: "mini",
-      icon: <Wind className="w-8 h-8" />,
-      name: "Mini Package",
-      duration: "1 - 1.5 hrs",
-      description: "Light cleaning & maintenance",
-      prices: { s: 90, m: 110, l: 130 },
-      features: [
-        "Exterior wash & dry",
-        "Interior vacuum",
-        "Windows clean",
-        "Quick tidy-up",
-      ],
-    },
-    {
-      id: "interior",
-      icon: <Sparkles className="w-8 h-8" />,
-      name: "Interior Package",
-      duration: "1.5 - 2.5 hrs",
-      description: "Deep interior shampoo & deodorise",
-      prices: { s: 140, m: 160, l: 190 },
-      features: [
-        "Deep interior vacuum",
-        "Seat shampoo & protect",
-        "Dashboard detail",
-        "Odour elimination",
-        "Air freshener",
-      ],
-    },
-    {
-      id: "full-detail",
-      icon: <Gauge className="w-8 h-8" />,
-      name: "Full Detail Package",
-      duration: "2.5 - 3.5 hrs",
-      description: "Complete in-out detailing",
-      prices: { s: 230, m: 260, l: 290 },
-      features: [
-        "Complete exterior detail",
-        "Deep interior cleaning",
-        "Paint protection",
-        "Tyre dressing",
-        "Engine bay wipe",
-      ],
-      highlight: true,
-    },
-    {
-      id: "enhancement",
-      icon: <Zap className="w-8 h-8" />,
-      name: "Enhancement Package",
-      duration: "4 - 5.5 hrs",
-      description: "Polishing, paint decontamination",
-      prices: { s: 350, m: 390, l: 450 },
-      features: [
-        "Paint decontamination",
-        "Professional polishing",
-        "Deep interior detail",
-        "Headlight restoration",
-        "Premium coating",
-      ],
-    },
-  ];
-
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -182,7 +115,7 @@ const ServicesOverview = () => {
   };
 
   return (
-    <section className="relative py-20 lg:py-32 overflow-hidden">
+    <section className="relative py-20 overflow-hidden">
       <Container>
         {/* Section Header */}
         <motion.div
@@ -216,20 +149,23 @@ const ServicesOverview = () => {
           whileInView="visible"
           viewport={{ once: true, amount: 0.2 }}
         >
-          {services.map((service) => (
+          {SERVICES.map((service) => (
             <motion.div
               key={service.id}
-              variants={itemVariants}
-              className={`group relative rounded-2xl  transition-all duration-300 cursor-pointer ${
-                service.highlight
-                  ? "bg-gradient-to-br from-primary/20 to-accent/20  shadow-lg lg:scale-105"
-                  : "bg-card  hover:shadow-lg"
-              }`}
+              variants={{
+                hidden: { opacity: 0, y: 30 },
+                visible: {
+                  opacity: 1,
+                  y: 0,
+                  transition: { duration: 0.3 },
+                },
+              }}
+              className={`group relative rounded-2xl bg-card  hover:shadow-lg transition-all duration-300 cursor-pointer`}
               whileHover={{ y: -8 }}
             >
               <ServiceCard
                 path={"/favicon.png"}
-                title={service.name}
+                title={service.title}
                 description={service.description}
               />
             </motion.div>

@@ -1,17 +1,25 @@
 "use client";
-import { Text } from "@/components/ui";
 import { cn } from "@/lib/utils/index";
+import { motion, MotionProps } from "framer-motion";
 import React from "react";
 
-export const TextGradient = ({ className, as = "h2" as const, ...props }) => {
+interface TextGradientProps extends MotionProps {
+  as?: React.ElementType;
+  className?: string;
+}
+
+export const TextGradient = ({
+  className,
+  as: TAg = motion.h2,
+  ...props
+}: TextGradientProps) => {
   return (
-    <Text
+    <TAg
       className={cn(
         "bg-gradient-to-r from-[#0871eb] via-primary/80 text-center to-[#1565C0] bg-clip-text text-transparent",
-        className,
+        className
       )}
-      as={as}
       {...props}
-    ></Text>
+    ></TAg>
   );
 };

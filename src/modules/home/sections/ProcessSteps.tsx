@@ -2,6 +2,7 @@
 import { Container } from "@/components/ui";
 import { motion } from "motion/react";
 import { CheckCircle2, Clock, MapPin, Smartphone } from "lucide-react";
+import SectionTitle from "@/components/common/SectionTitle";
 
 interface ProcessStep {
   number: number;
@@ -79,12 +80,8 @@ const ProcessSteps = () => {
           whileInView="visible"
           viewport={{ once: true, amount: 0.3 }}
         >
-          <motion.p
-            variants={itemVariants}
-            className="text-primary font-semibold"
-          >
-            Simple & Easy
-          </motion.p>
+          <SectionTitle variants={itemVariants} title="Simple & Easy" />
+
           <motion.h2
             variants={itemVariants}
             className="text-4xl lg:text-5xl font-bold text-foreground"

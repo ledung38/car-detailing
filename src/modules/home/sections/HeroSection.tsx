@@ -1,6 +1,9 @@
 "use client";
+import { AnimateSpan } from "@/components/common/Animate";
 import SmoothLoopVideo from "@/components/common/BannerVideo";
+import { ArrowCircleRightIcon } from "@/components/icons";
 import { Button, Container } from "@/components/ui";
+import { Routes } from "@/lib/enum/routes";
 import { ChevronRight, Sparkles } from "lucide-react";
 import { motion } from "motion/react";
 import Link from "next/link";
@@ -72,22 +75,17 @@ const HeroSection = () => {
             <span className="bg-gradient-to-r from-primary italic via-accent to-primary bg-clip-text text-transparent">
               SYDNEY
             </span>
-            {/* neon underline */}
-
-            <span
-              className="
-            absolute left-1/2 -bottom-2 h-[3px] w-[95%] 
-            -translate-x-1/2 
-            bg-gradient-to-r from-transparent via-primary to-transparent 
-            blur-[1px] drop-shadow-[0_0_6px_#00b3ff]
-          "
+            <img
+              src={"/line-title.png"}
+              className=" absolute left-1/2 -bottom-2 h-[3px] w-[95%] 
+            -translate-x-1/2            "
             />
           </motion.h1>
 
           {/* Subheading */}
           <motion.p
             variants={itemVariants}
-            className="text-lg text-foreground/70 text-center   leading-relaxed"
+            className="text-lg text-foreground/70 text-center   leading-relaxed mt-2"
           >
             Save time, protect your car, and enjoy that brand-new shine again.
             Our expert detailers bring mobile precision to your doorstep across
@@ -97,20 +95,22 @@ const HeroSection = () => {
           {/* Stats */}
           <motion.div
             variants={itemVariants}
-            className="grid grid-cols-3 gap-4 py-4 max-w-xl border-y border-primary/20"
+            className="grid grid-cols-3 gap-20 py-4 max-w-xl "
           >
-            <div>
-              <p className="text-3xl font-bold text-primary">500+</p>
-              <p className="text-sm text-foreground/60">Happy Clients</p>
-            </div>
-            <div>
-              <p className="text-3xl font-bold text-accent">1000+</p>
-              <p className="text-sm text-foreground/60">Cars Detailed</p>
-            </div>
-            <div>
-              <p className="text-3xl font-bold text-primary">5★</p>
-              <p className="text-sm text-foreground/60">Rated</p>
-            </div>
+            {[
+              { number: "500+", label: "Happy Clients" },
+              { number: "1000+", label: "Cars Detailed" },
+              { number: "5★", label: "Rated" },
+            ].map((stat, idx) => (
+              <div key={idx} className="text-center">
+                <p className="text-3xl font-black text-secondary">
+                  {stat.number}
+                </p>
+                <p className="text-sm font-medium text-[#c8d4e0] mt-1">
+                  {stat.label}
+                </p>
+              </div>
+            ))}
           </motion.div>
 
           {/* CTA Buttons */}
@@ -118,19 +118,27 @@ const HeroSection = () => {
             variants={itemVariants}
             className="flex flex-col sm:flex-row gap-4 pt-4"
           >
-            <Link href="/booking" className="w-full sm:w-auto">
-              <Button className="w-full sm:w-auto h-12 bg-primary hover:bg-primary/90 text-primary-foreground font-semibold rounded-lg flex items-center gap-2 group">
-                Book Now
-                <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-              </Button>
-            </Link>
-            <Link href="/service" className="w-full sm:w-auto">
-              <Button
-                variant="outline"
-                className="w-full sm:w-auto h-12 border-primary/30 text-foreground hover:bg-primary/10 font-semibold rounded-lg"
+            <Link href={Routes.BOOKING} className="w-full sm:w-auto">
+              <button
+                // whileHover={{ scale: 1.05, translateY: -2 }}
+                // whileTap={{ scale: 0.95 }}
+                className="relative px-8 py-4 bg-gradient-to-r from-[oklch(0.62_0.18_250)] to-[oklch(0.55_0.15_250)] text-white font-bold rounded-xl shadow-lg hover:shadow-xl hover:shadow-[oklch(0.62_0.18_250)]/30 transition-all duration-300 group overflow-hidden"
               >
-                Explore Services
-              </Button>
+                <span className="absolute inset-0 bg-white opacity-0 group-hover:opacity-10 transition-opacity duration-300" />
+                <span className="relative flex items-center gap-2">
+                  GET AN INSTANT QUOTE
+                  <AnimateSpan
+                    animate={{ x: [0, 4, 0] }}
+                    transition={{
+                      duration: 1.2,
+                      repeat: Infinity,
+                      ease: "easeInOut",
+                    }}
+                  >
+                    <ArrowCircleRightIcon className="size-6" />
+                  </AnimateSpan>
+                </span>
+              </button>
             </Link>
           </motion.div>
 

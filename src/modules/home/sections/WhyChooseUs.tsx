@@ -14,6 +14,8 @@ import {
 import SectionTitle from "@/components/common/SectionTitle";
 import { AnimateDiv } from "@/components/common/Animate";
 import { TickIcon } from "@/components/icons";
+import CounterStat from "@/modules/home/sections/CounterStat";
+import { TextGradient } from "@/components/common/TextGradient";
 
 interface BenefitCard {
   title: string;
@@ -47,10 +49,10 @@ const FeatureItem = ({
         </div>
       </AnimateDiv>
       <div className="flex-1">
-        <h3 className="text-lg sm:text-xl font-bold text-foreground mb-1 group-hover:text-primary">
+        <h3 className="text-lg sm:text-xl font-bold text-background mb-1 group-hover:text-primary">
           {title}
         </h3>
-        <p className="text-md sm:text-lg text-muted-foreground leading-relaxed">
+        <p className="text-md sm:text-lg text-muted leading-relaxed">
           {description}
         </p>
       </div>
@@ -113,12 +115,8 @@ const WhyChooseUs = () => {
   };
 
   return (
-    <section className="relative py-20 lg:py-32 overflow-hidden">
-      {/* Background Gradient */}
-      <div className="absolute inset-0 -z-10">
-        <div className="absolute top-1/2 left-0 w-96 h-96 bg-primary/15 rounded-full blur-3xl opacity-40 -translate-y-1/2" />
-        <div className="absolute bottom-20 right-0 w-96 h-96 bg-accent/10 rounded-full blur-3xl opacity-30 -translate-y-1/2" />
-      </div>
+    <section className="relative overflow-hidden py-20 bg-gradient-to-b from-primary/2 to-primary/40">
+      <div className="absolute inset-0 bg-[url('/bg_layer.webp')] bg-repeat bg-[length:200px_133px] dark:brightness-40 contrast-110 -z-1"></div>
 
       <Container>
         {/* Section Header */}
@@ -133,13 +131,13 @@ const WhyChooseUs = () => {
 
           <motion.h2
             variants={itemVariants}
-            className="text-4xl lg:text-5xl font-bold text-foreground"
+            className="text-4xl lg:text-5xl font-bold text-background"
           >
             Premium Care, Your Way
           </motion.h2>
           <motion.p
             variants={itemVariants}
-            className="text-lg text-foreground/60 max-w-2xl mx-auto"
+            className="text-lg text-muted max-w-2xl mx-auto"
           >
             We're not just detailers—we're car care partners committed to
             delivering excellence, every time.
@@ -187,7 +185,7 @@ const WhyChooseUs = () => {
 
         {/* Trust Section */}
         <motion.div
-          className="relative grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center py-12 rounded-2xl border border-primary/20 px-8 lg:px-12 bg-gradient-to-br from-primary/5 to-accent/5"
+          className="relative grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 bg-white items-center py-12 rounded-2xl border border-primary/20 px-8 lg:px-12 bg-gradient-to-br from-primary/5 to-accent/5"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.3 }}
@@ -197,12 +195,12 @@ const WhyChooseUs = () => {
           <div className="space-y-6">
             <div>
               <p className="text-primary font-semibold mb-2">Built on Trust</p>
-              <h3 className="text-3xl lg:text-4xl font-bold text-foreground">
+              <h3 className="text-3xl lg:text-4xl font-bold text-muted">
                 Trusted by Sydney's Best
               </h3>
             </div>
 
-            <p className="text-lg text-foreground/70 leading-relaxed">
+            <p className="text-lg text-muted leading-relaxed">
               Over 500 happy customers and 1000+ cars detailed. We've earned our
               reputation through consistent quality, professional service, and
               unwavering commitment to customer satisfaction.
@@ -216,8 +214,9 @@ const WhyChooseUs = () => {
                 "Fully Insured & Licensed",
               ].map((item, idx) => (
                 <div key={idx} className="flex items-center gap-3">
-                  <CheckCircle2 className="w-5 h-5 text-accent flex-shrink-0" />
-                  <span className="text-foreground font-medium">{item}</span>
+                  <TickIcon className="w-5 h-5 text-accent flex-shrink-0 " />
+
+                  <span className="text-[#0A84FF] font-medium">{item}</span>
                 </div>
               ))}
             </div>
@@ -229,22 +228,24 @@ const WhyChooseUs = () => {
               { number: "500+", label: "Happy Clients", icon: Users },
               { number: "1000+", label: "Cars Detailed", icon: TrendingUp },
               { number: "5★", label: "Rating", icon: Trophy },
-              { number: "8AM-6PM", label: "Work Hours", icon: Clock },
+              { number: "24/7", label: "Customer Support", icon: Clock },
             ].map((stat, idx) => {
               const IconComponent = stat.icon;
               return (
                 <motion.div
                   key={idx}
-                  className="p-6 rounded-xl bg-background border border-primary/20 text-center"
+                  className="p-6 rounded-xl z-10  relative text-center"
                   whileHover={{ scale: 1.05 }}
                 >
+                  <div className="absolute  rounded-xl inset-0 bg-[url('/bg_layer.webp')] bg-repeat bg-[length:200px_133px] dark:brightness-40 contrast-110 -z-1"></div>
+
                   <div className="p-3 bg-primary/20 rounded-lg w-fit mx-auto mb-3">
                     <IconComponent className="w-6 h-6 text-primary" />
                   </div>
-                  <p className="text-2xl font-bold text-foreground mb-1">
+                  <p className="text-2xl font-bold text-primary mb-1">
                     {stat.number}
                   </p>
-                  <p className="text-sm text-foreground/60">{stat.label}</p>
+                  <p className="text-sm text-accent">{stat.label}</p>
                 </motion.div>
               );
             })}
@@ -253,30 +254,37 @@ const WhyChooseUs = () => {
 
         {/* Process Highlight */}
         <motion.div
-          className="mt-12 p-8 lg:p-12 bg-card rounded-2xl border border-primary/20"
+          className="mt-12 p-8 relative lg:p-12 rounded-2xl z-10 "
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.2 }}
         >
-          <h3 className="text-2xl font-bold text-foreground mb-6">
+          <div
+            className="absolute top-0 left-0 w-full h-full bg-cover bg-top -z-1 rounded-2xl"
+            style={{
+              backgroundImage: "url('/compat_home.png')",
+              filter: "brightness(0.6) contrast(1.1)",
+            }}
+          />
+          <h3 className="text-2xl font-bold text-foreground mb-6 z-10">
             Our Promise to You
           </h3>
           <div className="space-y-4">
-            <p className="text-foreground/70 leading-relaxed">
+            <p className="text-foreground     leading-relaxed">
               <span className="text-primary font-semibold">
                 Professional Excellence:
               </span>{" "}
               Every team member is certified with 5+ years of experience in
               premium car detailing.
             </p>
-            <p className="text-foreground/70 leading-relaxed">
-              <span className="text-accent font-semibold">
+            <p className="text-foreground leading-relaxed">
+              <span className="text-primary font-semibold">
                 Quality Guarantee:
               </span>{" "}
               If you're not completely satisfied, we'll rework at no charge.
             </p>
-            <p className="text-foreground/70 leading-relaxed">
+            <p className="text-foreground leading-relaxed">
               <span className="text-primary font-semibold">
                 Eco-Responsible:
               </span>{" "}
