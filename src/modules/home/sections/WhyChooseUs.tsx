@@ -1,5 +1,5 @@
 "use client";
-import { Container } from "@/components/ui";
+import { Card, Container } from "@/components/ui";
 import { motion } from "motion/react";
 import {
   CheckCircle2,
@@ -16,7 +16,18 @@ import { AnimateDiv } from "@/components/common/Animate";
 import { TickIcon } from "@/components/icons";
 import CounterStat from "@/modules/home/sections/CounterStat";
 import { TextGradient } from "@/components/common/TextGradient";
+import miniPackage from "@/lib/assets/images/mini-package.png";
+import fullDetail from "@/lib/assets/images/full-detail-package.png";
+import extensionDetail from "@/lib/assets/images/extension-detail.png";
+import enhancementPackage from "@/lib/assets/images/enhancement-package.png";
+import ceramicCoatingPackage from "@/lib/assets/images/ceramic-coating-package.png";
 
+const ImageBg = [
+  miniPackage,
+  fullDetail,
+  enhancementPackage,
+  ceramicCoatingPackage,
+];
 interface BenefitCard {
   title: string;
   description: string;
@@ -231,21 +242,28 @@ const WhyChooseUs = () => {
               { number: "24/7", label: "Customer Support", icon: Clock },
             ].map((stat, idx) => {
               const IconComponent = stat.icon;
+
               return (
                 <motion.div
                   key={idx}
-                  className="p-6 rounded-xl z-10  relative text-center"
+                  className="p-6 rounded-xl z-10  relative text-center bg-accent/30"
                   whileHover={{ scale: 1.05 }}
                 >
-                  <div className="absolute  rounded-xl inset-0 bg-[url('/bg_layer.webp')] bg-repeat bg-[length:200px_133px] dark:brightness-40 contrast-110 -z-1"></div>
+                  <div
+                    className="absolute inset-0 rounded-xl bg-center bg-cover -z-10"
+                    style={{
+                      backgroundImage: `url(${ImageBg[idx].src})`,
+                      filter: "brightness(0.5) contrast(1.1)",
+                    }}
+                  ></div>
 
-                  <div className="p-3 bg-primary/20 rounded-lg w-fit mx-auto mb-3">
-                    <IconComponent className="w-6 h-6 text-primary" />
+                  <div className="p-3 bg-black/20 rounded-lg w-fit mx-auto mb-3">
+                    <IconComponent className="w-6 h-6 text-white" />
                   </div>
                   <p className="text-2xl font-bold text-primary mb-1">
                     {stat.number}
                   </p>
-                  <p className="text-sm text-accent">{stat.label}</p>
+                  <p className="text-sm text-white">{stat.label}</p>
                 </motion.div>
               );
             })}

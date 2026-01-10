@@ -1,21 +1,12 @@
 "use client";
-import { Container, Button } from "@/components/ui";
-import { motion } from "motion/react";
-import Link from "next/link";
-import {
-  Wind,
-  Zap,
-  Gauge,
-  Sparkles,
-  Shield,
-  Clock,
-  CheckCircle2,
-} from "lucide-react";
-import SectionTitle from "@/components/common/SectionTitle";
 import { AnimateDiv } from "@/components/common/Animate";
+import SectionTitle from "@/components/common/SectionTitle";
 import { ArrowRightIcon } from "@/components/icons";
-import Image from "next/image";
+import { Container } from "@/components/ui";
 import { SERVICES } from "@/modules/service/contants";
+import { motion } from "motion/react";
+import Image, { StaticImageData } from "next/image";
+import Link from "next/link";
 
 interface ServicePackage {
   id: string;
@@ -33,7 +24,7 @@ interface ServicePackage {
 }
 
 interface ServiceCardProps {
-  path: string;
+  path: StaticImageData;
   title: string;
   description: string;
 }
@@ -63,11 +54,11 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
         {/* Nội dung */}
         <div>
           <Image
-            src={"/favicon.png"}
+            src={path.src}
             alt={title}
-            width={500}
-            height={500}
-            className="w-full h-auto object-cover"
+            width={path.width}
+            height={path.height}
+            className="w-full h-65 object-cover"
             quality={75}
           />
           <div className="relative z-10 p-6 bg-gradient-to-t from-background via-card/50 to-card/0">
@@ -80,7 +71,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
 
             {/* CTA text (nằm trong link luôn) */}
             <div className="flex justify-center ">
-              <div className="inline-flex items-center rounded gap-2 px-4 py-2 text-white group-hover:text-white font-medium text-sm hover:ml-1 transition-all duration-300 bg-muted group-hover:bg-primary ">
+              <div className="inline-flex items-center rounded gap-2 px-4 py-2 text-white  font-medium text-sm hover:ml-1 transition-all duration-300 bg-muted bg-primary ">
                 <span className="sr-only">Learn more about {title}</span>
                 <span aria-hidden="true">Learn more</span>
                 <ArrowRightIcon className="w-5 h-5 [&_path]:stroke-white" />
@@ -164,7 +155,7 @@ const ServicesOverview = () => {
               whileHover={{ y: -8 }}
             >
               <ServiceCard
-                path={"/favicon.png"}
+                path={service.avatar}
                 title={service.title}
                 description={service.description}
               />

@@ -45,17 +45,16 @@ const Footer = () => {
       title: "Services",
       links: [
         {
-          label: "End of Lease Cleaning",
-          href: Routes.SERVICE_END_OF_LEASE_CLEANING,
+          label: "Mini Package",
+          href: Routes.SERVICE_MINI,
         },
-        { label: "Regular Cleaning", href: Routes.SERVICE_REGULAR_CLEANING },
-        { label: "Deep Cleaning", href: Routes.SERVICE_DEEP_CLEANING },
+        { label: "Interior Package", href: Routes.SERVICE_INTERIOR },
+        { label: "Full Detail Package", href: Routes.SERVICE_FULL_DETAIL },
         {
-          label: "Restaurant Cleaning",
-          href: Routes.SERVICE_RESTAURANT_CLEANING,
+          label: "Enhancement Package",
+          href: Routes.SERVICE_ENHANCEMENT,
         },
-        { label: "Airbnb Cleaning", href: Routes.SERVICE_AIRBNB_CLEANING },
-        { label: "Mould Cleaning", href: Routes.SERVICE_MOULD_CLEANING },
+        { label: "Ceramic Coating Package", href: Routes.SERVICE_CERAMIC },
       ],
     },
     {
@@ -87,7 +86,7 @@ const Footer = () => {
       href: "https://www.instagram.com/sydney.spotlesscleaning/",
       label: "Instagram",
     },
-    // { icon: TikTokIcon, href: "https://linkedin.com", label: "TikTok" },
+    { icon: TikTokIcon, href: "https://linkedin.com", label: "TikTok" },
   ];
 
   return (
@@ -131,7 +130,7 @@ const Footer = () => {
                   </div>
                   <div className="hidden sm:flex flex-col">
                     <span className="text-lg font-black text-white leading-tight tracking-tight">
-                      N&T Spotless Cleaning
+                      Sky Nice Mobile Car Detailing
                     </span>
                   </div>
                   {/* <div className="relative transition-all duration-300 group-hover:scale-110">
@@ -143,7 +142,7 @@ const Footer = () => {
               </div>
 
               <p className="text-white text-sm leading-relaxed mb-6">
-                Professional cleaning services you can trust. Making Sydney
+                Professional car detailing services you can trust. Making Sydney
                 cleaner, one space at a time.
               </p>
               {/* Social links */}

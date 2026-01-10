@@ -15,8 +15,8 @@ export const Home: React.FC = () => {
     <main className="w-full">
       <HeroSection />
       <ServicesOverview />
-      <WhyChooseUs />
       <BeforeAfterGallery />
+      <WhyChooseUs />
       <CompatHome />
       {/* <ProcessSteps /> */}
       <Testimonials />

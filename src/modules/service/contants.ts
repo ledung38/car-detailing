@@ -1,8 +1,17 @@
+import miniPackage from "@/lib/assets/images/mini-package.png";
+import interiorPackage from "@/lib/assets/images/interior-package.png";
+import fullDetail from "@/lib/assets/images/full-detail-package.png";
+import extensionDetail from "@/lib/assets/images/extension-detail.png";
+import enhancementPackage from "@/lib/assets/images/enhancement-package.png";
+import ceramicCoatingPackage from "@/lib/assets/images/ceramic-coating-package.png";
+import { StaticImageData } from "next/image";
+
 // constants/services.ts
 export interface Service {
   id: string;
   title: string;
   slug: string;
+  avatar: StaticImageData;
   duration: string;
   priceRange: string;
   description: string;
@@ -14,6 +23,7 @@ export const SERVICES: Service[] = [
   {
     id: "mini-package",
     title: "Mini Package / Maintenance",
+    avatar: miniPackage,
     slug: "mini-package",
     duration: "1 – 1.5 hours",
     priceRange: "S: $90 | M: $110 | L: $130",
@@ -32,6 +42,7 @@ export const SERVICES: Service[] = [
   {
     id: "interior-package",
     title: "Interior Package",
+    avatar: interiorPackage,
     slug: "interior-package",
     duration: "1.5 – 2.5 hours",
     priceRange: "S: $140 | M: $160 | L: $190",
@@ -50,6 +61,7 @@ export const SERVICES: Service[] = [
     id: "full-detail-package",
     title: "Full Detail Package",
     slug: "full-detail-package",
+    avatar: fullDetail,
     duration: "2.5 – 3.5 hours",
     priceRange: "S: $230 | M: $260 | L: $290",
     description:
@@ -70,6 +82,7 @@ export const SERVICES: Service[] = [
     id: "enhancement-package",
     title: "Enhancement Package",
     slug: "enhancement-package",
+    avatar: enhancementPackage,
     duration: "4 – 5.5 hours",
     priceRange: "S: $350 | M: $390 | L: $450",
     description:
@@ -86,6 +99,7 @@ export const SERVICES: Service[] = [
   {
     id: "ceramic-coating-package",
     title: "Ceramic Coating Package",
+    avatar: ceramicCoatingPackage,
     slug: "ceramic-coating-package",
     duration: "Varies by option (1, 3, or 5 years)",
     priceRange: "Contact for quotation",
@@ -103,6 +117,7 @@ export const SERVICES: Service[] = [
     id: "extension-detail",
     title: "Extension Detail Options",
     slug: "extension-detail",
+    avatar: extensionDetail,
     duration: "Add-on services",
     priceRange: "From $30 – $70",
     description:
@@ -131,5 +146,5 @@ export const SERVICE_DETAILS = Object.fromEntries(
         description: `${s.description} – Book now with Sky Nice Detailing Sydney.`,
       },
     },
-  ]),
+  ])
 );

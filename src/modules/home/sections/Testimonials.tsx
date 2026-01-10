@@ -96,7 +96,7 @@ const Testimonials = () => {
   };
 
   return (
-    <section className="relative py-20 lg:py-32 overflow-hidden bg-gradient-to-b from-white to-primary/80">
+    <section className="relative py-20 lg:py-32 overflow-hidden bg-[#c8e1f5]">
       {/* Background */}
       <div className="absolute inset-0 -z-10">
         <div className="absolute top-0 left-10 w-96 h-96 bg-primary/15 rounded-full blur-3xl opacity-40" />

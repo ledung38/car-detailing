@@ -148,7 +148,7 @@ export const Header = () => {
                     </>
                   )}
                   <Image
-                    src="/favicon.png"
+                    src="/logo_header.png"
                     alt="Logo"
                     priority
                     quality={100}
