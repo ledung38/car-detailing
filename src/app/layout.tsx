@@ -298,22 +298,22 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <ThemeProvider
+        {/* <ThemeProvider
           attribute="data-theme"
           defaultTheme="system"
           enableSystem
           disableTransitionOnChange
-        >
-          <NextTopLoader
-            color="var(--primary)"
-            zIndex={100000}
-            showSpinner={false}
-            crawlSpeed={200}
-            crawl={true}
-            height={3}
-          />
-          {children}
-        </ThemeProvider>
+        > */}
+        <NextTopLoader
+          color="var(--primary)"
+          zIndex={100000}
+          showSpinner={false}
+          crawlSpeed={200}
+          crawl={true}
+          height={3}
+        />
+        {children}
+        {/* </ThemeProvider> */}
       </body>
     </html>
   );

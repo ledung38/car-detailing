@@ -12,7 +12,7 @@ import HomeAreas from "@/modules/home/sections/ServiceAreas";
 
 export const Home: React.FC = () => {
   return (
-    <main className="w-full">
+    <main className="w-full -mt-20">
       <HeroSection />
       <ServicesOverview />
       <BeforeAfterGallery />

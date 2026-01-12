@@ -118,9 +118,9 @@ export const Header = () => {
     <>
       {/* Header */}
       <header
-        className={`fixed top-0 left-0 right-0 z-50 transition-all bg-white   dark:bg-[#0B1220]  duration-500 ${
+        className={`fixed top-0 left-0 right-0 z-50 transition-all bg-[#0B1220]  duration-500 ${
           isScrolled
-            ? "bg-white backdrop-blur-xl shadow-2xl"
+            ? "backdrop-blur-xl shadow-2xl"
             : isHome
               ? "!bg-transparent"
               : ""
@@ -141,12 +141,10 @@ export const Header = () => {
                 className="flex items-center gap-3 flex-shrink-0 group"
               >
                 <div className="relative transition-all duration-300 group-hover:scale-110">
-                  {isHome && !isScrolled && (
-                    <>
-                      <div className="absolute inset-0 bg-gradient-to-r from-blue-300 to-secondary rounded-full blur-lg opacity-0 group-hover:opacity-75 transition-opacity duration-300" />
-                      <div className="absolute inset-0 bg-gradient-to-r from-blue-300 to-secondary rounded-full blur-lg opacity-50 transition-opacity duration-300  group-hover:opacity-0" />
-                    </>
-                  )}
+                  <>
+                    <div className="absolute inset-0 bg-gradient-to-r from-blue-300 to-secondary rounded-full blur-lg opacity-0 group-hover:opacity-75 transition-opacity duration-300" />
+                    <div className="absolute inset-0 bg-gradient-to-r from-blue-300 to-secondary rounded-full blur-lg opacity-50 transition-opacity duration-300  group-hover:opacity-0" />
+                  </>
                   <Image
                     src="/logo_header.png"
                     alt="Logo"
@@ -180,7 +178,6 @@ export const Header = () => {
                             <NavLink
                               href={`${item.key}`}
                               isActive={active === item.key}
-                              isTextBlack={isHome ? !!isScrolled : true}
                             >
                               <span className="flex items-center gap-1">
                                 {item.label}
@@ -217,7 +214,6 @@ export const Header = () => {
                     <NavLink
                       href={`${item.key}`}
                       isActive={active === item.key}
-                      isTextBlack={isHome ? !!isScrolled : true}
                     >
                       {item.label}
                     </NavLink>
@@ -349,7 +345,7 @@ export const Header = () => {
       </header>
 
       {/* Spacing untuk fixed header */}
-      {/* <div className="h-20 bg-transparent" /> */}
+      <div className="h-20" />
     </>
   );
 };

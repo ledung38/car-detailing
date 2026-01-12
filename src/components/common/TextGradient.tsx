@@ -17,7 +17,7 @@ export const TextGradient = ({
     <TAg
       className={cn(
         "bg-gradient-to-r from-[#0871eb] via-primary/80 text-center to-[#1565C0] bg-clip-text text-transparent",
-        className
+        className,
       )}
       {...props}
     ></TAg>

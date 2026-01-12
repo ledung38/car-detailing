@@ -50,7 +50,7 @@ export default async function ServiceDetails({ params }) {
   const { slug } = await params;
 
   // Lấy thông tin dịch vụ từ data
-  const service = SERVICES[slug];
+  const service = SERVICES.find((service) => service.slug === slug);
 
   //   console.log("services", services);
   if (!service) {

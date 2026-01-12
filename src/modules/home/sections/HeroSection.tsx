@@ -30,7 +30,7 @@ const HeroSection = () => {
   };
 
   return (
-    <section className="relative min-h-screen w-full flex items-end justify-center overflow-hidden pt-16 pb-0">
+    <section className="relative min-h-screen w-full flex items-end justify-center overflow-hidden pb-0">
       <div className="absolute inset-0 -z-10">
         <SmoothLoopVideo src="/banner_video.mp4" />
       </div>

@@ -146,5 +146,5 @@ export const SERVICE_DETAILS = Object.fromEntries(
         description: `${s.description} – Book now with Sky Nice Detailing Sydney.`,
       },
     },
-  ])
+  ]),
 );

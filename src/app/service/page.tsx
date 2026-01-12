@@ -39,10 +39,5 @@ export const metadata: Metadata = {
 };
 
 export default function ServicePage() {
-  return (
-    <ServiceComponent
-      data={SERVICES["regular-cleaning"]}
-      slug="regular-cleaning"
-    />
-  );
+  return <ServiceComponent data={SERVICES[3]} slug="regular-cleaning" />;
 }
