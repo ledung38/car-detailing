@@ -88,8 +88,19 @@ const AboutUs = () => {
       {/* Hero Section - Who We Are with Video Background */}
       <section className="relative min-h-screen w-full flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 -z-10">
-          <SmoothLoopVideo src="/banner_video.mp4" />
-          <div className="absolute inset-0 bg-black/40" />
+          {/* <SmoothLoopVideo src="/banner_video.mp4" /> */}
+          {/* background image  */}
+          <Image
+            src="/about-us-bg.png"
+            width={1920}
+            height={1080}
+            alt="background"
+            className="absolute inset-0 w-full h-full object-cover object-center"
+            style={{
+              filter: "brightness(0.4)",
+            }}
+            priority
+          />
         </div>
 
         <Container>
@@ -99,7 +110,7 @@ const AboutUs = () => {
             initial="hidden"
             animate="visible"
           >
-            <SectionTitle title="About Us" />
+            <SectionTitle title="Who We Are" />
 
             <motion.h1
               variants={itemVariants}
@@ -178,7 +189,7 @@ const AboutUs = () => {
 
                 <motion.p
                   variants={itemVariants}
-                  className="text-lg text-foreground/70 leading-relaxed"
+                  className="text-lg text-foreground leading-relaxed"
                 >
                   {`To become Sydney's most trusted and preferred car detailing
                   service, recognized for exceptional quality, customer care,
@@ -195,7 +206,7 @@ const AboutUs = () => {
                   ].map((point, idx) => (
                     <div key={idx} className="flex gap-3 items-center">
                       <CheckCircle2 className="size-5 text-primary flex-shrink-0" />
-                      <span className="text-foreground/80">{point}</span>
+                      <span className="text-foreground">{point}</span>
                     </div>
                   ))}
                 </motion.div>
@@ -258,7 +269,7 @@ const AboutUs = () => {
                 />
                 <motion.p
                   variants={itemVariants}
-                  className="text-lg text-foreground/70 leading-relaxed"
+                  className="text-lg text-foreground leading-relaxed"
                 >
                   {`To revolutionize car care by bringing professional, premium
                   detailing directly to customers' homes, making car maintenance
@@ -274,7 +285,7 @@ const AboutUs = () => {
                   ].map((point, idx) => (
                     <div key={idx} className="flex gap-3 items-center">
                       <CheckCircle2 className="size-5 text-primary flex-shrink-0" />
-                      <span className="text-foreground/80">{point}</span>
+                      <span className="text-foreground">{point}</span>
                     </div>
                   ))}
                 </motion.div>
@@ -288,7 +299,7 @@ const AboutUs = () => {
       </section>
 
       {/* Our Service Process Section */}
-      <section className="relative py-12 md:py-20 overflow-hidden">
+      <section className="relative py-12 md:py-20 overflow-hidden bg-gradient-to-b from-background to-primary/60">
         <Container>
           <motion.div
             className="space-y-12"
@@ -302,7 +313,7 @@ const AboutUs = () => {
                 title="Our Service Process"
                 variants={itemVariants}
               />
-              <p className="text-lg text-foreground/70 max-w-2xl mx-auto mt-4">
+              <p className="text-lg text-foreground max-w-2xl mx-auto mt-4">
                 Simple, transparent, and convenient. Experience hassle-free car
                 detailing in just 4 steps.
               </p>
@@ -323,10 +334,10 @@ const AboutUs = () => {
                   className="relative"
                 >
                   {/* Step Card */}
-                  <div className="bg-card border border-border rounded-lg p-6 text-center hover:border-primary/50 transition-colors">
+                  <div className="bg-gradient-to-br from-blue-50 to-indigo-50 border-2 border-blue-200 rounded-xl p-8 text-center hover:border-blue-400 hover:shadow-lg transition-all duration-300">
                     {/* Step Number Circle */}
-                    <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary/20 border-2 border-primary mb-4 relative -mt-12">
-                      <span className="text-2xl font-bold text-primary">
+                    <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-br from-blue-500 to-indigo-600 border-4 border-white mb-4 relative -mt-12 shadow-md">
+                      <span className="text-2xl font-bold text-white">
                         {process.step}
                       </span>
                     </div>
@@ -335,12 +346,12 @@ const AboutUs = () => {
                     <div className="text-4xl mb-4">{process.icon}</div>
 
                     {/* Step Title */}
-                    <h4 className="text-xl font-bold text-foreground mb-3">
+                    <h4 className="text-xl font-bold text-gray-900 mb-3">
                       {process.title}
                     </h4>
 
                     {/* Step Description */}
-                    <p className="text-foreground/70 leading-relaxed">
+                    <p className="text-gray-700 leading-relaxed text-sm">
                       {process.description}
                     </p>
                   </div>
@@ -352,7 +363,7 @@ const AboutUs = () => {
       </section>
 
       {/* Final CTA Section */}
-      <section className="relative py-12 md:py-20 overflow-hidden bg-gradient-to-r from-primary/10 via-accent/10 to-primary/10">
+      <section className="relative py-12 md:py-20 overflow-hidden bg-gradient-to-b from-primary/60  to-background">
         <Container>
           <motion.div
             className="max-w-3xl mx-auto text-center space-y-8"

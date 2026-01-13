@@ -220,7 +220,10 @@ const ServiceComponent = ({ data, slug }: ServiceComponentProps) => {
                 autoPlay
                 muted
                 playsInline
-                className={cn("w-full h-140 object-cover rounded-2xl")}
+                loop
+                className={cn(
+                  "w-full h-140 object-cover rounded-2xl brightness-125",
+                )}
               />
             </motion.div>
           </motion.div>
@@ -285,14 +288,6 @@ const ServiceComponent = ({ data, slug }: ServiceComponentProps) => {
                   </motion.div>
                 ))}
               </div>
-
-              <motion.div variants={itemVariants}>
-                <Link href={Routes.BOOKING} className="inline-block">
-                  <button className="px-8 py-3 bg-primary/10 text-primary border border-primary/30 rounded-lg font-semibold hover:bg-primary/20 transition-all duration-300">
-                    Ask About Add-ons
-                  </button>
-                </Link>
-              </motion.div>
             </motion.div>
           </motion.div>
         </Container>
@@ -422,7 +417,7 @@ const ServiceComponent = ({ data, slug }: ServiceComponentProps) => {
       )}
 
       {/* Final CTA */}
-      <section className="py-16 md:py-24 bg-gradient-to-r from-primary/10 to-accent/10 border-t border-border/40">
+      <section className="py-16 md:py-24 bg-gradient-to-r from-primary/30 to-accent/30 border-t border-border/40">
         <Container>
           <motion.div
             className="max-w-3xl mx-auto text-center space-y-8"
