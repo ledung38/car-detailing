@@ -124,8 +124,8 @@ const Testimonials = () => {
             variants={itemVariants}
             className="text-lg text-muted max-w-2xl mx-auto"
           >
-            Real feedback from real customers who've experienced our premium
-            detailing service.
+            {`Real feedback from real customers who've experienced our premium
+            detailing service.`}
           </motion.p>
         </motion.div>
 

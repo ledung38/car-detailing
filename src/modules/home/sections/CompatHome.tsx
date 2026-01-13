@@ -58,9 +58,9 @@ export const CompatHome = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="text-base sm:text-lg text-gray-300 max-w-xl mb-8 leading-relaxed"
           >
-            Expert automotive detailing services that restore and protect your
+            {`Expert automotive detailing services that restore and protect your
             vehicle's paint, interior, and exterior. Certified professionals
-            using premium products for guaranteed results.
+            using premium products for guaranteed results.`}
           </motion.p>
 
           {/* CTA Button */}

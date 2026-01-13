@@ -180,11 +180,11 @@ const AboutUs = () => {
                   variants={itemVariants}
                   className="text-lg text-foreground/70 leading-relaxed"
                 >
-                  To become Sydney's most trusted and preferred car detailing
+                  {`To become Sydney's most trusted and preferred car detailing
                   service, recognized for exceptional quality, customer care,
                   and environmental responsibility. We envision a future where
                   every car owner has access to professional detailing at their
-                  convenience.
+                  convenience.`}
                 </motion.p>
 
                 <motion.div variants={itemVariants} className="space-y-3 pt-4">
@@ -260,10 +260,10 @@ const AboutUs = () => {
                   variants={itemVariants}
                   className="text-lg text-foreground/70 leading-relaxed"
                 >
-                  To revolutionize car care by bringing professional, premium
+                  {`To revolutionize car care by bringing professional, premium
                   detailing directly to customers' homes, making car maintenance
                   convenient, affordable, and environmentally responsible while
-                  setting new standards of excellence.
+                  setting new standards of excellence.`}
                 </motion.p>
 
                 <motion.div variants={itemVariants} className="space-y-3 pt-4">
@@ -363,12 +363,12 @@ const AboutUs = () => {
           >
             <motion.div variants={itemVariants} className="space-y-4">
               <h2 className="text-4xl md:text-5xl font-bold text-foreground">
-                Ready for Your Car's{" "}
+                {`Ready for Your Car's `}
                 <TextGradient>Transformation?</TextGradient>
               </h2>
               <p className="text-lg text-foreground/70 leading-relaxed">
-                Book your premium car detailing service today. We're just one
-                click away from making your vehicle showroom-perfect.
+                {`Book your premium car detailing service today. We're just one
+                click away from making your vehicle showroom-perfect.`}
               </p>
             </motion.div>
 

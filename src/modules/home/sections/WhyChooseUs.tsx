@@ -150,8 +150,8 @@ const WhyChooseUs = () => {
             variants={itemVariants}
             className="text-lg text-muted max-w-2xl mx-auto"
           >
-            We're not just detailers—we're car care partners committed to
-            delivering excellence, every time.
+            {`We're not just detailers—we're car care partners committed to
+            delivering excellence, every time.`}
           </motion.p>
         </motion.div>
 
@@ -207,14 +207,14 @@ const WhyChooseUs = () => {
             <div>
               <p className="text-primary font-semibold mb-2">Built on Trust</p>
               <h3 className="text-3xl lg:text-4xl font-bold text-muted">
-                Trusted by Sydney's Best
+                {`Trusted by Sydney's Best`}
               </h3>
             </div>
 
             <p className="text-lg text-muted leading-relaxed">
-              Over 500 happy customers and 1000+ cars detailed. We've earned our
+              {`Over 500 happy customers and 1000+ cars detailed. We've earned our
               reputation through consistent quality, professional service, and
-              unwavering commitment to customer satisfaction.
+              unwavering commitment to customer satisfaction.`}
             </p>
 
             <div className="space-y-3">
@@ -300,7 +300,7 @@ const WhyChooseUs = () => {
               <span className="text-primary font-semibold">
                 Quality Guarantee:
               </span>{" "}
-              If you're not completely satisfied, we'll rework at no charge.
+              {`If you're not completely satisfied, we'll rework at no charge.`}
             </p>
             <p className="text-foreground leading-relaxed">
               <span className="text-primary font-semibold">

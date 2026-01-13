@@ -182,10 +182,10 @@ const FAQ = () => {
           transition={{ duration: 0.6, delay: 0.2 }}
         >
           <h3 className="text-2xl font-bold text-foreground mb-4">
-            Can't Find Your Answer?
+            {`Can't Find Your Answer?`}
           </h3>
           <p className="text-foreground/70 mb-6 max-w-2xl mx-auto">
-            Reach out to our team directly. We're here to help!
+            {`Reach out to our team directly. We're here to help!`}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
