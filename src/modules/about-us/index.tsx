@@ -324,9 +324,6 @@ const AboutUs = () => {
               className="grid md:grid-cols-4 gap-6 relative"
               variants={containerVariants}
             >
-              {/* Connection Lines (desktop only) */}
-              <div className="hidden md:block absolute top-24 left-0 right-0 h-1 bg-gradient-to-r from-primary/0 via-primary/50 to-primary/0" />
-
               {processSteps.map((process, index) => (
                 <motion.div
                   key={index}
@@ -334,7 +331,7 @@ const AboutUs = () => {
                   className="relative"
                 >
                   {/* Step Card */}
-                  <div className="bg-gradient-to-br from-blue-50 to-indigo-50 border-2 border-blue-200 rounded-xl p-8 text-center hover:border-blue-400 hover:shadow-lg transition-all duration-300">
+                  <div className="bg-primary/20 border-2 border-blue-200 rounded-xl p-8 text-center hover:border-blue-400 hover:shadow-lg transition-all duration-300">
                     {/* Step Number Circle */}
                     <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-br from-blue-500 to-indigo-600 border-4 border-white mb-4 relative -mt-12 shadow-md">
                       <span className="text-2xl font-bold text-white">
@@ -346,12 +343,12 @@ const AboutUs = () => {
                     <div className="text-4xl mb-4">{process.icon}</div>
 
                     {/* Step Title */}
-                    <h4 className="text-xl font-bold text-gray-900 mb-3">
+                    <h4 className="text-xl font-bold text-foreground mb-3">
                       {process.title}
                     </h4>
 
                     {/* Step Description */}
-                    <p className="text-gray-700 leading-relaxed text-sm">
+                    <p className="text-foreground leading-relaxed text-sm">
                       {process.description}
                     </p>
                   </div>
