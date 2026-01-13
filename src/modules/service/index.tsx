@@ -63,7 +63,7 @@ const ServiceComponent = ({ data, slug }: ServiceComponentProps) => {
 
   // Get related services (excluding current and extension detail)
   const relatedServices = SERVICES.filter(
-    (s) => s.slug !== slug && s.slug !== "extension-detail"
+    (s) => s.slug !== slug && s.slug !== "extension-detail",
   ).slice(0, 3);
 
   return (

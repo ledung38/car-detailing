@@ -99,18 +99,11 @@ const AboutUs = () => {
             initial="hidden"
             animate="visible"
           >
-            <motion.div variants={itemVariants}>
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/20 border border-primary/40 backdrop-blur-sm mb-6">
-                <Sparkles className="size-4 text-primary" />
-                <span className="text-sm font-semibold text-primary">
-                  Who We Are
-                </span>
-              </div>
-            </motion.div>
+            <SectionTitle title="About Us" />
 
             <motion.h1
               variants={itemVariants}
-              className="text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight"
+              className="text-5xl md:text-6xl  font-bold text-white leading-tight"
             >
               Premier Mobile Car <TextGradient>Detailing Service</TextGradient>
             </motion.h1>
@@ -162,34 +155,26 @@ const AboutUs = () => {
       </section>
 
       {/* Mission & Vision Section - Based on UI Design */}
-      <section className="relative py-0 overflow-hidden bg-background">
+      <section className="relative  overflow-hidden bg-background py-25">
         {/* VISION Section */}
-        <div className="relative min-h-screen flex items-center overflow-hidden">
+        <div className="relative flex items-center overflow-hidden">
           <Container className="w-full">
             <div className="grid md:grid-cols-2 gap-12 items-center">
               {/* Vision Content */}
               <motion.div
-                className="space-y-6 z-10"
+                className="space-y-6 z-10 ml-20"
                 variants={containerVariants}
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true, amount: 0.3 }}
               >
-                <motion.div variants={itemVariants}>
-                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20">
-                    <Award className="size-4 text-primary" />
-                    <span className="text-sm font-semibold text-primary uppercase tracking-wider">
-                      Vision
-                    </span>
-                  </div>
-                </motion.div>
-
-                <motion.h2
+                {/* <motion.h2 variants={itemVariants}> */}
+                <SectionTitle
+                  title="Vision"
                   variants={itemVariants}
-                  className="text-4xl md:text-5xl font-bold text-foreground leading-tight"
-                >
-                  Our <TextGradient>Vision</TextGradient>
-                </motion.h2>
+                  className="text-4xl md:text-5xl font-bold text-primary leading-tight italic "
+                />
+                {/* </motion.h2> */}
 
                 <motion.p
                   variants={itemVariants}
@@ -239,9 +224,9 @@ const AboutUs = () => {
         </div>
 
         {/* MISSION Section */}
-        <div className="relative min-h-screen flex items-center overflow-hidden bg-primary/5">
+        <div className="relative  flex items-center overflow-hidden bg-primary/5 pt-12">
           <Container className="w-full">
-            <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div className="grid md:grid-cols-2 gap-16 items-center">
               {/* Mission Image */}
               <motion.div
                 variants={itemVariants}
@@ -260,28 +245,17 @@ const AboutUs = () => {
 
               {/* Mission Content */}
               <motion.div
-                className="space-y-6 z-10 md:order-2"
+                className="space-y-6 z-10 md:order-2 mr-20"
                 variants={containerVariants}
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true, amount: 0.3 }}
               >
-                <motion.div variants={itemVariants}>
-                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20">
-                    <Shield className="size-4 text-primary" />
-                    <span className="text-sm font-semibold text-primary uppercase tracking-wider">
-                      Mission
-                    </span>
-                  </div>
-                </motion.div>
-
-                <motion.h2
+                <SectionTitle
+                  title="Mission"
                   variants={itemVariants}
-                  className="text-4xl md:text-5xl font-bold text-foreground leading-tight"
-                >
-                  Our <TextGradient>Mission</TextGradient>
-                </motion.h2>
-
+                  className="text-4xl md:text-5xl font-bold text-primary leading-tight italic "
+                />
                 <motion.p
                   variants={itemVariants}
                   className="text-lg text-foreground/70 leading-relaxed"
@@ -372,57 +346,6 @@ const AboutUs = () => {
                   </div>
                 </motion.div>
               ))}
-            </motion.div>
-
-            {/* Additional Info */}
-            <motion.div
-              variants={containerVariants}
-              className="grid md:grid-cols-3 gap-6 pt-8 border-t border-border"
-            >
-              <motion.div
-                variants={itemVariants}
-                className="flex gap-4 items-start"
-              >
-                <Clock className="size-6 text-primary flex-shrink-0 mt-1" />
-                <div>
-                  <h4 className="font-bold text-foreground mb-1">
-                    Quick Turnaround
-                  </h4>
-                  <p className="text-foreground/70">
-                    Most services completed in 1-2 hours
-                  </p>
-                </div>
-              </motion.div>
-
-              <motion.div
-                variants={itemVariants}
-                className="flex gap-4 items-start"
-              >
-                <Shield className="size-6 text-primary flex-shrink-0 mt-1" />
-                <div>
-                  <h4 className="font-bold text-foreground mb-1">
-                    Guaranteed Quality
-                  </h4>
-                  <p className="text-foreground/70">
-                    100% satisfaction or your money back
-                  </p>
-                </div>
-              </motion.div>
-
-              <motion.div
-                variants={itemVariants}
-                className="flex gap-4 items-start"
-              >
-                <MapPin className="size-6 text-primary flex-shrink-0 mt-1" />
-                <div>
-                  <h4 className="font-bold text-foreground mb-1">
-                    Sydney Wide Service
-                  </h4>
-                  <p className="text-foreground/70">
-                    Available across all Sydney suburbs
-                  </p>
-                </div>
-              </motion.div>
             </motion.div>
           </motion.div>
         </Container>

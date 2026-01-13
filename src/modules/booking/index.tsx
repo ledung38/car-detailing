@@ -3,43 +3,42 @@
 import { generateEmailHTML } from "@/lib/utils/email";
 import { bookingFormSchema } from "@/modules/booking/validate";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { motion, AnimatePresence } from "motion/react";
+import { AnimatePresence, motion } from "motion/react";
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { toast as message } from "sonner";
 
-import { SERVICES } from "@/modules/service/contants";
+import SectionTitle from "@/components/common/SectionTitle";
+import { ArrowRightIcon } from "@/components/icons";
 import { Container } from "@/components/ui";
+import { Button } from "@/components/ui/Button";
+import { Checkbox } from "@/components/ui/Checkbox";
+import { RHFDatePicker } from "@/components/ui/DatePicker";
 import {
   Form,
+  FormControl,
   FormField,
   FormItem,
   FormLabel,
-  FormControl,
   FormMessage,
 } from "@/components/ui/Form";
 import { Input } from "@/components/ui/Input";
-import { Checkbox } from "@/components/ui/Checkbox";
-import { Button } from "@/components/ui/Button";
+import { SERVICES } from "@/modules/service/contants";
 import {
-  Calendar,
-  Clock,
-  MapPin,
-  User,
-  Phone,
-  Mail,
-  CheckCircle2,
   ArrowLeft,
-  Sparkles,
-  Zap,
   Award,
-  Shield,
+  Calendar,
   Check,
+  CheckCircle2,
+  Clock,
+  Mail,
+  MapPin,
+  Phone,
+  Shield,
+  Sparkles,
+  User,
 } from "lucide-react";
-import SectionTitle from "@/components/common/SectionTitle";
-import { ArrowRightIcon, CheckIcon } from "@/components/icons";
 import Link from "next/link";
-import { RHFDatePicker } from "@/components/ui/DatePicker";
 
 type FormData = {
   serviceId: string;
@@ -88,7 +87,7 @@ export const BookingWizard: React.FC = () => {
   const mainServices = SERVICES.slice(0, -1);
 
   const selectedService = mainServices.find(
-    (s) => s.id === form.watch("serviceId")
+    (s) => s.id === form.watch("serviceId"),
   );
   const selectedCarSize = form.watch("carSize");
 
@@ -120,14 +119,14 @@ export const BookingWizard: React.FC = () => {
       console.log("data", data);
       if (data?.success) {
         message.success(
-          "Booking confirmed! We'll contact you soon to confirm the appointment."
+          "Booking confirmed! We'll contact you soon to confirm the appointment.",
         );
         setCurrentStep(currentStep + 1);
         form.reset();
       } else {
         console.log("123123");
         message.error(
-          "Something went wrong. Please try again or contact support."
+          "Something went wrong. Please try again or contact support.",
         );
       }
     } catch (error: any) {
@@ -335,7 +334,7 @@ export const BookingWizard: React.FC = () => {
                                   {["S", "M", "L"].map((size, sizeIdx) => {
                                     const price = extractPrice(
                                       selectedService.priceRange,
-                                      size as "S" | "M" | "L"
+                                      size as "S" | "M" | "L",
                                     );
                                     const sizeEmoji =
                                       size === "S"
@@ -424,7 +423,7 @@ export const BookingWizard: React.FC = () => {
                                       >
                                         <Checkbox
                                           checked={selectedExtensions.includes(
-                                            option
+                                            option,
                                           )}
                                           onCheckedChange={(checked) => {
                                             if (checked) {
@@ -437,7 +436,7 @@ export const BookingWizard: React.FC = () => {
                                             } else {
                                               const newExt =
                                                 selectedExtensions.filter(
-                                                  (ext) => ext !== option
+                                                  (ext) => ext !== option,
                                                 );
 
                                               setSelectedExtensions(newExt);
@@ -454,7 +453,7 @@ export const BookingWizard: React.FC = () => {
                                           </p>
                                         </div>
                                         {selectedExtensions.includes(
-                                          option
+                                          option,
                                         ) && (
                                           <motion.div
                                             initial={{ scale: 0 }}
@@ -468,7 +467,7 @@ export const BookingWizard: React.FC = () => {
                                           </motion.div>
                                         )}
                                       </motion.label>
-                                    )
+                                    ),
                                   )}
                                 </div>
                               </FormControl>
@@ -906,7 +905,7 @@ export const BookingWizard: React.FC = () => {
                             {selectedCarSize === "L" && "Large"} ($
                             {extractPrice(
                               selectedService?.priceRange || "",
-                              selectedCarSize
+                              selectedCarSize,
                             )}
                             )
                           </span>
