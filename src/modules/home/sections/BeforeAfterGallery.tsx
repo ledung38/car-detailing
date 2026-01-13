@@ -1,9 +1,9 @@
 "use client";
 import { Container } from "@/components/ui";
 import { motion } from "motion/react";
-import { ChevronRight } from "lucide-react";
+import { ArrowDown, ArrowUp, ChevronRight } from "lucide-react";
 import Image, { StaticImageData } from "next/image";
-import { useState, useMemo } from "react";
+import { useState, useMemo, useEffect } from "react";
 import SectionTitle from "@/components/common/SectionTitle";
 import { imgBeforeAfter } from "@/lib/contants/images";
 
@@ -207,9 +207,9 @@ const BeforeAfterGallery = () => {
 
   // Organize images by columns
   const columnedGallery = useMemo(() => {
-    const columns = [[], [], []] as GalleryImage[][];
+    const columns = [[], [], [], []] as GalleryImage[][];
     galleryData.forEach((img, idx) => {
-      const columnIndex = idx % 3;
+      const columnIndex = idx % 4;
 
       columns[columnIndex]?.push(img);
     });
@@ -227,6 +227,24 @@ const BeforeAfterGallery = () => {
     },
   };
 
+  const handleToggle = (e: React.MouseEvent<HTMLButtonElement>) => {
+    e.preventDefault();
+    e.currentTarget.blur(); // bỏ focus để tránh auto-scroll
+
+    setIsExpanded((prev) => !prev);
+
+    if (isExpanded) {
+      const buttonEl = e.currentTarget;
+      setTimeout(() => {
+        const rect = buttonEl.getBoundingClientRect();
+        const inView = rect.top >= 0 && rect.bottom <= window.innerHeight;
+        if (!inView) {
+          buttonEl.scrollIntoView({ behavior: "smooth", block: "center" });
+        }
+      }, 350);
+    }
+  };
+
   const itemVariants = {
     hidden: { opacity: 0, y: 30 },
     visible: {
@@ -239,10 +257,6 @@ const BeforeAfterGallery = () => {
   return (
     <section className="relative py-20 overflow-hidden bg-white">
       {/* Background Elements */}
-      <div className="absolute inset-0 -z-10">
-        <div className="absolute top-0 right-20 w-96 h-96 bg-accent/15 rounded-full blur-3xl opacity-40" />
-        <div className="absolute bottom-0 left-0 w-96 h-96 bg-primary/10 rounded-full blur-3xl opacity-30" />
-      </div>
 
       <Container className="bg-background rounded-4xl py-10">
         {/* Section Header */}
@@ -271,13 +285,13 @@ const BeforeAfterGallery = () => {
         </motion.div>
 
         {/* Gallery Grid Container */}
-        <div className="relative mb-12">
+        <div className="relative mb-4 ">
           {!isExpanded && (
             <div className="absolute inset-0 z-1 bg-gradient-to-t from-background via-background/1 to-transparent pointer-events-none" />
           )}
 
           <motion.div
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 "
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"
@@ -286,14 +300,14 @@ const BeforeAfterGallery = () => {
             {columnedGallery.map((column, colIndex) => (
               <motion.div
                 key={`gallery-col-${colIndex}`}
-                className="relative flex flex-col gap-6 overflow-hidden"
+                className="relative flex flex-col gap-6 "
                 variants={itemVariants}
               >
                 {/* Gallery Images */}
-                <div
-                  className={`flex flex-col gap-6 transition-all duration-500 ${
-                    isExpanded ? "max-h-none" : "max-h-[1000px] overflow-hidden"
-                  }`}
+                <motion.div
+                  className="flex flex-col gap-6 overflow-hidden"
+                  animate={{ height: isExpanded ? "auto" : 1000 }}
+                  transition={{ duration: 0.5 }}
                 >
                   {column.map((image) => (
                     <motion.article
@@ -318,25 +332,37 @@ const BeforeAfterGallery = () => {
                       </div>
                     </motion.article>
                   ))}
-                </div>
+                </motion.div>
               </motion.div>
             ))}
           </motion.div>
-
           <motion.div
-            className={`flex justify-center z-10 absolute bottom-10 left-1/2 -translate-x-1/2 ${isExpanded && "!-bottom-20"}`}
+            className={`flex justify-center z-1 absolute inset-0 items-end w-full`}
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <button
-              onClick={() => setIsExpanded((prev) => !prev)}
-              className="inline-flex items-center justify-center gap-2 px-8 py-3 rounded-lg bg-accent text-accent-foreground font-semibold hover:bg-accent/90 transition-colors duration-300"
-              aria-label="Show all gallery images"
-            >
-              {isExpanded ? "Show Less" : "Show All"}
-              <ChevronRight className="w-5 h-5" />
-            </button>
+            {!isExpanded ? (
+              <button
+                onClick={handleToggle}
+                id="show-more"
+                className="inline-flex items-center justify-center gap-2 px-8 py-3 rounded-lg bg-accent text-accent-foreground font-semibold hover:bg-accent/90 transition-colors duration-300"
+                aria-label="Show all gallery images"
+              >
+                Show All
+                <ArrowDown className="w-5 h-5" />
+              </button>
+            ) : (
+              <button
+                onClick={handleToggle}
+                id="show-less"
+                className="inline-flex items-center justify-center gap-2 px-8 py-3 rounded-lg bg-accent text-accent-foreground font-semibold hover:bg-accent/90 transition-colors duration-300"
+                aria-label="Show all gallery images"
+              >
+                Show Less
+                <ArrowUp className="w-5 h-5" />
+              </button>
+            )}
           </motion.div>
         </div>
 

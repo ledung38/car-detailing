@@ -296,50 +296,50 @@ link[rel="preload"] {
 /* 
 variables
 :root {
-  --radius: ;
-  --card: ;
-  --card-foreground: ;
-  --popover: ;
-  --popover-foreground: ;
-  --primary: ;
-  --primary-foreground: ;
-  --secondary: ;
-  --secondary-foreground: ;
+  --radius:
+  --background: 
+  --foreground: 
+  --card: 
+  --card-foreground:
+  --popover: 
+  --popover-foreground: 
+  --primary: 
+  --primary-foreground:
+  --secondary:; 
+  --secondary-foreground: ; /* 
   --success: ;
   --success-foreground: ;
   --warning: ;
   --warning-foreground: ;
   --info: ;
-  --info-foreground: ;
+  --info-foreground:;
+  --destructive:;
   --muted: ;
-  --muted-foreground: ;
-  --accent: ;
+  --muted-foreground:;
+  --accent:;
   --accent-foreground: ;
-  --destructive: ;
   --border: ;
   --input: ;
   --ring: ;
-  --disabled: ;
-  --disabled-foreground: ;
-  --chart-1: ;
-  --chart-2: ;
-  --chart-3: ;
-  --chart-4: ;
-  --chart-5: ;
-  --sidebar: ;
-  --sidebar-foreground: ;
-  --sidebar-primary: ;
-  --sidebar-primary-foreground: ;
-  --sidebar-accent: ;
-  --sidebar-accent-foreground: ;
-  --sidebar-border: ;
-  --sidebar-ring: ;
-  --background: ;
-  --foreground: ;
-  --gradient-primary: ;
-  --foreground-gradient-primary: ;
-  --gradient-accent: ;
-  --foreground-gradient-accent: ;
-  --gradient-border: ;
-  --foreground-gradient-border: ;
+  --disabled: 
+  --disabled-foreground: 
+  --chart-1: 
+  --chart-2: 
+  --chart-3:
+  --chart-4:
+  --chart-5:
+  --sidebar: 
+  --sidebar-foreground: 
+  --sidebar-primary: 
+  --sidebar-primary-foreground: 
+  --sidebar-accent: 
+  --sidebar-accent-foreground: 
+  --sidebar-border: 
+  --sidebar-ring: 
+  --gradient-primary: 
+  --foreground-gradient-primary:
+  --gradient-accent: 
+  --foreground-gradient-accent: 
+  --gradient-border: 
+  --foreground-gradient-border: 
 } */

@@ -37,7 +37,7 @@ const checkboxVariants = cva(
       size: "md",
       variant: "default",
     },
-  },
+  }
 );
 
 interface CheckboxProps
@@ -80,8 +80,6 @@ function Checkbox({
       setRipples((prev) => prev.filter((r) => r.id !== newRipple.id));
     }, 600);
   };
-
-  console.log("ripples", ripples);
 
   return (
     <Flex

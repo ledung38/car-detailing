@@ -63,7 +63,7 @@ const ServiceComponent = ({ data, slug }: ServiceComponentProps) => {
 
   // Get related services (excluding current and extension detail)
   const relatedServices = SERVICES.filter(
-    (s) => s.slug !== slug && s.slug !== "extension-detail",
+    (s) => s.slug !== slug && s.slug !== "extension-detail"
   ).slice(0, 3);
 
   return (
@@ -176,9 +176,9 @@ const ServiceComponent = ({ data, slug }: ServiceComponentProps) => {
 
       {/* Highlights Section */}
       <section className="py-8 sm:py-12 bg-card/30 border-b border-border/40">
-        <Container className="grid grid-cols-2 ">
+        <Container className="grid grid-cols-2 items-center">
           <motion.div
-            className=" col-span-1"
+            className=" col-span-1 "
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"
@@ -220,7 +220,7 @@ const ServiceComponent = ({ data, slug }: ServiceComponentProps) => {
                 autoPlay
                 muted
                 playsInline
-                className={cn("w-full h-140 object-cover ")}
+                className={cn("w-full h-140 object-cover rounded-2xl")}
               />
             </motion.div>
           </motion.div>
@@ -299,7 +299,7 @@ const ServiceComponent = ({ data, slug }: ServiceComponentProps) => {
       </section>
 
       {/* Why Choose Section */}
-      <section className="py-16 md:py-24 bg-gradient-to-b from-primary/5 to-transparent border-b border-border/40">
+      {/* <section className="py-16 md:py-24 bg-gradient-to-b from-primary/5 to-transparent border-b border-border/40">
         <Container>
           <motion.div
             className="max-w-3xl mx-auto"
@@ -359,7 +359,7 @@ const ServiceComponent = ({ data, slug }: ServiceComponentProps) => {
             </div>
           </motion.div>
         </Container>
-      </section>
+      </section> */}
 
       {/* Related Services */}
       {relatedServices.length > 0 && (

@@ -20,8 +20,6 @@ export const Home: React.FC = () => {
       <CompatHome />
       {/* <ProcessSteps /> */}
       <Testimonials />
-      {/* <FAQ /> */}
-      {/* <FinalCTA /> */}
       <HomeAreas />
     </main>
   );
