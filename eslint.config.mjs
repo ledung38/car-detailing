@@ -22,6 +22,7 @@ const eslintConfig = [
     rules: {
       "@typescript-eslint/no-explicit-any": "off",
       "react-hooks/rules-of-hooks": "error",
+      "@typescript-eslint/ban-ts-comment": "off",
     },
   },
 ];

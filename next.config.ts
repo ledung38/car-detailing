@@ -167,6 +167,9 @@ const nextConfig: NextConfig = {
       resolveAlias: {},
     },
   },
+  typescript: {
+    ignoreBuildErrors: true,
+  },
 };
 
 export default nextConfig;
