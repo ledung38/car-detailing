@@ -52,7 +52,7 @@ const AboutUs = () => {
     { number: "500+", label: "Satisfied Customers", icon: Users },
     { number: "1000+", label: "Cars Detailed", icon: Award },
     { number: "5★", label: "Average Rating", icon: Star },
-    { number: "2+", label: "Years Service", icon: Clock },
+    { number: "5+", label: "Years Service", icon: Clock },
   ];
 
   // Service Process steps
@@ -166,9 +166,9 @@ const AboutUs = () => {
       </section>
 
       {/* Mission & Vision Section - Based on UI Design */}
-      <section className="relative  overflow-hidden bg-background py-25">
+      <section className="relative  overflow-hidden  py-25 bg-primary/5">
         {/* VISION Section */}
-        <div className="relative flex items-center overflow-hidden">
+        <div className="relative flex items-center overflow-hidden ">
           <Container className="w-full">
             <div className="grid md:grid-cols-2 gap-12 items-center">
               {/* Vision Content */}
@@ -229,13 +229,10 @@ const AboutUs = () => {
               </motion.div>
             </div>
           </Container>
-
-          {/* Decorative elements */}
-          <div className="absolute top-0 right-0 w-96 h-96 bg-primary/5 rounded-full -mr-48 -mt-48" />
         </div>
 
         {/* MISSION Section */}
-        <div className="relative  flex items-center overflow-hidden bg-primary/5 pt-12">
+        <div className="relative  flex items-center overflow-hidden  pt-12">
           <Container className="w-full">
             <div className="grid md:grid-cols-2 gap-16 items-center">
               {/* Mission Image */}
@@ -292,9 +289,6 @@ const AboutUs = () => {
               </motion.div>
             </div>
           </Container>
-
-          {/* Decorative elements */}
-          <div className="absolute bottom-0 left-0 w-96 h-96 bg-primary/5 rounded-full -ml-48 -mb-48" />
         </div>
       </section>
 

@@ -263,8 +263,8 @@ export const Pricing: React.FC = () => {
                 variants={itemVariants}
                 className="p-6 rounded-xl bg-primary/20  border border-border/40 hover:border-primary/50 transition-all duration-300"
               >
-                <div className="w-12 h-12 rounded-lg bg-primary/20 flex items-center justify-center mb-4">
-                  <TickIcon className="w-6 h-6 text-primary" />
+                <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-blue-500 to-indigo-600 flex items-center justify-center mb-4">
+                  <TickIcon className="w-6 h-6 [&_path]:fill-white" />
                 </div>
                 <h3 className="text-lg font-bold text-foreground mb-2">
                   {feature.title}

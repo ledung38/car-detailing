@@ -5,11 +5,10 @@ import Image from "next/image";
 import Link from "next/link";
 import { Clock, CheckCircle2, AlertCircle, Zap } from "lucide-react";
 import SectionTitle from "@/components/common/SectionTitle";
-import { ArrowRightIcon, CheckIcon } from "@/components/icons";
+import { ArrowRightIcon, CheckIcon, TickIcon } from "@/components/icons";
 import { Routes } from "@/lib/enum/routes";
 import { SERVICES } from "@/modules/service/contants";
 import extensionDetailImg from "@/lib/assets/images/extension-detail.png";
-import SmoothLoopVideo from "@/components/common/BannerVideo";
 import { cn } from "@/lib/utils";
 
 interface ServiceComponentProps {
@@ -63,7 +62,7 @@ const ServiceComponent = ({ data, slug }: ServiceComponentProps) => {
 
   // Get related services (excluding current and extension detail)
   const relatedServices = SERVICES.filter(
-    (s) => s.slug !== slug && s.slug !== "extension-detail",
+    (s) => s.slug !== slug && s.slug !== "extension-detail"
   ).slice(0, 3);
 
   return (
@@ -198,7 +197,7 @@ const ServiceComponent = ({ data, slug }: ServiceComponentProps) => {
                   variants={itemVariants}
                   className="flex items-start gap-4 p-4 rounded-lg hover:bg-background/50 transition-colors duration-300"
                 >
-                  <CheckCircle2 className="w-6 h-6 text-accent flex-shrink-0 mt-0.5" />
+                  <TickIcon className="w-6 h-6 text-accent flex-shrink-0 mt-0.5" />
                   <span className="text-foreground/80 text-lg leading-relaxed">
                     {highlight}
                   </span>
@@ -217,12 +216,12 @@ const ServiceComponent = ({ data, slug }: ServiceComponentProps) => {
             <motion.div variants={itemVariants} className="mb-12">
               <video
                 src="/car-detail.mp4"
+                controls
                 autoPlay
                 muted
                 playsInline
-                loop
                 className={cn(
-                  "w-full h-140 object-cover rounded-2xl brightness-125",
+                  "w-full h-140 object-cover rounded-2xl brightness-125"
                 )}
               />
             </motion.div>

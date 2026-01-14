@@ -87,7 +87,7 @@ export const BookingWizard: React.FC = () => {
   const mainServices = SERVICES.slice(0, -1);
 
   const selectedService = mainServices.find(
-    (s) => s.id === form.watch("serviceId"),
+    (s) => s.id === form.watch("serviceId")
   );
   const selectedCarSize = form.watch("carSize");
 
@@ -116,17 +116,15 @@ export const BookingWizard: React.FC = () => {
 
       const data = await res.json();
 
-      console.log("data", data);
       if (data?.success) {
         message.success(
-          "Booking confirmed! We'll contact you soon to confirm the appointment.",
+          "Booking confirmed! We'll contact you soon to confirm the appointment."
         );
         setCurrentStep(currentStep + 1);
         form.reset();
       } else {
-        console.log("123123");
         message.error(
-          "Something went wrong. Please try again or contact support.",
+          "Something went wrong. Please try again or contact support."
         );
       }
     } catch (error: any) {
@@ -334,7 +332,7 @@ export const BookingWizard: React.FC = () => {
                                   {["S", "M", "L"].map((size, sizeIdx) => {
                                     const price = extractPrice(
                                       selectedService.priceRange,
-                                      size as "S" | "M" | "L",
+                                      size as "S" | "M" | "L"
                                     );
                                     const sizeEmoji =
                                       size === "S"
@@ -423,7 +421,7 @@ export const BookingWizard: React.FC = () => {
                                       >
                                         <Checkbox
                                           checked={selectedExtensions.includes(
-                                            option,
+                                            option
                                           )}
                                           onCheckedChange={(checked) => {
                                             if (checked) {
@@ -436,7 +434,7 @@ export const BookingWizard: React.FC = () => {
                                             } else {
                                               const newExt =
                                                 selectedExtensions.filter(
-                                                  (ext) => ext !== option,
+                                                  (ext) => ext !== option
                                                 );
 
                                               setSelectedExtensions(newExt);
@@ -453,7 +451,7 @@ export const BookingWizard: React.FC = () => {
                                           </p>
                                         </div>
                                         {selectedExtensions.includes(
-                                          option,
+                                          option
                                         ) && (
                                           <motion.div
                                             initial={{ scale: 0 }}
@@ -467,7 +465,7 @@ export const BookingWizard: React.FC = () => {
                                           </motion.div>
                                         )}
                                       </motion.label>
-                                    ),
+                                    )
                                   )}
                                 </div>
                               </FormControl>
@@ -690,7 +688,6 @@ export const BookingWizard: React.FC = () => {
                                   clearable={false}
                                 />
                               </FormControl>
-                              <FormMessage />
                             </FormItem>
                           )}
                         />
@@ -905,7 +902,7 @@ export const BookingWizard: React.FC = () => {
                             {selectedCarSize === "L" && "Large"} ($
                             {extractPrice(
                               selectedService?.priceRange || "",
-                              selectedCarSize,
+                              selectedCarSize
                             )}
                             )
                           </span>

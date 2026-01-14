@@ -77,15 +77,14 @@ const HeroSection = () => {
             </span>
             <img
               src={"/line-title.png"}
-              className=" absolute left-1/2 -bottom-2 h-[3px] w-[95%] 
-            -translate-x-1/2            "
+              className=" absolute left-1/2 -bottom-2 h-[3px] w-[95%] -translate-x-1/2"
             />
           </motion.h1>
 
           {/* Subheading */}
           <motion.p
             variants={itemVariants}
-            className="text-lg text-foreground/70 text-center   leading-relaxed mt-2"
+            className="text-lg text-foreground text-center   leading-relaxed mt-2"
           >
             Save time, protect your car, and enjoy that brand-new shine again.
             Our expert detailers bring mobile precision to your doorstep across
