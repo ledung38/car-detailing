@@ -58,7 +58,7 @@ type FormData = {
 };
 
 export const BookingWizard: React.FC = () => {
-  const [currentStep, setCurrentStep] = useState(0);
+  const [currentStep, setCurrentStep] = useState(2);
   const [selectedExtensions, setSelectedExtensions] = useState<string[]>([]);
 
   const form = useForm<FormData>({

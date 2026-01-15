@@ -27,16 +27,17 @@ interface ServiceCardProps {
   path: StaticImageData;
   title: string;
   description: string;
+  slug: string;
 }
 const ServiceCard: React.FC<ServiceCardProps> = ({
+  slug,
   path,
   title,
   description,
 }) => {
-  const link = `/service/${title.toLowerCase().replaceAll(" ", "-")}`;
   return (
     <Link
-      href={link}
+      href={`/service/${slug}`}
       className="group block focus:outline-none focus-visible:ring-2 focus-visible:ring-primary rounded-2xl"
     >
       <AnimateDiv
@@ -155,6 +156,7 @@ const ServicesOverview = () => {
               whileHover={{ y: -8 }}
             >
               <ServiceCard
+                slug={service.slug}
                 path={service.avatar}
                 title={service.title}
                 description={service.description}

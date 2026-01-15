@@ -213,7 +213,7 @@ const ServiceComponent = ({ data, slug }: ServiceComponentProps) => {
             whileInView="visible"
             viewport={{ once: true, amount: 0.2 }}
           >
-            <motion.div variants={itemVariants} className="mb-12">
+            <motion.div variants={itemVariants}>
               <video
                 src="/car-detail.mp4"
                 controls

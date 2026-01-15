@@ -102,7 +102,7 @@ export const ratingsExample: any[] = [
     customerName: "Charlie Adams",
     comment:
       "The headlight restoration add-on was handled quickly and professionally. Highly satisfied!",
-    serviceName: "Extension Detail Options",
+    serviceName: "Interior Package",
     avatar:
       "https://images.pexels.com/photos/1181686/pexels-photo-1181686.jpeg", // nam 30+, tự tin
   },

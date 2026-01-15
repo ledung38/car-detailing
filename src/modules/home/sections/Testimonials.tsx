@@ -1,70 +1,12 @@
 "use client";
-import { Container } from "@/components/ui";
-import { motion } from "motion/react";
-import { Star, Quote } from "lucide-react";
-import SectionTitle from "@/components/common/SectionTitle";
 import { AnimateDiv } from "@/components/common/Animate";
-import ListComment from "@/modules/home/sections/components/ListComment";
+import SectionTitle from "@/components/common/SectionTitle";
+import { Container } from "@/components/ui";
 import { ratingsExample } from "@/modules/home/contants";
-
-interface Testimonial {
-  id: string;
-  name: string;
-  role: string;
-  content: string;
-  rating: number;
-  car: string;
-}
+import ListComment from "@/modules/home/sections/components/ListComment";
+import { motion } from "motion/react";
 
 const Testimonials = () => {
-  const testimonials: Testimonial[] = [
-    {
-      id: "1",
-      name: "John Anderson",
-      role: "Sydney, NSW",
-      car: "Tesla Model 3",
-      content:
-        "Amazing service! David was professional, punctual, and my car looks brand new. The attention to detail is incredible. Highly recommend SKY NICE!",
-      rating: 5,
-    },
-    {
-      id: "2",
-      name: "Sarah Mitchell",
-      role: "Sydney, NSW",
-      car: "BMW X5",
-      content:
-        "Absolutely impressed with the quality. The interior cleaning was thorough and the exterior shine is perfect. Will definitely book again!",
-      rating: 5,
-    },
-    {
-      id: "3",
-      name: "Michael Chen",
-      role: "Sydney, NSW",
-      car: "Audi A4",
-      content:
-        "Best car detailing service I've used. They came right on time, did excellent work, and the pricing is fair. Very happy customer here.",
-      rating: 5,
-    },
-    {
-      id: "4",
-      name: "Emma Williams",
-      role: "Sydney, NSW",
-      car: "Mercedes C-Class",
-      content:
-        "Professional, reliable, and thorough. My car has never looked better. The team at SKY NICE knows what they're doing. Highly recommended!",
-      rating: 5,
-    },
-    {
-      id: "5",
-      name: "David Thompson",
-      role: "Sydney, NSW",
-      car: "Range Rover",
-      content:
-        "Exceptional service quality. The ceramic coating package was worth every penny. My car looks showroom fresh. 10/10 would recommend!",
-      rating: 5,
-    },
-  ];
-
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -83,16 +25,6 @@ const Testimonials = () => {
       y: 0,
       transition: { duration: 0.6 },
     },
-  };
-
-  const renderStars = (rating: number) => {
-    return (
-      <div className="flex items-center gap-1">
-        {[...Array(rating)].map((_, i) => (
-          <Star key={i} className="w-4 h-4 fill-accent text-accent" />
-        ))}
-      </div>
-    );
   };
 
   return (

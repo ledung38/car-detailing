@@ -20,15 +20,14 @@ const SectionTitle: React.FC<SectionTitleProps> = ({
     <Tag
       className={cn(
         "relative inline-block text-primary text-xl md:text-2xl font-bold tracking-wide",
-        className,
+        className
       )}
       {...props}
     >
       {title}
       <img
         src={"/line-title.png"}
-        className=" absolute left-1/2 -bottom-2 h-[3px] w-[95%] 
-            -translate-x-1/2            "
+        className=" absolute left-1/2 -bottom-2 h-[3px] w-[95%] -translate-x-1/2"
       />
       {/* <span
         className="

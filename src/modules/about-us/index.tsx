@@ -23,7 +23,7 @@ import { Routes } from "@/lib/enum/routes";
 import Link from "next/link";
 import SmoothLoopVideo from "@/components/common/BannerVideo";
 import Image from "next/image";
-import fullDetailImg from "@/lib/assets/images/full-detail-package.png";
+import aboutUsImg from "@/lib/assets/images/about-us/vision.png";
 import ceramicCoatingImg from "@/lib/assets/images/ceramic-coating-package.png";
 
 const AboutUs = () => {
@@ -60,7 +60,7 @@ const AboutUs = () => {
     {
       step: 1,
       title: "Book Online",
-      description: "Simple 2-minute booking through our website or app",
+      description: "Simple 2-minute booking through our website",
       icon: "📱",
     },
     {
@@ -218,12 +218,12 @@ const AboutUs = () => {
                 whileHover={{ scale: 1.05 }}
                 className="relative h-96 md:h-full hidden md:block"
               >
-                <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-primary/5 rounded-lg overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-primary/5 rounded-lg overflow-hidden ">
                   <Image
-                    src={fullDetailImg}
+                    src={aboutUsImg}
                     alt="Vision"
                     fill
-                    className="object-cover"
+                    className="object-cover object-right"
                   />
                 </div>
               </motion.div>
