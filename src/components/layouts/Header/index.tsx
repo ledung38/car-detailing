@@ -146,7 +146,7 @@ export const Header = () => {
                     <div className="absolute inset-0 bg-gradient-to-r from-blue-300 to-secondary rounded-full blur-lg opacity-75 transition-opacity duration-300  group-hover:opacity-0" />
                   </>
                   <Image
-                    src="/logo_header.png"
+                    src="/logo_header14.png"
                     alt="Logo"
                     priority
                     quality={100}
