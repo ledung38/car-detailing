@@ -1,153 +1,146 @@
-import { SERVICES } from "@/modules/service/contants";
-
 export const ratingsExample: any[] = [
   {
-    customerName: "Sophie Williams",
+    customerName: "J S",
     comment:
-      "Fantastic job! My car looks brand new. The detailing was thorough and they were very professional. Highly recommend!",
-    serviceName: "Mini Package / Maintenance",
-    avatar: "https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg", // nữ 30+, nụ cười nhẹ, tone ấm
-  },
-  {
-    customerName: "Jack Thompson",
-    comment:
-      "Excellent Full Detail Package service. Every part of my car was meticulously cleaned.",
+      "Friendly and professional mobile service. easy communication and was able to be flexible when the weather was bad. I opted for the full external and internal detailing and are very happy with the result. car was cleaned thoroughly and looks like brand new again! would definitely recommend David and his small business to anyone who wants reliable service.",
     serviceName: "Full Detail Package",
-    avatar: "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg", // nam 35+, business look
+    avatar:
+      "https://images.pexels.com/photos/1704488/pexels-photo-1704488.jpeg", // Nam
   },
   {
-    customerName: "Olivia Harris",
+    customerName: "Wayne Phan",
+    comment: `We got the boys to wash 2 cars and they did a really good job. I would recommend them for anyone who is looking for a mobile car wash.
+We also got them to apply ceramic coating on another car and now that car looks brand new. Paint job is now amazing, very happy with the results!`,
+    serviceName: "Mini Package / Maintenance",
+    avatar: "https://images.pexels.com/photos/91227/pexels-photo-91227.jpeg", // Nam
+  },
+  {
+    customerName: "Phương Hoài",
     comment:
-      "The Interior Package was exactly what I needed. The seats and carpets look pristine now.",
+      "Car Detailing Sky Nice did an amazing job! My car looks shiny and brand new after the service. Every detail was taken care of with great attention. The staff were friendly, professional, and the pricing was very reasonable.",
     serviceName: "Interior Package",
-    avatar: "https://images.pexels.com/photos/340152/pexels-photo-340152.jpeg", // nữ 25+, friendly
+    avatar: "https://images.pexels.com/photos/733872/pexels-photo-733872.jpeg", // Nữ
   },
   {
-    customerName: "Liam Anderson",
+    customerName: "Zema mihardja",
     comment:
-      "Really happy with the service. Quick, efficient, and the ceramic coating has made my car shine beautifully.",
+      "I would recommend you to get David to do the job!!! My car was so dirty and now it’s immaculately clean and shiny, I feel I am driving a new vehicle.. This is my first experience with Sky Mobile detailing and definitely I will book again as soon as my car needs clean again.",
     serviceName: "Ceramic Coating Package",
     avatar:
-      "https://images.pexels.com/photos/1840608/pexels-photo-1840608.jpeg", // nam 30+, casual
+      "https://images.pexels.com/photos/2424290/pexels-photo-2424290.jpeg", // Nam
   },
   {
-    customerName: "Charlotte Brown",
+    customerName: "Vo Phuc Nhan",
     comment:
-      "Excellent service! The Mini Package maintained my car's shine perfectly. The team was professional and friendly.",
-    serviceName: "Mini Package / Maintenance",
-    avatar: "https://images.pexels.com/photos/325531/pexels-photo-325531.jpeg", // nữ 30+, natural
-  },
-  {
-    customerName: "Noah Martin",
-    comment:
-      "Outstanding work with the Full Detail Package. My car looks immaculate and the paint protection is fantastic.",
-    serviceName: "Full Detail Package",
-    avatar: "https://images.pexels.com/photos/775358/pexels-photo-775358.jpeg", // nam 35+, chuyên nghiệp
-  },
-  {
-    customerName: "Emily Johnson",
-    comment:
-      "Lovely staff and top-quality work. The Interior Package was thorough. My car smells fresh and looks so clean!",
-    serviceName: "Interior Package",
-    avatar:
-      "https://images.pexels.com/photos/3228213/pexels-photo-3228213.jpeg", // nữ 25+, business casual
-  },
-  {
-    customerName: "Benjamin White",
-    comment:
-      "The Enhancement Package was incredible. The paint correction made such a visible difference in my car's appearance.",
-    serviceName: "Enhancement Package",
-    avatar:
-      "https://images.pexels.com/photos/1704488/pexels-photo-1704488.jpeg", // nam 30+, clean look
-  },
-  {
-    customerName: "Isla Clarke",
-    comment:
-      "Professional detailing service that helped maintain my vehicle's condition and resale value.",
-    serviceName: "Full Detail Package",
-    avatar: "https://images.pexels.com/photos/936075/pexels-photo-936075.jpeg", // nữ 25+, studio light
-  },
-  {
-    customerName: "Ethan Hall",
-    comment:
-      "Affordable, reliable, and friendly. Definitely my go-to for the regular Mini Package maintenance every month.",
+      "I was genuinely surprised by how clean my car looked after the service. Every corner was spotless, from the carpets to the dashboard. Even the air smelled fresh and clean. The team was friendly and professional – highly recommended",
     serviceName: "Mini Package / Maintenance",
     avatar:
-      "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg", // nam 25+, ngoài trời
+      "https://images.pexels.com/photos/1681010/pexels-photo-1681010.jpeg", // Nam
   },
   {
-    customerName: "Mia Roberts",
+    customerName: "Thang Nguyen",
     comment:
-      "The team was friendly and efficient. The Interior Package left my car feeling completely fresh and sanitized.",
+      "Super happy with the service! They cleaned spots I didn’t even know were dirty. My kids' car seats were full of crumbs, but now everything looks spotless.",
+    serviceName: "Full Detail Package",
+    avatar: "https://images.pexels.com/photos/325531/pexels-photo-325531.jpeg", // Nam
+  },
+  {
+    customerName: "Pham Trung Anh",
+    comment:
+      "They arrived on time, were very polite, and paid attention to every detail. Even small areas inside the car were thoroughly cleaned. I’ll definitely be booking regular cleanings from now on.",
     serviceName: "Interior Package",
-    avatar: "https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg", // nữ 25+, tóc ngắn, tự nhiên
+    avatar: "https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg", // Nam
   },
   {
-    customerName: "Oliver King",
+    customerName: "Huu Hoang Tran",
     comment:
-      "The crew did a fantastic job with the Enhancement Package. The polish and protection look amazing.",
+      "They didn’t just clean – they restored my car. The interior was dusty, stained, and had pet hair everywhere. After their service, it looked brand new. I’m genuinely impressed.",
     serviceName: "Enhancement Package",
     avatar:
-      "https://images.pexels.com/photos/2379005/pexels-photo-2379005.jpeg", // nam 30+, friendly
+      "https://images.pexels.com/photos/1680172/pexels-photo-1680172.jpeg", // Nam
   },
   {
-    customerName: "Harper Evans",
+    customerName: "Tuan Nguyen",
     comment:
-      "Very impressive work with the ceramic coating. My car looks brand new and has excellent protection.",
+      "Convenient, professional, and spotless. The team was polite, the equipment was high quality, and they treated my car with care. The exterior wax left a nice glossy finish that’s still lasting after a week.",
+    serviceName: "Full Detail Package",
+    avatar:
+      "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg", // Nam
+  },
+  {
+    customerName: "Martijn",
+    comment:
+      "The car felt so clean and fresh after the service. I especially loved how they handled the leather seats and dashboard – spotless and no harsh chemical smell.",
+    serviceName: "Mini Package / Maintenance",
+    avatar: "https://images.pexels.com/photos/937481/pexels-photo-937481.jpeg", // Nam
+  },
+  {
+    customerName: "Do Nguyen",
+    comment:
+      "I’ve tried a few mobile detailing services before, but this one was the best by far. What I liked most was their attention to the little things – like conditioning the leather seats and removing the musty smell from the carpet.",
+    serviceName: "Interior Package",
+    avatar:
+      "https://images.pexels.com/photos/1840608/pexels-photo-1840608.jpeg", // Nam
+  },
+  {
+    customerName: "Thi Vo",
+    comment:
+      "Very happy with the services, the interior and mats was absolutely clean like brand new!! 👍 …",
+    serviceName: "Enhancement Package",
+    avatar:
+      "https://images.pexels.com/photos/2102416/pexels-photo-2102416.jpeg", // Nữ
+  },
+  {
+    customerName: "Giao Nguyen",
+    comment: "Great service — thank you for making my car shine again ❤️❤️❤️",
     serviceName: "Ceramic Coating Package",
     avatar:
-      "https://images.pexels.com/photos/1036623/pexels-photo-1036623.jpeg", // nữ 25+, ngoài trời
+      "https://images.pexels.com/photos/3763188/pexels-photo-3763188.jpeg", // Nữ
   },
   {
-    customerName: "Charlie Adams",
-    comment:
-      "The headlight restoration add-on was handled quickly and professionally. Highly satisfied!",
+    customerName: "KEVIN DAU",
+    comment: "good services and very polite staff",
     serviceName: "Interior Package",
-    avatar:
-      "https://images.pexels.com/photos/1181686/pexels-photo-1181686.jpeg", // nam 30+, tự tin
+    avatar: "https://images.pexels.com/photos/936075/pexels-photo-936075.jpeg", // Nam
   },
   {
-    customerName: "Grace Lewis",
-    comment:
-      "Very happy with the Full Detail Package service. Friendly staff, fair pricing, and excellent results.",
+    customerName: "Will T",
+    comment: "Excellent car detailing.",
     serviceName: "Full Detail Package",
-    avatar: "https://images.pexels.com/photos/428333/pexels-photo-428333.jpeg", // nữ 30+, áo trắng
+    avatar: "https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg", // Nam
   },
   {
-    customerName: "Mason Wilson",
-    comment:
-      "A trustworthy detailing service we rely on for monthly maintenance with the Mini Package.",
+    customerName: "Nadia Hasan",
+    comment: "Great job David was wonderful! Punctual and very thorough!!",
     serviceName: "Mini Package / Maintenance",
-    avatar:
-      "https://images.pexels.com/photos/4587183/pexels-photo-4587183.jpeg", // nam 35+, thân thiện
+    avatar: "https://images.pexels.com/photos/733872/pexels-photo-733872.jpeg", // Nữ
   },
   {
-    customerName: "Ella Turner",
+    customerName: "Nguyen duc",
     comment:
-      "The technicians were professional and efficient. The Interior Package left my car looking and smelling pristine.",
+      "Great mobile detailing service with friendly and skilled technicians. Worth every penny",
     serviceName: "Interior Package",
-    avatar: "https://images.pexels.com/photos/614810/pexels-photo-614810.jpeg", // nữ 25+, ánh sáng tự nhiên
+    avatar:
+      "https://images.pexels.com/photos/1043474/pexels-photo-1043474.jpeg", // Nam
   },
   {
-    customerName: "Henry Scott",
-    comment:
-      "The Enhancement Package with paint correction transformed my car's appearance. Worth every cent!",
+    customerName: "Luca Milne",
+    comment: "Great stuff!",
     serviceName: "Enhancement Package",
     avatar:
-      "https://images.pexels.com/photos/1840608/pexels-photo-1840608.jpeg", // nam 30+, casual
+      "https://images.pexels.com/photos/1681011/pexels-photo-1681011.jpeg", // Nam
   },
   {
-    customerName: "Zoe Campbell",
-    comment:
-      "Lovely experience from start to finish. The Full Detail Package was thorough and the results exceeded expectations!",
+    customerName: "Luu Tien Dat",
+    comment: "excellent service!",
     serviceName: "Full Detail Package",
-    avatar: "https://images.pexels.com/photos/340152/pexels-photo-340152.jpeg", // nữ 25+, tone ấm
+    avatar:
+      "https://images.pexels.com/photos/1704489/pexels-photo-1704489.jpeg", // Nam
   },
   {
-    customerName: "Lucas Davis",
-    comment:
-      "They went above and beyond with the ceramic coating! My car has never looked better and the protection is incredible.",
+    customerName: "Thomas Bizzell",
+    comment: "Great service.",
     serviceName: "Ceramic Coating Package",
-    avatar: "https://images.pexels.com/photos/775358/pexels-photo-775358.jpeg", // nam 35+, business
+    avatar: "https://images.pexels.com/photos/614810/pexels-photo-614810.jpeg", // Nam
   },
 ];

@@ -68,7 +68,7 @@ const Footer = () => {
         },
         {
           label: "Sydney, Australia",
-          href: "https://maps.app.goo.gl/Zj9SkChrEE7eZX8T9",
+          href: "https://maps.app.goo.gl/DpLwRqXWg8y9oVoM8",
           icon: MapPin,
         },
       ],

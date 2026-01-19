@@ -203,7 +203,7 @@ export default function RootLayout({
               sameAs: [
                 "https://www.facebook.com/SKYNICEdetailing",
                 "https://www.instagram.com/skynicecardetailing",
-                "https://maps.app.goo.gl/Zj9SkChrEE7eZX8T9",
+                "https://maps.app.goo.gl/DpLwRqXWg8y9oVoM8",
               ],
               priceRange: "$$",
               areaServed: "Sydney, NSW, Australia",
@@ -240,7 +240,7 @@ export default function RootLayout({
               sameAs: [
                 "https://www.facebook.com/SKYNICEdetailing",
                 "https://www.instagram.com/skynicecardetailing",
-                "https://maps.app.goo.gl/Zj9SkChrEE7eZX8T9",
+                "https://maps.app.goo.gl/DpLwRqXWg8y9oVoM8",
               ],
             }),
           }}
