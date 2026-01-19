@@ -201,8 +201,8 @@ export default function RootLayout({
                 longitude: "151.2093",
               },
               sameAs: [
-                "https://www.facebook.com/sydney.spotlesscleaning",
-                "https://www.instagram.com/sydney.spotlesscleaning",
+                "https://www.facebook.com/SKYNICEdetailing",
+                "https://www.instagram.com/skynicecardetailing",
                 "https://maps.app.goo.gl/Zj9SkChrEE7eZX8T9",
               ],
               priceRange: "$$",
@@ -238,8 +238,8 @@ export default function RootLayout({
               logo: `${baseUrl}/logo_500x500.png`,
               description,
               sameAs: [
-                "https://www.facebook.com/sydney.spotlesscleaning",
-                "https://www.instagram.com/sydney.spotlesscleaning",
+                "https://www.facebook.com/SKYNICEdetailing",
+                "https://www.instagram.com/skynicecardetailing",
                 "https://maps.app.goo.gl/Zj9SkChrEE7eZX8T9",
               ],
             }),

@@ -114,12 +114,12 @@ const Testimonials = () => {
               Follow Us & See More
             </h3>
             <p className="text-muted max-w-2xl mx-auto">
-              Check out our Instagram @SkyNice_Detailing for more customer
+              Check out our Instagram @skynicecardetailing for more customer
               reviews, before & after galleries, and exclusive detailing tips.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
               <a
-                href="https://www.instagram.com/SkyNice_Detailing/"
+                href="https://www.instagram.com/skynicecardetailing"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center px-6 py-3 bg-primary hover:bg-primary/90 text-primary-foreground font-semibold rounded-lg transition-all"
@@ -127,7 +127,7 @@ const Testimonials = () => {
                 Follow on Instagram
               </a>
               <a
-                href="https://www.facebook.com/sky.nice.car.detailing"
+                href="https://www.facebook.com/SKYNICEdetailing"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center px-6 py-3 bg-primary/10 hover:bg-primary/20 text-primary border border-primary/30 font-semibold rounded-lg transition-all"

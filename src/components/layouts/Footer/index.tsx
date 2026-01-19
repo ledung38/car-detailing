@@ -78,15 +78,19 @@ const Footer = () => {
   const socials = [
     {
       icon: Facebook,
-      href: "https://www.facebook.com/sydney.spotlesscleaning",
+      href: "https://www.facebook.com/SKYNICEdetailing",
       label: "Facebook",
     },
     {
       icon: Instagram,
-      href: "https://www.instagram.com/sydney.spotlesscleaning/",
+      href: "https://www.instagram.com/skynicecardetailing",
       label: "Instagram",
     },
-    { icon: TikTokIcon, href: "https://linkedin.com", label: "TikTok" },
+    {
+      icon: TikTokIcon,
+      href: "https://www.tiktok.com/@sky.nice.car.detailing",
+      label: "TikTok",
+    },
   ];
 
   return (

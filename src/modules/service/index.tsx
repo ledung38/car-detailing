@@ -62,7 +62,7 @@ const ServiceComponent = ({ data, slug }: ServiceComponentProps) => {
 
   // Get related services (excluding current and extension detail)
   const relatedServices = SERVICES.filter(
-    (s) => s.slug !== slug && s.slug !== "extension-detail",
+    (s) => s.slug !== slug && s.slug !== "extension-detail"
   ).slice(0, 3);
 
   return (
@@ -165,6 +165,11 @@ const ServiceComponent = ({ data, slug }: ServiceComponentProps) => {
                 </button>
               </Link>
 
+              <p className="text-sm text-foreground/50 mb-4 text-center mt-4 italic">
+                *Prices are for reference only and may vary depending on vehicle
+                condition.
+              </p>
+
               <p className="text-xs text-foreground/60 text-center mt-4">
                 ✓ Mobile service • ✓ No hidden fees • ✓ Money back guarantee
               </p>
@@ -215,13 +220,13 @@ const ServiceComponent = ({ data, slug }: ServiceComponentProps) => {
           >
             <motion.div variants={itemVariants}>
               <video
-                src="/car-detail.mp4"
+                src="https://www.facebook.com/share/r/17opsnzCED/?mibextid=wwXIfr"
                 controls
                 autoPlay
                 muted
                 playsInline
                 className={cn(
-                  "w-full h-140 object-cover rounded-2xl brightness-125",
+                  "w-full h-140 object-cover rounded-2xl brightness-125"
                 )}
               />
             </motion.div>

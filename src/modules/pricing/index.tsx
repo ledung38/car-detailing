@@ -150,35 +150,56 @@ export const Pricing: React.FC = () => {
 
                       {/* Prices - All 3 sizes */}
                       <div className="my-6 pb-6 border-t border-border/40">
-                        <p className="text-xs uppercase text-foreground/50 tracking-wider font-semibold mb-3">
-                          Pricing
+                        <p className="text-xs  text-foreground/50 tracking-wider font-semibold mb-3">
+                          PRICING
                         </p>
-                        <div className="grid grid-cols-3 gap-4">
-                          <div className="text-center">
-                            <p className="text-2xl font-bold text-primary">
-                              ${prices.S}
+                        {service.slug === "ceramic-coating-package" ? (
+                          <p className="text-center  bg-gradient-to-r pt-8 pb-11 from-[#0174f7] via-primary  to-[#0174f7] bg-clip-text text-transparent text-2xl  font-black">
+                            Contact Us
+                          </p>
+                        ) : service.slug === "extension-detail" ? (
+                          <p className="text-2xl font-bold text-primary text-center pt-8 pb-11">
+                            {service.priceRange}
+                          </p>
+                        ) : (
+                          <>
+                            <span className="text-xs text-transform text-foreground/50 mb-1">
+                              {`From`}
+                            </span>
+                            <div className="grid grid-cols-3 gap-4">
+                              <div className="text-center">
+                                <p className="text-2xl font-bold text-primary">
+                                  ${prices.S}
+                                </p>
+                                <p className="text-xs text-foreground/60 mt-1">
+                                  Small
+                                </p>
+                              </div>
+                              <div className="text-center">
+                                <p className="text-2xl font-bold text-primary">
+                                  ${prices.M}
+                                </p>
+                                <p className="text-xs text-foreground/60 mt-1">
+                                  Medium
+                                </p>
+                              </div>
+                              <div className="text-center">
+                                <p className="text-2xl font-bold text-primary">
+                                  ${prices.L}
+                                </p>
+                                <p className="text-xs text-foreground/60 mt-1">
+                                  Large
+                                </p>
+                              </div>
+                            </div>
+
+                            {/* Ghi chú */}
+                            <p className="text-[11px] text-foreground/50 text-center mt-4 italic">
+                              *Prices are for reference only and may vary
+                              depending on vehicle condition.
                             </p>
-                            <p className="text-xs text-foreground/60 mt-1">
-                              Small
-                            </p>
-                          </div>
-                          <div className="text-center">
-                            <p className="text-2xl font-bold text-primary">
-                              ${prices.M}
-                            </p>
-                            <p className="text-xs text-foreground/60 mt-1">
-                              Medium
-                            </p>
-                          </div>
-                          <div className="text-center">
-                            <p className="text-2xl font-bold text-primary">
-                              ${prices.L}
-                            </p>
-                            <p className="text-xs text-foreground/60 mt-1">
-                              Large
-                            </p>
-                          </div>
-                        </div>
+                          </>
+                        )}
                       </div>
 
                       {/* Highlights */}
