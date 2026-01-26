@@ -7,7 +7,7 @@ import { Clock, CheckCircle2, AlertCircle, Zap } from "lucide-react";
 import SectionTitle from "@/components/common/SectionTitle";
 import { ArrowRightIcon, CheckIcon, TickIcon } from "@/components/icons";
 import { Routes } from "@/lib/enum/routes";
-import { SERVICES } from "@/modules/service/contants";
+import { SERVICES, videoServices } from "@/modules/service/contants";
 import extensionDetailImg from "@/lib/assets/images/extension-detail.png";
 import { cn } from "@/lib/utils";
 
@@ -219,16 +219,15 @@ const ServiceComponent = ({ data, slug }: ServiceComponentProps) => {
             viewport={{ once: true, amount: 0.2 }}
           >
             <motion.div variants={itemVariants}>
-              <video
-                src="https://www.facebook.com/share/r/17opsnzCED/?mibextid=wwXIfr"
-                controls
-                autoPlay
-                muted
-                playsInline
-                className={cn(
-                  "w-full h-140 object-cover rounded-2xl brightness-125",
-                )}
-              />
+              <div className="relative w-full min-h-[500px] h-150 overflow-hidden rounded-2xl">
+                <iframe
+                  className="absolute top-1/2 left-1/2 w-full h-auto min-h-full -translate-x-1/2 -translate-y-1/2 object-cover"
+                  src={`${videoServices[slug]}?rel=0&modestbranding=1&showinfo=0&controls=1&fs=1&iv_load_policy=3&color=white`}
+                  title="Sky Nice Car Detailing"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                ></iframe>
+              </div>
             </motion.div>
           </motion.div>
         </Container>
