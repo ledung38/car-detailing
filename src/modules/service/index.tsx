@@ -219,9 +219,9 @@ const ServiceComponent = ({ data, slug }: ServiceComponentProps) => {
             viewport={{ once: true, amount: 0.2 }}
           >
             <motion.div variants={itemVariants}>
-              <div className="relative w-full min-h-[500px] h-150 overflow-hidden rounded-2xl">
+              <div className="relative w-full max-h-[600px] aspect-video overflow-hidden rounded-2xl">
                 <iframe
-                  className="absolute top-1/2 left-1/2 w-full h-auto min-h-full -translate-x-1/2 -translate-y-1/2 object-cover"
+                  className="absolute top-0 left-0 w-full h-full object-cover"
                   src={`${videoServices[slug]}?rel=0&modestbranding=1&showinfo=0&controls=1&fs=1&iv_load_policy=3&color=white`}
                   title="Sky Nice Car Detailing"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"

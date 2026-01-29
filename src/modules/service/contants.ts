@@ -150,10 +150,10 @@ export const SERVICE_DETAILS = Object.fromEntries(
 );
 
 export const videoServices = {
-  "full-detail-package": "https://www.youtube.com/embed/yQYqNM6FG_4",
-  "mini-package": "https://www.youtube.com/embed/_4hp2ueVyR0",
-  "interior-package": "https://www.youtube.com/embed/ei2rXqyggwY",
-  "enhancement-package": "https://www.youtube.com/embed/yG1GyIHddGw",
-  "ceramic-coating-package": "https://www.youtube.com/embed/Z5RcOxu9tXQ",
-  "extension-detail": "https://www.youtube.com/embed/yQYqNM6FG_4",
+  "full-detail-package": "https://www.youtube.com/embed/w-CPxGfroDE",
+  "mini-package": "https://www.youtube.com/embed/bG5MnqdFJ10",
+  "interior-package": "https://www.youtube.com/embed/XHKXYuY1Ugs",
+  "enhancement-package": "https://www.youtube.com/embed/HuKYKyHfagQ",
+  "ceramic-coating-package": "https://www.youtube.com/embed/odQuRWQotzE",
+  "extension-detail": "https://www.youtube.com/embed/w-CPxGfroDE",
 };

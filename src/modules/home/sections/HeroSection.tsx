@@ -31,8 +31,15 @@ const HeroSection = () => {
 
   return (
     <section className="relative min-h-screen w-full flex items-end justify-center overflow-hidden pb-0">
-      <div className="absolute inset-0 -z-10">
-        <SmoothLoopVideo src="/banner_video.mp4" />
+      <div className="absolute inset-0 -z-10 brightness-50 scale-120">
+        {/* <SmoothLoopVideo src="/banner_video.mp4" /> */}
+        <iframe
+          className="w-full h-full"
+          src="https://www.youtube.com/embed/LFPv0_ai1L8?autoplay=1&mute=1&loop=1&playlist=LFPv0_ai1L8&controls=0&rel=0&modestbranding=1&showinfo=0&fs=0&iv_load_policy=3&color=white&playsinline=1"
+          title="Sky Nice Car Detailing"
+          allow="autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen"
+          allowFullScreen
+        ></iframe>
       </div>
       <Container>
         <motion.div
