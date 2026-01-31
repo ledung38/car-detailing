@@ -1,10 +1,8 @@
 "use client";
 import { AnimateSpan } from "@/components/common/Animate";
-import SmoothLoopVideo from "@/components/common/BannerVideo";
 import { ArrowCircleRightIcon } from "@/components/icons";
-import { Button, Container } from "@/components/ui";
+import { Container } from "@/components/ui";
 import { Routes } from "@/lib/enum/routes";
-import { ChevronRight, Sparkles } from "lucide-react";
 import { motion } from "motion/react";
 import Link from "next/link";
 
@@ -35,9 +33,10 @@ const HeroSection = () => {
         {/* <SmoothLoopVideo src="/banner_video.mp4" /> */}
         <iframe
           className="w-full h-full"
-          src="https://www.youtube.com/embed/LFPv0_ai1L8?autoplay=1&mute=1&loop=1&playlist=LFPv0_ai1L8&controls=0&rel=0&modestbranding=1&showinfo=0&fs=0&iv_load_policy=3&color=white&playsinline=1"
-          title="Sky Nice Car Detailing"
-          allow="autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen"
+          src="https://www.youtube.com/embed/iM_xmlP0cLg?autoplay=1&mute=1&loop=1&playlist=iM_xmlP0cLg&controls=0&rel=0&modestbranding=1&showinfo=0&fs=0&iv_load_policy=3&color=white&playsinline=1"
+          title="Sky Nice Car Detailing Sydney | Mobile Car Wash & Detailing Service"
+          allow="autoplay; encrypted-media; picture-in-picture"
+          referrerPolicy="strict-origin-when-cross-origin"
           allowFullScreen
         ></iframe>
       </div>
