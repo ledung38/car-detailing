@@ -3,32 +3,32 @@ import LayoutComponents from "@/components/layouts/LayoutComponents";
 import Pricing from "@/modules/pricing";
 
 export const metadata: Metadata = {
-  title: "Pricing - N&T Spotless Cleaning Services",
+  title: "Pricing - Sky Nice Mobile Car Detailing Services",
   description:
-    "Transparent, affordable pricing for all cleaning services. Regular cleaning, End of lease cleaning, House cleaning, Deep cleaning . Free quotes available.",
+    "Transparent, affordable pricing for all mobile car detailing services. Full detail, interior clean, ceramic coating & more. Free quotes available.",
   keywords: [
-    "cleaning prices Sydney",
-    "house cleaning cost",
-    "regular cleaning pricing",
-    "affordable cleaning services",
+    "car detailing prices Sydney",
+    "mobile detailing cost",
+    "ceramic coating pricing",
+    "professional car detailing services",
   ],
   openGraph: {
-    title: "Pricing - N&T Spotless Cleaning Services",
+    title: "Pricing - Sky Nice Mobile Car Detailing Services",
     description:
-      "Transparent, affordable pricing for all cleaning services. Free quotes available.",
-    url: "https://www.spotlesscleaningsydney.com/pricing",
+      "Transparent, affordable pricing for all mobile car detailing services. Free quotes available.",
+    url: "https://www.skynicemobiledetailing.com.au/pricing",
     type: "website",
     images: [
       {
-        url: "https://www.spotlesscleaningsydney.com/og-pricing.png",
+        url: "https://www.skynicemobiledetailing.com.au/og-pricing.png",
         width: 1200,
         height: 630,
-        alt: "N&T Spotless Cleaning - Pricing",
+        alt: "Sky Nice Mobile Car Detailing - Pricing",
       },
     ],
   },
   alternates: {
-    canonical: "https://www.spotlesscleaningsydney.com/pricing",
+    canonical: "https://www.skynicemobiledetailing.com.au/pricing",
   },
 };
 

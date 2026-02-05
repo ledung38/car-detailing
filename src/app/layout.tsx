@@ -1,7 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import { ThemeProvider } from "@/components/theme/ThemeProvider";
 import NextTopLoader from "nextjs-toploader";
 import Script from "next/script";
 
@@ -23,7 +22,7 @@ const geistMono = Geist_Mono({
 const baseUrl = "https://www.skynicemobiledetailing.com.au";
 const siteName = "SKY NICE Mobile Car Detailing Sydney";
 const description =
-  "SKY NICE offers professional mobile car detailing in Sydney. We come to you with premium eco-friendly products & certified detailers. Full detail, interior clean, ceramic coating & more. 500+ happy clients, 5-star rated.";
+  "SKY NICE offers professional mobile car detailing in Sydney. We come to you with premium eco-friendly products & certified detailers. Full detail, interior clean, ceramic coating & more. 500+ happy clients, 5-star rated. 5 years of experience.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
@@ -65,7 +64,7 @@ export const metadata: Metadata = {
     title: `${siteName} | Premium Auto Care`,
     description,
     images: [`/screenshot-wide.png`],
-    creator: "@SkyNiceDetail",
+    creator: "@skynicecardetailing",
   },
 
   // Additional SEO
@@ -158,7 +157,7 @@ export default function RootLayout({
         {/* Google tag (gtag.js) - Deferred */}
         <Script
           strategy="afterInteractive"
-          src="https://www.googletagmanager.com/gtag/js?id=G-HWPMP7DHGW"
+          src="https://www.googletagmanager.com/gtag/js?id=G-HWPMP7DHGW1"
         ></Script>
         <Script
           id="ga4-init"
@@ -168,7 +167,7 @@ export default function RootLayout({
               window.dataLayer = window.dataLayer || [];
               function gtag(){dataLayer.push(arguments);}
               gtag('js', new Date());
-              gtag('config', 'G-HWPMP7DHGW');
+              gtag('config', 'G-HWPMP7DHGW1');
             `,
           }}
         />
@@ -181,7 +180,7 @@ export default function RootLayout({
               "@context": "https://schema.org",
               "@type": "LocalBusiness",
               "@id": baseUrl,
-              name: "N&T Spotless Cleaning",
+              name: "SKY NICE Mobile Car Detailing",
               image: `${baseUrl}/screenshot-wide.png`,
               description,
               url: baseUrl,
@@ -233,7 +232,7 @@ export default function RootLayout({
               "@context": "https://schema.org",
               "@type": "Organization",
               "@id": `${baseUrl}#organization`,
-              name: "N&T Spotless Cleaning",
+              name: "Sky Nice Mobile Car Detailing",
               url: baseUrl,
               logo: `${baseUrl}/logo_500x500.png`,
               description,
@@ -298,12 +297,6 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {/* <ThemeProvider
-          attribute="data-theme"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
-        > */}
         <NextTopLoader
           color="var(--primary)"
           zIndex={100000}
@@ -313,7 +306,6 @@ export default function RootLayout({
           height={3}
         />
         {children}
-        {/* </ThemeProvider> */}
       </body>
     </html>
   );

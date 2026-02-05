@@ -99,7 +99,7 @@ const nextConfig: NextConfig = {
             value: "spotlesscleaningsydney.com",
           },
         ],
-        destination: "https://www.spotlesscleaningsydney.com/:path*",
+        destination: "https://www.skynicemobiledetailing.com.au/:path*",
         permanent: true,
       },
 
@@ -113,7 +113,7 @@ const nextConfig: NextConfig = {
             value: "http",
           },
         ],
-        destination: "https://www.spotlesscleaningsydney.com/:path*",
+        destination: "https://www.skynicemobiledetailing.com.au/:path*",
         permanent: true,
       },
 
@@ -157,7 +157,7 @@ const nextConfig: NextConfig = {
   env: {
     NEXT_PUBLIC_SITE_URL:
       process.env.NEXT_PUBLIC_SITE_URL ||
-      "https://www.spotlesscleaningsydney.com",
+      "https://www.skynicemobiledetailing.com.au",
   },
 
   // Turbopack for faster builds

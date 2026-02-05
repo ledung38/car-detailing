@@ -22,6 +22,6 @@ export default function robots(): MetadataRoute.Robots {
         disallow: ["/"],
       },
     ],
-    sitemap: "https://www.spotlesscleaningsydney.com/sitemap.xml",
+    sitemap: "https://www.skynicemobiledetailing.com.au/sitemap.xml",
   };
 }

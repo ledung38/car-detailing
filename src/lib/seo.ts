@@ -3,10 +3,10 @@
  */
 
 export const SITE_CONFIG = {
-  name: "N&T Spotless Cleaning",
-  url: "https://www.spotlesscleaningsydney.com",
+  name: "Sky Nice Mobile Car Detailing",
+  url: "https://www.skynicemobiledetailing.com.au",
   description:
-    "Professional cleaning services in Sydney. Deep cleaning, regular maintenance, end of lease cleaning, restaurant and mould cleaning. 2000+ happy clients, 8+ years experience.",
+    "Professional mobile car detailing services in Sydney. We come to you with premium eco-friendly products & certified detailers. Full detail, interior clean, ceramic coating & more. 500+ happy clients, 5-star rated.",
   email: "skynicecardetailing102@gmail.com",
   phone: "+61-433-263-105",
   address: {
@@ -113,8 +113,8 @@ export const getLocalBusinessSchema = () => ({
   },
   aggregateRating: {
     "@type": "AggregateRating",
-    ratingValue: "4.9",
-    reviewCount: "2000",
+    ratingValue: "5",
+    reviewCount: "50",
   },
 });
 

@@ -1,12 +1,11 @@
-"use client";
 import Link from "next/link";
-import { motion } from "framer-motion";
 import { Facebook, Instagram, Phone, Mail, MapPin } from "lucide-react";
-import { NextAvatar } from "@/components/ui";
+import { Container, NextAvatar } from "@/components/ui";
 import { Routes } from "@/lib/enum/routes";
 import logo from "@/lib/assets/images/logo.webp";
 import { TikTokIcon } from "@/components/icons";
-import { AnimateLink } from "@/components/common/Animate";
+import { AnimateDiv, AnimateLink } from "@/components/common/Animate";
+import Image from "next/image";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -97,7 +96,7 @@ const Footer = () => {
     <footer className="bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 border-t border-primary/20 relative overflow-hidden">
       {/* Background decoration */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <motion.div
+        <AnimateDiv
           className="absolute -bottom-40 right-0 w-96 h-96 bg-primary/10 rounded-full blur-3xl"
           animate={{
             scale: [1, 1.2, 1],
@@ -110,7 +109,7 @@ const Footer = () => {
       <div className="relative z-10">
         {/* Main footer content */}
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24 !pb-5">
-          <motion.div
+          <AnimateDiv
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"
@@ -118,7 +117,7 @@ const Footer = () => {
             className="grid grid-cols-2 lg:grid-cols-4 gap-8 mb-12"
           >
             {/* Brand section */}
-            <motion.div variants={itemVariants} className="lg:col-span-1">
+            <AnimateDiv variants={itemVariants} className="lg:col-span-1">
               <div className="flex items-center gap-2 mb-4 max-sm:justify-center">
                 <Link
                   href={Routes.HOME}
@@ -126,10 +125,12 @@ const Footer = () => {
                 >
                   <div className="relative transition-all duration-300 group-hover:scale-110">
                     <div className="absolute inset-0 bg-gradient-to-r from-blue-300 to-secondary rounded-full blur-lg opacity-0 group-hover:opacity-75 transition-opacity duration-300" />
-                    <NextAvatar
+                    <Image
                       src={logo}
+                      width={100}
+                      height={100}
                       alt="logo"
-                      className="relative w-20 h-20"
+                      className="relative w-20 h-20 rounded-full"
                     />
                   </div>
                   <div className="hidden sm:flex flex-col">
@@ -137,11 +138,6 @@ const Footer = () => {
                       Sky Nice Mobile Car Detailing
                     </span>
                   </div>
-                  {/* <div className="relative transition-all duration-300 group-hover:scale-110">
-                    <div className="absolute inset-0 bg-gradient-to-r from-blue-300 to-secondary rounded-full blur-lg opacity-0 group-hover:opacity-75 transition-opacity duration-300" />
-                    <div className="absolute inset-0 bg-gradient-to-r from-blue-300 to-secondary rounded-full blur-lg opacity-50 transition-opacity duration-300  group-hover:opacity-0" />
-                    <img src="/logo_header_v3.png" className="relative h-18 " />
-                  </div> */}
                 </Link>
               </div>
 
@@ -154,25 +150,24 @@ const Footer = () => {
                 {socials.map((social, index) => {
                   const Icon = social.icon;
                   return (
-                    <motion.a
+                    <a
                       key={index}
                       href={social.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      whileHover={{ scale: 1.2, y: -4 }}
-                      className="w-9 h-9 rounded-lg bg-primary/10 hover:bg-primary text-primary hover:text-white  flex items-center justify-center transition-colors"
+                      className="w-9 h-9 rounded-lg bg-primary/10 hover:bg-primary text-primary hover:text-white  flex items-center justify-center transition-colors hover:scale-120 hover:-translate-y-1"
                       title={social.label}
                     >
                       <Icon className="w-4 h-4" />
-                    </motion.a>
+                    </a>
                   );
                 })}
               </div>
-            </motion.div>
+            </AnimateDiv>
 
             {/* Footer links */}
             {footerLinks.map((column, columnIndex) => (
-              <motion.div key={columnIndex} variants={itemVariants}>
+              <AnimateDiv key={columnIndex} variants={itemVariants}>
                 <h3 className="font-semibold text-white mb-4">
                   {column.title}
                 </h3>
@@ -201,12 +196,12 @@ const Footer = () => {
                     );
                   })}
                 </ul>
-              </motion.div>
+              </AnimateDiv>
             ))}
-          </motion.div>
+          </AnimateDiv>
 
           {/* Divider */}
-          <motion.div
+          <AnimateDiv
             initial={{ scaleX: 0 }}
             whileInView={{ scaleX: 1 }}
             viewport={{ once: true }}
@@ -215,31 +210,32 @@ const Footer = () => {
           />
 
           {/* Bottom section */}
-          <motion.div
+          <AnimateDiv
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
             className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-white"
           >
-            <p>© {currentYear} N&T Spotless Cleaning. All Rights Reserved.</p>
+            <p>
+              © {currentYear} Sky Nice Mobile Car Detailing. All Rights
+              Reserved.
+            </p>
             <div className="flex gap-6">
-              <motion.a
+              <a
                 href="#"
-                whileHover={{ color: "#0A84FF" }}
-                className="hover:text-primary transition-colors cursor-pointer text-white"
+                className="hover:text-primary transition-colors cursor-pointer text-white "
               >
                 Privacy Policy
-              </motion.a>
-              <motion.a
+              </a>
+              <a
                 href="#"
-                whileHover={{ color: "#0A84FF" }}
                 className="hover:text-primary transition-colors cursor-pointer text-white"
               >
                 Terms of Service
-              </motion.a>
+              </a>
             </div>
-          </motion.div>
+          </AnimateDiv>
         </div>
       </div>
     </footer>

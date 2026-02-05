@@ -68,30 +68,6 @@ Home (Main Container)
 │  ├─ Stats Section (500+ clients, 99% satisfaction, 5★)
 │  └─ Social Media Links (Instagram, Facebook)
 │
-├─ FAQ
-│  ├─ Section Header
-│  ├─ Accordion FAQ (8 questions)
-│  │  ├─ How do I book?
-│  │  ├─ What areas do you service?
-│  │  ├─ What if I'm not satisfied?
-│  │  ├─ What's included in Full Detail?
-│  │  ├─ Eco-friendly products?
-│  │  ├─ Availability?
-│  │  ├─ Add extra services?
-│  │  └─ Ceramic coating longevity?
-│  └─ Contact CTA (Phone, Email)
-│
-└─ FinalCTA
-   ├─ Hero Text (Ready for a Spotless Car?)
-   ├─ Quick Stat Badges (2 min booking, 100% satisfaction, All Sydney)
-   ├─ Primary & Secondary CTAs
-   ├─ Contact Methods Grid
-   │  ├─ Phone: 0433 263 105
-   │  ├─ Email: skynicecardetailing102@gmail.com
-   │  └─ Service Area: All of Sydney, NSW
-   ├─ Working Hours Display
-   ├─ Social Media Links
-   └─ Brand Quote
 
 ```
 

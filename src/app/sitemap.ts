@@ -1,7 +1,7 @@
 import { MetadataRoute } from "next";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = "https://www.spotlesscleaningsydney.com";
+  const baseUrl = "https://www.skynicemobiledetailing.com.au";
 
   const routes = [
     {
@@ -38,12 +38,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   // Add service pages
   const services = [
-    "deep-cleaning",
-    "regular-cleaning",
-    "end-of-lease-cleaning",
-    "mould-cleaning",
-    "airbnb-cleaning",
-    "restaurant-cleaning",
+    "mini-package",
+    "interior-package",
+    "full-detail-package",
+    "enhancement-package",
+    "ceramic-coating-package",
+    "extension-detail",
   ];
 
   const serviceRoutes = services.map((service) => ({

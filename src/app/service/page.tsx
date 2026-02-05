@@ -4,37 +4,37 @@ import ServiceComponent from "@/modules/service";
 import { SERVICES } from "@/modules/service/contants";
 
 export const metadata: Metadata = {
-  title: "Our Services - N&T Spotless Cleaning",
+  title: "Our Services - Sky Nice Mobile Car Detailing",
   description:
-    "Explore our comprehensive cleaning services: Deep cleaning, Regular maintenance, End of lease, Restaurant, Mould, Airbnb and specialized cleaning.",
+    "Explore our comprehensive mobile car detailing services: Full detail, interior cleaning, ceramic coating, paint protection, and premium add-ons. We come to you!",
   keywords: [
-    "cleaning services",
-    "deep cleaning",
-    "regular cleaning",
-    "restaurant cleaning",
-    "end of lease cleaning",
-    "window cleaning",
-    "mould cleaning",
-    "airbnb cleaning",
-    "cleaning services in sydney",
+    "car detailing services",
+    "mobile car detailing",
+    "full car detail",
+    "interior car cleaning",
+    "ceramic coating",
+    "paint protection",
+    "car polishing",
+    "car detailing Sydney",
+    "professional detailing services",
   ],
   openGraph: {
-    title: "Our Services - N&T Spotless Cleaning",
+    title: "Our Services - Sky Nice Mobile Car Detailing",
     description:
-      "Explore our comprehensive cleaning services for homes and businesses in Sydney.",
-    url: "https://www.spotlesscleaningsydney.com/service",
+      "Explore our comprehensive mobile car detailing services in Sydney. Full detail, interior cleaning, ceramic coating, and more.",
+    url: "https://www.skynicemobiledetailing.com.au/service",
     type: "website",
     images: [
       {
-        url: "https://www.spotlesscleaningsydney.com/og-services.png",
+        url: "https://www.skynicemobiledetailing.com.au/og-services.png",
         width: 1200,
         height: 630,
-        alt: "N&T Spotless Cleaning - Services",
+        alt: "Sky Nice Mobile Car Detailing - Services",
       },
     ],
   },
   alternates: {
-    canonical: "https://www.spotlesscleaningsydney.com/service",
+    canonical: "https://www.skynicemobiledetailing.com.au/service",
   },
 };
 

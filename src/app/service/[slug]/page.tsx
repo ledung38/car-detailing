@@ -8,13 +8,13 @@ export async function generateMetadata({ params }) {
   const { slug } = await params;
   const siteUrl =
     process.env.NEXT_PUBLIC_SITE_URL ||
-    "https://www.spotlesscleaningsydney.com";
+    "https://www.skynicemobiledetailing.com.au";
   const service = SERVICES[slug];
 
   // Nếu slug không tồn tại -> fallback metadata an toàn
   if (!service) {
     return {
-      title: "Service not found | N&T Spotless Cleaning",
+      title: "Service not found | Sky Nice Mobile Car Detailing",
       description: "Sorry, this service is not available.",
       alternates: { canonical: `${siteUrl}/service/${slug}` },
     };
@@ -22,7 +22,7 @@ export async function generateMetadata({ params }) {
 
   // Metadata SEO thật cho từng slug
   return {
-    title: `${service.title} | N&T Spotless Cleaning`,
+    title: `${service.title} | Sky Nice Mobile Car Detailing`,
     description: service.description,
     openGraph: {
       title: service.title,
@@ -36,7 +36,7 @@ export async function generateMetadata({ params }) {
         },
       ],
       url: `${siteUrl}/service/${slug}`,
-      siteName: "N&T Spotless Cleaning",
+      siteName: "Sky Nice Mobile Car Detailing",
     },
     alternates: {
       canonical: `${siteUrl}/service/${slug}`,

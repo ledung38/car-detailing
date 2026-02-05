@@ -80,7 +80,7 @@ const ListComment = ({ data }: { data: any }) => {
     };
   }, [api]);
   return (
-    <Container className="p-0 " ref={containerSecondRef}>
+    <Container className="p-0" ref={containerSecondRef}>
       <Flex vertical={true} align={"center"} gap={24}>
         <DecorQuote
           className="absolute bottom-6 left-[-12px] z-0 size-8 sm:hidden"
@@ -106,7 +106,7 @@ const ListComment = ({ data }: { data: any }) => {
             {data?.map((item: any, index: number) => (
               <CarouselItem
                 key={item?.id ?? index}
-                className={`relative pl-4 md:basis-1/2 ${
+                className={`relative  md:basis-1/2 ${
                   totalSlides >= 3
                     ? "max-w-none lg:basis-1/3"
                     : totalSlides >= 2

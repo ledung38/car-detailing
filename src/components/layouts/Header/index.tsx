@@ -1,5 +1,4 @@
 "use client";
-import { ModeToggle } from "@/components/common/ModeToggle";
 import { BellIcon, PhoneIcon } from "@/components/icons";
 import { MENU_ITEMS } from "@/components/layouts/contants";
 import { NavLink } from "@/components/layouts/Header/NavLink";
@@ -16,11 +15,14 @@ import { Routes } from "@/lib/enum/routes";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
+import {
+  AnimateButton,
+  AnimateDiv,
+  AnimateNav,
+} from "@/components/common/Animate";
 import { ChevronDown, Menu, X } from "lucide-react";
-import React, { useCallback, useEffect, useState } from "react";
 import Image from "next/image";
-import { AnimateButton, AnimateDiv } from "@/components/common/Animate";
-import { motion } from "motion/react";
+import React, { useCallback, useEffect, useState } from "react";
 
 // Mobile Menu Item Component
 const MobileMenuItem = ({
@@ -146,7 +148,7 @@ export const Header = () => {
                     <div className="absolute inset-0 bg-gradient-to-r from-blue-300 to-secondary rounded-full blur-lg opacity-75 transition-opacity duration-300  group-hover:opacity-0" />
                   </>
                   <Image
-                    src="/logo_header14.png"
+                    src="/logo_header.png"
                     alt="Logo"
                     priority
                     quality={100}
@@ -160,7 +162,7 @@ export const Header = () => {
             </AnimateDiv>
 
             {/* Desktop Navigation - Enhanced */}
-            <motion.nav
+            <AnimateNav
               className="hidden lg:flex items-center gap-8"
               initial={{ opacity: 0.8, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -220,7 +222,7 @@ export const Header = () => {
                   </AnimateDiv>
                 );
               })}
-            </motion.nav>
+            </AnimateNav>
 
             {/* Right Actions - Premium Buttons */}
             <div className="flex items-center gap-2 sm:gap-3">

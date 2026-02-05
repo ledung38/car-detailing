@@ -1,4 +1,3 @@
-import PageFlip from "@/components/common/PageFlip";
 import Footer from "@/components/layouts/Footer";
 import { Header } from "@/components/layouts/Header";
 import { PropsWithChildren } from "react";
@@ -9,7 +8,6 @@ const LayoutComponents = ({ children }: PropsWithChildren) => {
       <Header />
       <div className="min-h-screen">{children}</div>
       <Footer />
-      <PageFlip />
     </div>
   );
 };

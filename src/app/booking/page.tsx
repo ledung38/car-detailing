@@ -3,34 +3,35 @@ import LayoutComponents from "@/components/layouts/LayoutComponents";
 import BookingWizard from "@/modules/booking";
 
 export const metadata: Metadata = {
-  title: "Book Cleaning Service - N&T Spotless Cleaning",
+  title: "Book Car Detailing - Sky Nice Mobile Car Detailing",
   description:
-    "Book your cleaning service in Sydney. Easy online booking, instant quotes, flexible scheduling.",
+    "Book your mobile car detailing service in Sydney. Easy online booking, instant quotes, flexible scheduling. We come to you!",
   keywords: [
-    "book N&T cleaning service",
-    "book cleaning service",
-    "schedule cleaning",
-    "cleaning booking",
-    "get cleaning quote",
-    "book cleaning service in sydney",
+    "book car detailing",
+    "book Sky Nice detailing",
+    "schedule car detailing",
+    "car detailing booking",
+    "get detailing quote",
+    "mobile car detailing Sydney",
+    "book mobile detailing",
   ],
   openGraph: {
-    title: "Book Cleaning Service - N&T Spotless Cleaning",
+    title: "Book Car Detailing - Sky Nice Mobile Car Detailing",
     description:
-      "Easy online booking for professional cleaning services in Sydney.",
-    url: "https://www.spotlesscleaningsydney.com/booking",
+      "Easy online booking for professional mobile car detailing services in Sydney.",
+    url: "https://www.skynicemobiledetailing.com.au/booking",
     type: "website",
     images: [
       {
-        url: "https://www.spotlesscleaningsydney.com/og-booking.png",
+        url: "https://www.skynicemobiledetailing.com.au/og-booking.png",
         width: 1200,
         height: 630,
-        alt: "N&T Spotless Cleaning - Booking",
+        alt: "Sky Nice Mobile Car Detailing - Booking",
       },
     ],
   },
   alternates: {
-    canonical: "https://www.spotlesscleaningsydney.com/booking",
+    canonical: "https://www.skynicemobiledetailing.com.au/booking",
   },
 };
 

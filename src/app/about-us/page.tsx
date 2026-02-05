@@ -3,32 +3,33 @@ import LayoutComponents from "@/components/layouts/LayoutComponents";
 import AboutUs from "@/modules/about-us";
 
 export const metadata: Metadata = {
-  title: "About Us - N&T Spotless Cleaning",
+  title: "About Us - Sky Nice Mobile Car Detailing",
   description:
-    "Learn about N&T Spotless Cleaning, Sydney's trusted cleaning company. 8+ years of experience, 2000+ happy clients, certified professionals.",
+    "Learn about Sky Nice Mobile Car Detailing, Sydney's trusted mobile car detailing service. 5+ years of experience, 500+ happy clients, certified professionals with eco-friendly products.",
   keywords: [
-    "about N&T spotless cleaning",
-    "cleaning company Sydney",
-    "professional cleaners",
-    "cleaning services experience",
+    "about Sky Nice car detailing",
+    "mobile car detailing Sydney",
+    "professional car detailers",
+    "car detailing experience",
+    "certified detailers",
   ],
   openGraph: {
-    title: "About Us - N&T Spotless Cleaning",
+    title: "About Us - Sky Nice Mobile Car Detailing",
     description:
-      "Learn about N&T Spotless Cleaning, Sydney's trusted cleaning company with 8+ years of experience.",
-    url: "https://www.spotlesscleaningsydney.com/about-us",
+      "Learn about Sky Nice Mobile Car Detailing, Sydney's trusted mobile car detailing service with premium eco-friendly products.",
+    url: "https://www.skynicemobiledetailing.com.au/about-us",
     type: "website",
     images: [
       {
-        url: "https://www.spotlesscleaningsydney.com/og-about.png",
+        url: "https://www.skynicemobiledetailing.com.au/og-about.png",
         width: 1200,
         height: 630,
-        alt: "About N&T Spotless Cleaning",
+        alt: "About Sky Nice Mobile Car Detailing",
       },
     ],
   },
   alternates: {
-    canonical: "https://www.spotlesscleaningsydney.com/about-us",
+    canonical: "https://www.skynicemobiledetailing.com.au/about-us",
   },
 };
 

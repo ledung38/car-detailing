@@ -5,7 +5,7 @@ import { Metadata } from "next";
 export const metadata: Metadata = {
   title: "SKY NICE Mobile Car Detailing Sydney | Premium Auto Care",
   description:
-    "SKY NICE offers professional mobile car detailing in Sydney. We come to you with premium products & certified detailers. Full detail, interior clean, ceramic coating & more. 500+ happy clients.",
+    "SKY NICE offers professional mobile car detailing in Sydney. We come to you with premium products & certified detailers. Full detail, interior clean, ceramic coating & more. 500+ happy clients. 5-star rated. 5 years of experience.",
   keywords: [
     "car detailing Sydney",
     "mobile car wash Sydney",
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "https://www.skynicemobiledetailing.com.au/og-image.jpg",
+        url: "https://www.skynicemobiledetailing.com.au/screenshot-wide.png",
         width: 1200,
         height: 630,
         alt: "SKY NICE Mobile Car Detailing Sydney",

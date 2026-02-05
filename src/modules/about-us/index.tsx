@@ -1,30 +1,28 @@
-"use client";
-import React from "react";
-import { Container } from "@/components/ui";
-import { motion } from "motion/react";
 import {
-  CheckCircle2,
-  Users,
-  Shield,
-  Zap,
-  Award,
-  Heart,
-  Leaf,
-  Clock,
-  MapPin,
-  Star,
-  ArrowRight,
-  Sparkles,
-} from "lucide-react";
+  AnimateA,
+  AnimateDiv,
+  AnimateH1,
+  AnimateP,
+} from "@/components/common/Animate";
 import SectionTitle from "@/components/common/SectionTitle";
-import { AnimateDiv } from "@/components/common/Animate";
 import { TextGradient } from "@/components/common/TextGradient";
-import { Routes } from "@/lib/enum/routes";
-import Link from "next/link";
-import SmoothLoopVideo from "@/components/common/BannerVideo";
-import Image from "next/image";
+import { Container } from "@/components/ui";
 import aboutUsImg from "@/lib/assets/images/about-us/vision.png";
 import ceramicCoatingImg from "@/lib/assets/images/ceramic-coating-package.png";
+import { Routes } from "@/lib/enum/routes";
+import {
+  ArrowRight,
+  Award,
+  CheckCircle2,
+  Clock,
+  Heart,
+  MapPin,
+  Star,
+  Users,
+  Zap,
+} from "lucide-react";
+import Image from "next/image";
+import Link from "next/link";
 
 const AboutUs = () => {
   const containerVariants = {
@@ -45,7 +43,7 @@ const AboutUs = () => {
       y: 0,
       transition: { duration: 0.5, ease: "easeOut" },
     },
-  };
+  } as const;
 
   // Stats for achievements
   const stats = [
@@ -88,7 +86,6 @@ const AboutUs = () => {
       {/* Hero Section - Who We Are with Video Background */}
       <section className="relative min-h-screen w-full flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 -z-10">
-          {/* <SmoothLoopVideo src="/banner_video.mp4" /> */}
           {/* background image  */}
           <Image
             src="/about-us-bg.png"
@@ -104,7 +101,7 @@ const AboutUs = () => {
         </div>
 
         <Container>
-          <motion.div
+          <AnimateDiv
             className="space-y-8 text-center max-w-4xl mx-auto"
             variants={containerVariants}
             initial="hidden"
@@ -112,31 +109,31 @@ const AboutUs = () => {
           >
             <SectionTitle title="Who We Are" />
 
-            <motion.h1
+            <AnimateH1
               variants={itemVariants}
               className="text-5xl md:text-6xl  font-bold text-white leading-tight"
             >
               Premier Mobile Car <TextGradient>Detailing Service</TextGradient>
-            </motion.h1>
+            </AnimateH1>
 
-            <motion.p
+            <AnimateP
               variants={itemVariants}
               className="text-lg md:text-xl text-white/90 max-w-3xl mx-auto leading-relaxed"
             >
               Transforming vehicles into showroom-fresh masterpieces. We bring
               professional, premium car detailing directly to your location
               across Sydney.
-            </motion.p>
+            </AnimateP>
 
             {/* Stats Grid */}
-            <motion.div
+            <AnimateDiv
               variants={containerVariants}
               className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-12"
             >
               {stats.map((stat, index) => {
                 const IconComponent = stat.icon;
                 return (
-                  <motion.div
+                  <AnimateDiv
                     key={index}
                     variants={itemVariants}
                     className="bg-white/10 border border-white/20 rounded-lg p-6 backdrop-blur-sm hover:bg-white/20 transition-colors"
@@ -146,13 +143,13 @@ const AboutUs = () => {
                       {stat.number}
                     </div>
                     <div className="text-sm text-white/80">{stat.label}</div>
-                  </motion.div>
+                  </AnimateDiv>
                 );
               })}
-            </motion.div>
+            </AnimateDiv>
 
             {/* CTA Button */}
-            <motion.div variants={itemVariants} className="pt-6">
+            <AnimateDiv variants={itemVariants} className="pt-6">
               <Link
                 href={Routes.BOOKING}
                 className="inline-flex items-center gap-2 px-8 py-4 rounded-lg bg-primary hover:bg-primary/90 text-primary-foreground font-semibold transition-colors text-lg"
@@ -160,8 +157,8 @@ const AboutUs = () => {
                 Book Your Service
                 <ArrowRight className="size-5" />
               </Link>
-            </motion.div>
-          </motion.div>
+            </AnimateDiv>
+          </AnimateDiv>
         </Container>
       </section>
 
@@ -172,7 +169,7 @@ const AboutUs = () => {
           <Container className="w-full">
             <div className="grid md:grid-cols-2 gap-12 items-center">
               {/* Vision Content */}
-              <motion.div
+              <AnimateDiv
                 className="space-y-6 z-10 ml-20"
                 variants={containerVariants}
                 initial="hidden"
@@ -187,7 +184,7 @@ const AboutUs = () => {
                 />
                 {/* </motion.h2> */}
 
-                <motion.p
+                <AnimateP
                   variants={itemVariants}
                   className="text-lg text-foreground leading-relaxed"
                 >
@@ -196,9 +193,9 @@ const AboutUs = () => {
                   and environmental responsibility. We envision a future where
                   every car owner has access to professional detailing at their
                   convenience.`}
-                </motion.p>
+                </AnimateP>
 
-                <motion.div variants={itemVariants} className="space-y-3 pt-4">
+                <AnimateDiv variants={itemVariants} className="space-y-3 pt-4">
                   {[
                     "Excellence in every detail",
                     "Customer satisfaction guaranteed",
@@ -209,11 +206,11 @@ const AboutUs = () => {
                       <span className="text-foreground">{point}</span>
                     </div>
                   ))}
-                </motion.div>
-              </motion.div>
+                </AnimateDiv>
+              </AnimateDiv>
 
               {/* Vision Image */}
-              <motion.div
+              <AnimateDiv
                 variants={itemVariants}
                 whileHover={{ scale: 1.05 }}
                 className="relative h-96 md:h-full hidden md:block"
@@ -226,7 +223,7 @@ const AboutUs = () => {
                     className="object-cover object-right"
                   />
                 </div>
-              </motion.div>
+              </AnimateDiv>
             </div>
           </Container>
         </div>
@@ -236,7 +233,7 @@ const AboutUs = () => {
           <Container className="w-full">
             <div className="grid md:grid-cols-2 gap-16 items-center">
               {/* Mission Image */}
-              <motion.div
+              <AnimateDiv
                 variants={itemVariants}
                 whileHover={{ scale: 1.05 }}
                 className="relative h-96 md:h-full hidden md:block md:order-1"
@@ -249,10 +246,10 @@ const AboutUs = () => {
                     className="object-cover"
                   />
                 </div>
-              </motion.div>
+              </AnimateDiv>
 
               {/* Mission Content */}
-              <motion.div
+              <AnimateDiv
                 className="space-y-6 z-10 md:order-2 mr-20"
                 variants={containerVariants}
                 initial="hidden"
@@ -264,7 +261,7 @@ const AboutUs = () => {
                   variants={itemVariants}
                   className="text-4xl md:text-5xl font-bold text-primary leading-tight italic "
                 />
-                <motion.p
+                <AnimateP
                   variants={itemVariants}
                   className="text-lg text-foreground leading-relaxed"
                 >
@@ -272,9 +269,9 @@ const AboutUs = () => {
                   detailing directly to customers' homes, making car maintenance
                   convenient, affordable, and environmentally responsible while
                   setting new standards of excellence.`}
-                </motion.p>
+                </AnimateP>
 
-                <motion.div variants={itemVariants} className="space-y-3 pt-4">
+                <AnimateDiv variants={itemVariants} className="space-y-3 pt-4">
                   {[
                     "Premium products for superior results",
                     "Eco-friendly, sustainable practices",
@@ -285,8 +282,8 @@ const AboutUs = () => {
                       <span className="text-foreground">{point}</span>
                     </div>
                   ))}
-                </motion.div>
-              </motion.div>
+                </AnimateDiv>
+              </AnimateDiv>
             </div>
           </Container>
         </div>
@@ -295,14 +292,14 @@ const AboutUs = () => {
       {/* Our Service Process Section */}
       <section className="relative py-12 md:py-20 overflow-hidden bg-gradient-to-b from-background to-primary/60">
         <Container>
-          <motion.div
+          <AnimateDiv
             className="space-y-12"
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.2 }}
           >
-            <motion.div variants={itemVariants} className="text-center">
+            <AnimateDiv variants={itemVariants} className="text-center">
               <SectionTitle
                 title="Our Service Process"
                 variants={itemVariants}
@@ -311,15 +308,15 @@ const AboutUs = () => {
                 Simple, transparent, and convenient. Experience hassle-free car
                 detailing in just 4 steps.
               </p>
-            </motion.div>
+            </AnimateDiv>
 
             {/* Process Steps */}
-            <motion.div
+            <AnimateDiv
               className="grid md:grid-cols-4 gap-6 relative"
               variants={containerVariants}
             >
               {processSteps.map((process, index) => (
-                <motion.div
+                <AnimateDiv
                   key={index}
                   variants={itemVariants}
                   className="relative"
@@ -346,24 +343,24 @@ const AboutUs = () => {
                       {process.description}
                     </p>
                   </div>
-                </motion.div>
+                </AnimateDiv>
               ))}
-            </motion.div>
-          </motion.div>
+            </AnimateDiv>
+          </AnimateDiv>
         </Container>
       </section>
 
       {/* Final CTA Section */}
       <section className="relative py-12 md:py-20 overflow-hidden bg-gradient-to-b from-primary/60  to-background">
         <Container>
-          <motion.div
+          <AnimateDiv
             className="max-w-3xl mx-auto text-center space-y-8"
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.2 }}
           >
-            <motion.div variants={itemVariants} className="space-y-4">
+            <AnimateDiv variants={itemVariants} className="space-y-4">
               <h2 className="text-4xl md:text-5xl font-bold text-foreground">
                 {`Ready for Your Car's `}
                 <TextGradient>Transformation?</TextGradient>
@@ -372,14 +369,14 @@ const AboutUs = () => {
                 {`Book your premium car detailing service today. We're just one
                 click away from making your vehicle showroom-perfect.`}
               </p>
-            </motion.div>
+            </AnimateDiv>
 
             {/* CTA Buttons */}
-            <motion.div
+            <AnimateDiv
               variants={containerVariants}
               className="flex flex-col sm:flex-row gap-4 justify-center pt-4"
             >
-              <motion.div variants={itemVariants}>
+              <AnimateDiv variants={itemVariants}>
                 <Link
                   href={Routes.BOOKING}
                   className="inline-flex items-center gap-2 px-8 py-4 rounded-lg bg-primary hover:bg-primary/90 text-primary-foreground font-semibold transition-colors"
@@ -387,9 +384,9 @@ const AboutUs = () => {
                   Book Now
                   <ArrowRight className="size-5" />
                 </Link>
-              </motion.div>
+              </AnimateDiv>
 
-              <motion.div variants={itemVariants}>
+              <AnimateDiv variants={itemVariants}>
                 <Link
                   href={Routes.SERVICE}
                   className="inline-flex items-center gap-2 px-8 py-4 rounded-lg bg-card border border-primary/50 hover:bg-primary/10 text-foreground font-semibold transition-colors"
@@ -397,15 +394,15 @@ const AboutUs = () => {
                   View Services
                   <ArrowRight className="size-5" />
                 </Link>
-              </motion.div>
-            </motion.div>
+              </AnimateDiv>
+            </AnimateDiv>
 
             {/* Quick Contact Info */}
-            <motion.div
+            <AnimateDiv
               variants={containerVariants}
               className="grid md:grid-cols-3 gap-6 pt-8 border-t border-border"
             >
-              <motion.a
+              <AnimateA
                 variants={itemVariants}
                 href="tel:0433263105"
                 className="flex flex-col items-center gap-2 p-4 rounded-lg hover:bg-primary/10 transition-colors"
@@ -415,9 +412,9 @@ const AboutUs = () => {
                   0433 263 105
                 </span>
                 <span className="text-sm text-foreground/60">Call anytime</span>
-              </motion.a>
+              </AnimateA>
 
-              <motion.a
+              <AnimateA
                 variants={itemVariants}
                 href="mailto:skynicecardetailing102@gmail.com"
                 className="flex flex-col items-center gap-2 p-4 rounded-lg hover:bg-primary/10 transition-colors"
@@ -429,9 +426,9 @@ const AboutUs = () => {
                 <span className="text-sm text-foreground/60 break-all">
                   skynicecardetailing102@gmail.com
                 </span>
-              </motion.a>
+              </AnimateA>
 
-              <motion.div
+              <AnimateDiv
                 variants={itemVariants}
                 className="flex flex-col items-center gap-2 p-4 rounded-lg hover:bg-primary/10 transition-colors"
               >
@@ -442,9 +439,9 @@ const AboutUs = () => {
                 <span className="text-sm text-foreground/60">
                   NSW, Australia
                 </span>
-              </motion.div>
-            </motion.div>
-          </motion.div>
+              </AnimateDiv>
+            </AnimateDiv>
+          </AnimateDiv>
         </Container>
       </section>
     </main>
