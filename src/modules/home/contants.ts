@@ -127,8 +127,7 @@ We also got them to apply ceramic coating on another car and now that car looks 
     customerName: "Luca Milne",
     comment: "Great stuff!",
     serviceName: "Enhancement Package",
-    avatar:
-      "https://images.pexels.com/photos/1681011/pexels-photo-1681011.jpeg", // Nam
+    avatar: "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg", // Nam
   },
   {
     customerName: "Luu Tien Dat",

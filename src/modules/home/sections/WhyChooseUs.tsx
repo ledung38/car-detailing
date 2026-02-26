@@ -182,7 +182,7 @@ const WhyChooseUs = () => {
 
         {/* Trust Section */}
         <AnimateDiv
-          className="relative grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 bg-white items-center py-12 rounded-2xl border border-primary/20 px-8 lg:px-12 bg-gradient-to-br from-primary/5 to-accent/5"
+          className="relative grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 bg-white items-center py-8 lg:py-12 rounded-2xl border border-primary/20 px-4 lg:px-12 bg-gradient-to-br from-primary/5 to-accent/5"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.3 }}
