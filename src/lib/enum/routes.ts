@@ -1,7 +1,7 @@
 // constants/routes.ts
 export const Routes = {
   HOME: "/",
-  SERVICE: "/service",
+  SERVICE: "/service/full-detail-package",
   SERVICE_MINI: "/service/mini-package",
   SERVICE_INTERIOR: "/service/interior-package",
   SERVICE_FULL_DETAIL: "/service/full-detail-package",

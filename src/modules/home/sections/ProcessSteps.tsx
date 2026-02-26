@@ -1,4 +1,3 @@
-"use client";
 import { Container } from "@/components/ui";
 import { motion } from "motion/react";
 import { CheckCircle2, Clock, MapPin, Smartphone } from "lucide-react";

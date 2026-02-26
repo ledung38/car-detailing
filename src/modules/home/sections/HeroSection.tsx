@@ -1,9 +1,14 @@
-"use client";
-import { AnimateSpan } from "@/components/common/Animate";
+import {
+  AnimateDiv,
+  AnimateH1,
+  AnimateP,
+  AnimateSpan,
+} from "@/components/common/Animate";
 import { ArrowCircleRightIcon } from "@/components/icons";
 import { Container } from "@/components/ui";
 import { Routes } from "@/lib/enum/routes";
 import { motion } from "motion/react";
+import Image from "next/image";
 import Link from "next/link";
 
 const HeroSection = () => {
@@ -40,7 +45,7 @@ const HeroSection = () => {
         ></iframe>
       </div>
       <Container>
-        <motion.div
+        <AnimateDiv
           className="h-full flex gap-2 flex-col items-center pb-4"
           variants={containerVariants}
           initial="hidden"
@@ -49,7 +54,7 @@ const HeroSection = () => {
         >
           {/* Left Content */}
           {/* Badge */}
-          {/* <motion.div
+          {/* <AnimateDiv
               variants={itemVariants}
               className="flex items-center gap-2"
             >
@@ -59,7 +64,7 @@ const HeroSection = () => {
                   Premium Mobile Car Detailing
                 </span>
               </div>
-            </motion.div> */}
+            </AnimateDiv> */}
 
           {/* Heading */}
           {/* <motion.h1
@@ -72,7 +77,7 @@ const HeroSection = () => {
                 Professional Car Care
               </span>
             </motion.h1> */}
-          <motion.h1
+          <AnimateH1
             variants={itemVariants}
             className="text-5xl relative lg:text-6xl xl:text-7xl font-bold tracking-tight"
           >
@@ -80,24 +85,28 @@ const HeroSection = () => {
             <span className="bg-gradient-to-r from-primary italic via-accent to-primary bg-clip-text text-transparent">
               SYDNEY
             </span>
-            <img
-              src={"/line-title.png"}
-              className=" absolute left-1/2 -bottom-2 h-[3px] w-[95%] -translate-x-1/2"
+
+            <Image
+              src="/line-title.png"
+              alt="Line title decoration"
+              width={1200}
+              height={3}
+              className="absolute left-1/2 -bottom-2 h-[3px] w-[95%] -translate-x-1/2"
             />
-          </motion.h1>
+          </AnimateH1>
 
           {/* Subheading */}
-          <motion.p
+          <AnimateP
             variants={itemVariants}
             className="text-lg text-foreground text-center   leading-relaxed mt-2"
           >
             Save time, protect your car, and enjoy that brand-new shine again.
             Our expert detailers bring mobile precision to your doorstep across
             Sydney.
-          </motion.p>
+          </AnimateP>
 
           {/* Stats */}
-          <motion.div
+          <AnimateDiv
             variants={itemVariants}
             className="grid grid-cols-3 gap-20 py-4 max-w-xl "
           >
@@ -115,10 +124,10 @@ const HeroSection = () => {
                 </p>
               </div>
             ))}
-          </motion.div>
+          </AnimateDiv>
 
           {/* CTA Buttons */}
-          <motion.div
+          <AnimateDiv
             variants={itemVariants}
             className="flex flex-col sm:flex-row gap-4 pt-4"
           >
@@ -144,17 +153,17 @@ const HeroSection = () => {
                 </span>
               </button>
             </Link>
-          </motion.div>
+          </AnimateDiv>
 
-          <motion.p
+          <AnimateP
             variants={itemVariants}
             className=" font-bold tracking-tight mt-2"
           >
             <span className="text-foreground">We Come To You - </span>
 
             <span className="text-foreground">Professional Car Care</span>
-          </motion.p>
-        </motion.div>
+          </AnimateP>
+        </AnimateDiv>
       </Container>
     </section>
   );

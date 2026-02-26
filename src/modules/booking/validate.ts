@@ -6,7 +6,7 @@ export const bookingFormSchema = z.object({
     message: "Please select a service.",
   }),
   carSize: z.enum(["S", "M", "L"], {
-    errorMap: () => ({ message: "Please select a car size." }),
+    message: "Please select a car size.",
   }),
   extensions: z.array(z.string()).default([]),
 
@@ -27,9 +27,10 @@ export const bookingFormSchema = z.object({
 
   // Step 3: Appointment Details
   date: z.date({
-    errorMap: () => ({
-      message: "Preferred date is required.",
-    }),
+    error: (issue) =>
+      issue.input === undefined
+        ? "Preferred date is required."
+        : "Preferred date is invalid",
   }),
   time: z.string().trim().nonempty({
     message: "Preferred time is required.",

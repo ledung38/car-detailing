@@ -3,6 +3,7 @@
 import React from "react";
 import { cn } from "@/lib/utils";
 import { motion, MotionProps } from "framer-motion";
+import Image from "next/image";
 
 interface SectionTitleProps extends MotionProps {
   title: string;
@@ -25,9 +26,12 @@ const SectionTitle: React.FC<SectionTitleProps> = ({
       {...props}
     >
       {title}
-      <img
-        src={"/line-title.png"}
-        className=" absolute left-1/2 -bottom-2 h-[3px] w-[95%] -translate-x-1/2"
+      <Image
+        src="/line-title.png"
+        alt="Line title decoration"
+        width={1200}
+        height={3}
+        className="absolute left-1/2 -bottom-2 h-[3px] w-[95%] -translate-x-1/2"
       />
       {/* <span
         className="

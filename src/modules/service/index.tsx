@@ -1,15 +1,13 @@
-"use client";
-import { Container } from "@/components/ui";
-import { motion } from "motion/react";
-import Image from "next/image";
-import Link from "next/link";
-import { Clock, CheckCircle2, AlertCircle, Zap } from "lucide-react";
+import { AnimateDiv } from "@/components/common/Animate";
 import SectionTitle from "@/components/common/SectionTitle";
 import { ArrowRightIcon, CheckIcon, TickIcon } from "@/components/icons";
+import { Container } from "@/components/ui";
+import extensionDetailImg from "@/lib/assets/images/extension-detail.png";
 import { Routes } from "@/lib/enum/routes";
 import { SERVICES, videoServices } from "@/modules/service/contants";
-import extensionDetailImg from "@/lib/assets/images/extension-detail.png";
-import { cn } from "@/lib/utils";
+import { Clock, Zap } from "lucide-react";
+import Image from "next/image";
+import Link from "next/link";
 
 interface ServiceComponentProps {
   data: {
@@ -47,7 +45,7 @@ const ServiceComponent = ({ data, slug }: ServiceComponentProps) => {
       y: 0,
       transition: { duration: 0.5, ease: "easeOut" },
     },
-  };
+  } as const;
 
   const extractPrices = (priceRange: string) => {
     const parts = priceRange.split("|");
@@ -80,7 +78,7 @@ const ServiceComponent = ({ data, slug }: ServiceComponentProps) => {
         <div className="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent" />
 
         <Container>
-          <motion.div
+          <AnimateDiv
             className="absolute inset-x-0 bottom-0 p-6 md:p-12"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -90,21 +88,21 @@ const ServiceComponent = ({ data, slug }: ServiceComponentProps) => {
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mt-4">
               {data.title}
             </h1>
-          </motion.div>
+          </AnimateDiv>
         </Container>
       </section>
 
       {/* Overview Section */}
       <section className="py-8 md:py-12 border-b border-border/40">
         <Container>
-          <motion.div
+          <AnimateDiv
             className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start"
             variants={containerVariants}
             initial="hidden"
             animate="visible"
           >
             {/* Left Content */}
-            <motion.div variants={itemVariants} className="space-y-6">
+            <AnimateDiv variants={itemVariants} className="space-y-6">
               <div>
                 <p className="text-foreground/70 leading-relaxed text-lg">
                   {data.description}
@@ -126,10 +124,10 @@ const ServiceComponent = ({ data, slug }: ServiceComponentProps) => {
                   <p className="font-semibold text-foreground">Quality</p>
                 </div>
               </div>
-            </motion.div>
+            </AnimateDiv>
 
             {/* Right - Pricing */}
-            <motion.div
+            <AnimateDiv
               variants={itemVariants}
               className="rounded-2xl bg-gradient-to-br from-card to-card/50 border border-primary/30 p-8 sticky top-24"
             >
@@ -173,31 +171,31 @@ const ServiceComponent = ({ data, slug }: ServiceComponentProps) => {
               <p className="text-xs text-foreground/60 text-center mt-4">
                 ✓ Mobile service • ✓ No hidden fees • ✓ Money back guarantee
               </p>
-            </motion.div>
-          </motion.div>
+            </AnimateDiv>
+          </AnimateDiv>
         </Container>
       </section>
 
       {/* Highlights Section */}
       <section className="py-8 sm:py-12 bg-card/30 border-b border-border/40">
         <Container className="grid grid-cols-2 items-center">
-          <motion.div
+          <AnimateDiv
             className=" col-span-1 "
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.2 }}
           >
-            <motion.div variants={itemVariants} className="mb-12">
+            <AnimateDiv variants={itemVariants} className="mb-12">
               <SectionTitle title="What's Included" variants={itemVariants} />
               <h2 className="text-4xl font-bold text-foreground mt-4">
                 Complete Service Package
               </h2>
-            </motion.div>
+            </AnimateDiv>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {data.highlights.map((highlight, idx) => (
-                <motion.div
+                <AnimateDiv
                   key={idx}
                   variants={itemVariants}
                   className="flex items-start gap-4 p-4 rounded-lg hover:bg-background/50 transition-colors duration-300"
@@ -206,19 +204,19 @@ const ServiceComponent = ({ data, slug }: ServiceComponentProps) => {
                   <span className="text-foreground/80 text-lg leading-relaxed">
                     {highlight}
                   </span>
-                </motion.div>
+                </AnimateDiv>
               ))}
             </div>
-          </motion.div>
+          </AnimateDiv>
 
-          <motion.div
+          <AnimateDiv
             className="col-span-1"
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.2 }}
           >
-            <motion.div variants={itemVariants}>
+            <AnimateDiv variants={itemVariants}>
               <div className="relative w-full max-h-[600px] aspect-video overflow-hidden rounded-2xl">
                 <iframe
                   className="absolute top-0 left-0 w-full h-full object-cover"
@@ -228,15 +226,15 @@ const ServiceComponent = ({ data, slug }: ServiceComponentProps) => {
                   allowFullScreen
                 ></iframe>
               </div>
-            </motion.div>
-          </motion.div>
+            </AnimateDiv>
+          </AnimateDiv>
         </Container>
       </section>
 
       {/* Extension Options Section */}
       <section className="py-16 md:py-24 border-b border-border/40">
         <Container>
-          <motion.div
+          <AnimateDiv
             className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center"
             variants={containerVariants}
             initial="hidden"
@@ -244,7 +242,7 @@ const ServiceComponent = ({ data, slug }: ServiceComponentProps) => {
             viewport={{ once: true, amount: 0.2 }}
           >
             {/* Image */}
-            <motion.div
+            <AnimateDiv
               variants={itemVariants}
               className="relative h-96 rounded-2xl overflow-hidden border border-border/40"
             >
@@ -256,10 +254,10 @@ const ServiceComponent = ({ data, slug }: ServiceComponentProps) => {
                 quality={85}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-background/40 to-transparent" />
-            </motion.div>
+            </AnimateDiv>
 
             {/* Content */}
-            <motion.div variants={itemVariants} className="space-y-6">
+            <AnimateDiv variants={itemVariants} className="space-y-6">
               <div>
                 <SectionTitle title="Premium Add-ons" variants={itemVariants} />
                 <h3 className="text-3xl md:text-4xl font-bold text-foreground mt-4 mb-4">
@@ -275,7 +273,7 @@ const ServiceComponent = ({ data, slug }: ServiceComponentProps) => {
               {/* Extension Options Grid */}
               <div className="grid grid-cols-1 gap-4">
                 {extensionOptions.highlights.map((option, idx) => (
-                  <motion.div
+                  <AnimateDiv
                     key={idx}
                     variants={itemVariants}
                     className="flex items-start gap-4 p-4 rounded-lg bg-card border border-border/40 hover:border-accent/50 transition-all duration-300 group"
@@ -288,30 +286,30 @@ const ServiceComponent = ({ data, slug }: ServiceComponentProps) => {
                         {option}
                       </p>
                     </div>
-                  </motion.div>
+                  </AnimateDiv>
                 ))}
               </div>
-            </motion.div>
-          </motion.div>
+            </AnimateDiv>
+          </AnimateDiv>
         </Container>
       </section>
 
       {/* Why Choose Section */}
       {/* <section className="py-16 md:py-24 bg-gradient-to-b from-primary/5 to-transparent border-b border-border/40">
         <Container>
-          <motion.div
+          <AnimateDiv
             className="max-w-3xl mx-auto"
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.3 }}
           >
-            <motion.div variants={itemVariants} className="text-center mb-12">
+            <AnimateDiv variants={itemVariants} className="text-center mb-12">
               <SectionTitle title="Why Choose Us" variants={itemVariants} />
               <h2 className="text-4xl font-bold text-foreground mt-4">
                 Premium Service, Trusted Expertise
               </h2>
-            </motion.div>
+            </AnimateDiv>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {[
@@ -340,7 +338,7 @@ const ServiceComponent = ({ data, slug }: ServiceComponentProps) => {
                   desc: "100% biodegradable products",
                 },
               ].map((item, idx) => (
-                <motion.div
+                <AnimateDiv
                   key={idx}
                   variants={itemVariants}
                   className="p-6 rounded-xl bg-card border border-border/40 hover:border-primary/50 transition-all duration-300 text-center group"
@@ -352,10 +350,10 @@ const ServiceComponent = ({ data, slug }: ServiceComponentProps) => {
                     {item.title}
                   </h3>
                   <p className="text-sm text-foreground/70">{item.desc}</p>
-                </motion.div>
+                </AnimateDiv>
               ))}
             </div>
-          </motion.div>
+          </AnimateDiv>
         </Container>
       </section> */}
 
@@ -363,7 +361,7 @@ const ServiceComponent = ({ data, slug }: ServiceComponentProps) => {
       {relatedServices.length > 0 && (
         <section className="py-16 md:py-24">
           <Container>
-            <motion.div
+            <AnimateDiv
               className="mb-12"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -373,9 +371,9 @@ const ServiceComponent = ({ data, slug }: ServiceComponentProps) => {
               <h2 className="text-4xl font-bold text-foreground mt-4">
                 You Might Also Like
               </h2>
-            </motion.div>
+            </AnimateDiv>
 
-            <motion.div
+            <AnimateDiv
               className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
               variants={containerVariants}
               initial="hidden"
@@ -383,7 +381,7 @@ const ServiceComponent = ({ data, slug }: ServiceComponentProps) => {
               viewport={{ once: true, amount: 0.2 }}
             >
               {relatedServices.map((service) => (
-                <motion.div
+                <AnimateDiv
                   key={service.id}
                   variants={itemVariants}
                   className="group"
@@ -412,9 +410,9 @@ const ServiceComponent = ({ data, slug }: ServiceComponentProps) => {
                       </div>
                     </div>
                   </Link>
-                </motion.div>
+                </AnimateDiv>
               ))}
-            </motion.div>
+            </AnimateDiv>
           </Container>
         </section>
       )}
@@ -422,7 +420,7 @@ const ServiceComponent = ({ data, slug }: ServiceComponentProps) => {
       {/* Final CTA */}
       <section className="py-16 md:py-24 bg-gradient-to-r from-primary/30 to-accent/30 border-t border-border/40">
         <Container>
-          <motion.div
+          <AnimateDiv
             className="max-w-3xl mx-auto text-center space-y-8"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -445,7 +443,7 @@ const ServiceComponent = ({ data, slug }: ServiceComponentProps) => {
                 <ArrowRightIcon className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </button>
             </Link>
-          </motion.div>
+          </AnimateDiv>
         </Container>
       </section>
     </main>

@@ -113,7 +113,8 @@ const AboutUs = () => {
               variants={itemVariants}
               className="text-5xl md:text-6xl  font-bold text-white leading-tight"
             >
-              Premier Mobile Car <TextGradient>Detailing Service</TextGradient>
+              Premier Mobile Car{" "}
+              <TextGradient as={"span"}>Detailing Service</TextGradient>
             </AnimateH1>
 
             <AnimateP
@@ -182,8 +183,8 @@ const AboutUs = () => {
                   variants={itemVariants}
                   className="text-4xl md:text-5xl font-bold text-primary leading-tight italic "
                 />
-                {/* </motion.h2> */}
 
+                {/* </motion.h2> */}
                 <AnimateP
                   variants={itemVariants}
                   className="text-lg text-foreground leading-relaxed"
@@ -363,7 +364,7 @@ const AboutUs = () => {
             <AnimateDiv variants={itemVariants} className="space-y-4">
               <h2 className="text-4xl md:text-5xl font-bold text-foreground">
                 {`Ready for Your Car's `}
-                <TextGradient>Transformation?</TextGradient>
+                <TextGradient as={"span"}>Transformation?</TextGradient>
               </h2>
               <p className="text-lg text-foreground/70 leading-relaxed">
                 {`Book your premium car detailing service today. We're just one
@@ -388,7 +389,7 @@ const AboutUs = () => {
 
               <AnimateDiv variants={itemVariants}>
                 <Link
-                  href={Routes.SERVICE}
+                  href={`${Routes.SERVICE}`}
                   className="inline-flex items-center gap-2 px-8 py-4 rounded-lg bg-card border border-primary/50 hover:bg-primary/10 text-foreground font-semibold transition-colors"
                 >
                   View Services

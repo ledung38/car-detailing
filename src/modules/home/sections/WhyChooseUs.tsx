@@ -1,26 +1,12 @@
-"use client";
-import { Card, Container } from "@/components/ui";
-import { motion } from "motion/react";
-import {
-  CheckCircle2,
-  Shield,
-  Zap,
-  Heart,
-  Trophy,
-  Users,
-  TrendingUp,
-  Clock,
-} from "lucide-react";
+import { AnimateDiv, AnimateH2, AnimateP } from "@/components/common/Animate";
 import SectionTitle from "@/components/common/SectionTitle";
-import { AnimateDiv } from "@/components/common/Animate";
 import { TickIcon } from "@/components/icons";
-import CounterStat from "@/modules/home/sections/CounterStat";
-import { TextGradient } from "@/components/common/TextGradient";
-import miniPackage from "@/lib/assets/images/mini-package.png";
-import fullDetail from "@/lib/assets/images/full-detail-package.png";
-import extensionDetail from "@/lib/assets/images/extension-detail.png";
-import enhancementPackage from "@/lib/assets/images/enhancement-package.png";
+import { Container } from "@/components/ui";
 import ceramicCoatingPackage from "@/lib/assets/images/ceramic-coating-package.png";
+import enhancementPackage from "@/lib/assets/images/enhancement-package.png";
+import fullDetail from "@/lib/assets/images/full-detail-package.png";
+import miniPackage from "@/lib/assets/images/mini-package.png";
+import { Clock, TrendingUp, Trophy, Users } from "lucide-react";
 
 const ImageBg = [
   miniPackage,
@@ -131,7 +117,7 @@ const WhyChooseUs = () => {
 
       <Container>
         {/* Section Header */}
-        <motion.div
+        <AnimateDiv
           className="text-center space-y-4 mb-16"
           variants={containerVariants}
           initial="hidden"
@@ -140,20 +126,20 @@ const WhyChooseUs = () => {
         >
           <SectionTitle title="Why Sky Nice" />
 
-          <motion.h2
+          <AnimateH2
             variants={itemVariants}
             className="text-4xl lg:text-5xl font-bold text-background"
           >
             Premium Care, Your Way
-          </motion.h2>
-          <motion.p
+          </AnimateH2>
+          <AnimateP
             variants={itemVariants}
             className="text-lg text-muted max-w-2xl mx-auto"
           >
             {`We're not just detailers—we're car care partners committed to
             delivering excellence, every time.`}
-          </motion.p>
-        </motion.div>
+          </AnimateP>
+        </AnimateDiv>
 
         {/* Features Grid - 2 columns */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 mb-16 sm:mb-20 max-sm:gap-4">
@@ -195,7 +181,7 @@ const WhyChooseUs = () => {
         </div>
 
         {/* Trust Section */}
-        <motion.div
+        <AnimateDiv
           className="relative grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 bg-white items-center py-12 rounded-2xl border border-primary/20 px-8 lg:px-12 bg-gradient-to-br from-primary/5 to-accent/5"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -244,7 +230,7 @@ const WhyChooseUs = () => {
               const IconComponent = stat.icon;
 
               return (
-                <motion.div
+                <AnimateDiv
                   key={idx}
                   className="p-6 rounded-xl z-10  relative text-center bg-accent/30"
                   whileHover={{ scale: 1.05 }}
@@ -264,14 +250,14 @@ const WhyChooseUs = () => {
                     {stat.number}
                   </p>
                   <p className="text-sm text-white">{stat.label}</p>
-                </motion.div>
+                </AnimateDiv>
               );
             })}
           </div>
-        </motion.div>
+        </AnimateDiv>
 
         {/* Process Highlight */}
-        <motion.div
+        <AnimateDiv
           className="mt-12 p-8 relative lg:p-12 rounded-2xl z-10 "
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
@@ -309,7 +295,7 @@ const WhyChooseUs = () => {
               100% biodegradable products—safe for your car and the environment.
             </p>
           </div>
-        </motion.div>
+        </AnimateDiv>
       </Container>
     </section>
   );

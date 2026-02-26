@@ -1,10 +1,8 @@
-"use client";
-import { AnimateDiv } from "@/components/common/Animate";
+import { AnimateDiv, AnimateH2, AnimateP } from "@/components/common/Animate";
 import SectionTitle from "@/components/common/SectionTitle";
 import { Container } from "@/components/ui";
 import { ratingsExample } from "@/modules/home/contants";
 import ListComment from "@/modules/home/sections/components/ListComment";
-import { motion } from "motion/react";
 
 const Testimonials = () => {
   const containerVariants = {
@@ -37,7 +35,7 @@ const Testimonials = () => {
 
       <Container>
         {/* Section Header */}
-        <motion.div
+        <AnimateDiv
           className="text-center space-y-4 mb-16"
           variants={containerVariants}
           initial="hidden"
@@ -46,20 +44,20 @@ const Testimonials = () => {
         >
           <SectionTitle variants={itemVariants} title="Customer Testimonials" />
 
-          <motion.h2
+          <AnimateH2
             variants={itemVariants}
             className="text-4xl lg:text-5xl font-bold text-background"
           >
             Loved by Our Clients
-          </motion.h2>
-          <motion.p
+          </AnimateH2>
+          <AnimateP
             variants={itemVariants}
             className="text-lg text-muted max-w-2xl mx-auto"
           >
             {`Real feedback from real customers who've experienced our premium
             detailing service.`}
-          </motion.p>
-        </motion.div>
+          </AnimateP>
+        </AnimateDiv>
 
         {/* Testimonials Grid */}
         <AnimateDiv
@@ -102,7 +100,7 @@ const Testimonials = () => {
         </motion.div> */}
 
         {/* Social Proof */}
-        <motion.div
+        <AnimateDiv
           className="mt-12 p-8 rounded-2xl bg-white"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
@@ -136,7 +134,7 @@ const Testimonials = () => {
               </a>
             </div>
           </div>
-        </motion.div>
+        </AnimateDiv>
       </Container>
     </section>
   );

@@ -1,11 +1,10 @@
-"use client";
+import { AnimateDiv, AnimateH1, AnimateP } from "@/components/common/Animate";
 import SectionTitle from "@/components/common/SectionTitle";
-import { ArrowRightIcon, CheckIcon, TickIcon } from "@/components/icons";
+import { ArrowRightIcon, TickIcon } from "@/components/icons";
 import { Container } from "@/components/ui";
 import { Routes } from "@/lib/enum/routes";
 import { SERVICES } from "@/modules/service/contants";
 import { CheckCircle2, Clock } from "lucide-react";
-import { motion } from "motion/react";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
@@ -38,7 +37,7 @@ export const Pricing: React.FC = () => {
       y: 0,
       transition: { duration: 0.5, ease: "easeOut" },
     },
-  };
+  } as const;
 
   // Extract prices for all sizes
   const extractPrices = (priceRange: string) => {
@@ -55,14 +54,14 @@ export const Pricing: React.FC = () => {
       {/* Hero Section */}
       <section className="relative py-8 md:py-12 overflow-hidden bg-gradient-to-b from-primary/10 to-background">
         <Container>
-          <motion.div
+          <AnimateDiv
             className="text-center space-y-6"
             variants={containerVariants}
             initial="hidden"
             animate="visible"
           >
             <SectionTitle title="Transparent Pricing" variants={itemVariants} />
-            <motion.h1
+            <AnimateH1
               variants={itemVariants}
               className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground"
             >
@@ -70,23 +69,23 @@ export const Pricing: React.FC = () => {
               <span className="bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent">
                 Competitive Prices
               </span>
-            </motion.h1>
-            <motion.p
+            </AnimateH1>
+            <AnimateP
               variants={itemVariants}
               className="text-lg text-foreground/70 max-w-3xl mx-auto"
             >
               No hidden fees. All packages include premium products and expert
               detailing. Book now and get expert mobile car detailing
               Sydney-wide.
-            </motion.p>
-          </motion.div>
+            </AnimateP>
+          </AnimateDiv>
         </Container>
       </section>
 
       {/* Pricing Cards */}
       <section className="relative py-5 overflow-hidden">
         <Container>
-          <motion.div
+          <AnimateDiv
             className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
             variants={containerVariants}
             initial="hidden"
@@ -98,7 +97,7 @@ export const Pricing: React.FC = () => {
               const isPopular = index === 1; // Full Detail Package
 
               return (
-                <motion.div
+                <AnimateDiv
                   key={service.id}
                   variants={itemVariants}
                   className="group h-full"
@@ -230,17 +229,17 @@ export const Pricing: React.FC = () => {
                       </Link>
                     </div>
                   </div>
-                </motion.div>
+                </AnimateDiv>
               );
             })}
-          </motion.div>
+          </AnimateDiv>
         </Container>
       </section>
 
       {/* Comparison Section */}
       <section className="relative py-20 overflow-hidden bg-primary/30 border-t border-border/40">
         <Container>
-          <motion.div
+          <AnimateDiv
             className="mb-16"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -250,9 +249,9 @@ export const Pricing: React.FC = () => {
             <h2 className="text-4xl font-bold text-foreground mt-4">
               What Makes Our Pricing Unbeatable
             </h2>
-          </motion.div>
+          </AnimateDiv>
 
-          <motion.div
+          <AnimateDiv
             className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"
             variants={containerVariants}
             initial="hidden"
@@ -279,7 +278,7 @@ export const Pricing: React.FC = () => {
                   "5-star rated professionals with years of experience",
               },
             ].map((feature, idx) => (
-              <motion.div
+              <AnimateDiv
                 key={idx}
                 variants={itemVariants}
                 className="p-6 rounded-xl bg-primary/20  border border-border/40 hover:border-primary/50 transition-all duration-300"
@@ -293,40 +292,40 @@ export const Pricing: React.FC = () => {
                 <p className="text-foreground/70 text-sm">
                   {feature.description}
                 </p>
-              </motion.div>
+              </AnimateDiv>
             ))}
-          </motion.div>
+          </AnimateDiv>
         </Container>
       </section>
 
       {/* FAQ-like section */}
       <section className="relative  bg-primary/30 py-20 overflow-hidden">
         <Container>
-          <motion.div
+          <AnimateDiv
             className="max-w-3xl mx-auto"
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.2 }}
           >
-            <motion.div variants={itemVariants} className="text-center mb-12">
+            <AnimateDiv variants={itemVariants} className="text-center mb-12">
               <h2 className="text-4xl font-bold text-foreground mb-4">
                 Questions About Pricing?
               </h2>
               <p className="text-lg text-foreground/70">
                 Get your instant quote and book your appointment today
               </p>
-            </motion.div>
+            </AnimateDiv>
 
-            <motion.div variants={itemVariants} className="flex justify-center">
+            <AnimateDiv variants={itemVariants} className="flex justify-center">
               <Link href={Routes.BOOKING}>
                 <button className="px-8 py-4 bg-gradient-to-r from-primary to-accent text-white font-bold rounded-xl hover:shadow-xl hover:shadow-primary/30 transition-all duration-300 flex items-center gap-2 group">
                   <span>Get Your Instant Quote</span>
                   <ArrowRightIcon className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </button>
               </Link>
-            </motion.div>
-          </motion.div>
+            </AnimateDiv>
+          </AnimateDiv>
         </Container>
       </section>
     </main>

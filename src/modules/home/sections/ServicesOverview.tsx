@@ -1,10 +1,8 @@
-"use client";
-import { AnimateDiv } from "@/components/common/Animate";
+import { AnimateDiv, AnimateH2, AnimateP } from "@/components/common/Animate";
 import SectionTitle from "@/components/common/SectionTitle";
 import { ArrowRightIcon } from "@/components/icons";
 import { Container } from "@/components/ui";
 import { SERVICES } from "@/modules/service/contants";
-import { motion } from "motion/react";
 import Image, { StaticImageData } from "next/image";
 import Link from "next/link";
 
@@ -110,7 +108,7 @@ const ServicesOverview = () => {
     <section className="relative py-20 overflow-hidden">
       <Container>
         {/* Section Header */}
-        <motion.div
+        <AnimateDiv
           className="text-center space-y-4 mb-16"
           variants={containerVariants}
           initial="hidden"
@@ -118,23 +116,23 @@ const ServicesOverview = () => {
           viewport={{ once: true, amount: 0.3 }}
         >
           <SectionTitle title="Our Services" variants={itemVariants} />
-          <motion.h2
+          <AnimateH2
             variants={itemVariants}
             className="text-4xl lg:text-5xl font-bold text-foreground"
           >
             Tailored Detailing Solutions
-          </motion.h2>
-          <motion.p
+          </AnimateH2>
+          <AnimateP
             variants={itemVariants}
             className="text-lg text-foreground/60 max-w-2xl mx-auto"
           >
             From quick touch-ups to complete transformations, we have the
             perfect package for your car.
-          </motion.p>
-        </motion.div>
+          </AnimateP>
+        </AnimateDiv>
 
         {/* Services Grid */}
-        <motion.div
+        <AnimateDiv
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 mb-12"
           variants={containerVariants}
           initial="hidden"
@@ -142,7 +140,7 @@ const ServicesOverview = () => {
           viewport={{ once: true, amount: 0.2 }}
         >
           {SERVICES.map((service) => (
-            <motion.div
+            <AnimateDiv
               key={service.id}
               variants={{
                 hidden: { opacity: 0, y: 30 },
@@ -161,11 +159,11 @@ const ServicesOverview = () => {
                 title={service.title}
                 description={service.description}
               />
-            </motion.div>
+            </AnimateDiv>
           ))}
 
           {/* {services.map((service) => (
-            <motion.div
+            <AnimateDiv
               key={service.id}
               variants={itemVariants}
               className={`group relative rounded-2xl p-8 transition-all duration-300 cursor-pointer ${
@@ -240,12 +238,12 @@ const ServicesOverview = () => {
                   Book Package
                 </Button>
               </Link>
-            </motion.div>
+            </AnimateDiv>
           ))} */}
-        </motion.div>
+        </AnimateDiv>
 
         {/* Extensions Section */}
-        {/* <motion.div
+        {/* <AnimateDiv
           className="bg-card border border-primary/20 rounded-2xl p-8 lg:p-12"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -283,7 +281,7 @@ const ServicesOverview = () => {
               ))}
             </div>
           </div>
-        </motion.div> */}
+        </AnimateDiv> */}
       </Container>
     </section>
   );

@@ -1,3 +1,4 @@
+"use client";
 import { DecorQuote } from "@/components/icons";
 import {
   Carousel,

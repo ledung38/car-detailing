@@ -1,11 +1,11 @@
 "use client";
-import { Container } from "@/components/ui";
-import { motion } from "motion/react";
-import { ArrowDown, ArrowUp, ChevronRight } from "lucide-react";
-import Image, { StaticImageData } from "next/image";
-import { useState, useMemo, useEffect } from "react";
 import SectionTitle from "@/components/common/SectionTitle";
+import { Container } from "@/components/ui";
 import { imgBeforeAfter } from "@/lib/contants/images";
+import { ArrowDown, ArrowUp } from "lucide-react";
+import { motion } from "motion/react";
+import Image, { StaticImageData } from "next/image";
+import { useMemo, useState } from "react";
 
 interface GalleryImage {
   id: string;
@@ -13,14 +13,6 @@ interface GalleryImage {
   alt: string;
   title: string;
   type: string;
-}
-
-interface BeforeAfterItem {
-  id: string;
-  title: string;
-  type: string;
-  beforeText: string;
-  afterText: string;
 }
 
 const BeforeAfterGallery = () => {

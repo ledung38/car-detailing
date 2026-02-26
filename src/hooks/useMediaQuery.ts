@@ -1,3 +1,4 @@
+"use client";
 import { useIsomorphicLayoutEffect } from "@/hooks/useIsomorphicLayoutEffect";
 import { useState } from "react";
 
