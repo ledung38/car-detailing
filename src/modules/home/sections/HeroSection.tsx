@@ -34,7 +34,7 @@ const HeroSection = () => {
 
   return (
     <section className="relative min-h-screen w-full flex items-end justify-center overflow-hidden pb-0">
-      <div className="absolute inset-0 top-20  bg-primary/20  -z-8" />
+      <div className="sm:hidden absolute inset-0 top-20  bg-primary/20  -z-8" />
       <div className="absolute inset-0 -z-10 brightness-50 scale-120">
         <iframe
           className="w-full h-full"
