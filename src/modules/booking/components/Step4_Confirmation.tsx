@@ -45,7 +45,7 @@ export const Step4_Confirmation: React.FC<Step4_ConfirmationProps> = ({
           <strong>{formValues.phone}</strong> to confirm the final details and
           answer any questions.
         </p>
-        <div className="pt-4 border-t border-blue-200/40">
+        {/* <div className="pt-4 border-t border-blue-200/40">
           <p className="text-sm text-slate-500 mb-2">Estimated appointment:</p>
           <p className="font-semibold text-slate-800">
             {formValues.date instanceof Date
@@ -53,7 +53,7 @@ export const Step4_Confirmation: React.FC<Step4_ConfirmationProps> = ({
               : ""}{" "}
             at {formValues.time}
           </p>
-        </div>
+        </div> */}
       </div>
 
       <Link href="/" className="inline-block">
