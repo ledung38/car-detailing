@@ -28,11 +28,11 @@ export const metadata: Metadata = {
     title: "Book Car Detailing - Easy Online Booking | Sky Nice",
     description:
       "Schedule professional mobile car detailing in Sydney. Instant booking, flexible scheduling, we come to you. Fast confirmation.",
-    url: "https://www.skynicemobiledetailing.com.au/booking",
+    url: "https://www.skynicemobilecardetailing.com.au/booking",
     type: "website",
     images: [
       {
-        url: "https://www.skynicemobiledetailing.com.au/og-booking.png",
+        url: "https://www.skynicemobilecardetailing.com.au/og-booking.png",
         width: 1200,
         height: 630,
         alt: "Sky Nice Mobile Car Detailing - Easy Online Booking",
@@ -40,7 +40,7 @@ export const metadata: Metadata = {
     ],
   },
   alternates: {
-    canonical: "https://www.skynicemobiledetailing.com.au/booking",
+    canonical: "https://www.skynicemobilecardetailing.com.au/booking",
   },
   applicationName: "Sky Nice Mobile Car Detailing",
   referrer: "origin-when-cross-origin",

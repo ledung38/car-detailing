@@ -17,11 +17,11 @@ export const metadata: Metadata = {
     title: "About Us - Sky Nice Mobile Car Detailing",
     description:
       "Learn about Sky Nice Mobile Car Detailing, Sydney's trusted mobile car detailing service with premium eco-friendly products.",
-    url: "https://www.skynicemobiledetailing.com.au/about-us",
+    url: "https://www.skynicemobilecardetailing.com.au/about-us",
     type: "website",
     images: [
       {
-        url: "https://www.skynicemobiledetailing.com.au/og-about.png",
+        url: "https://www.skynicemobilecardetailing.com.au/og-about.png",
         width: 1200,
         height: 630,
         alt: "About Sky Nice Mobile Car Detailing",
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     ],
   },
   alternates: {
-    canonical: "https://www.skynicemobiledetailing.com.au/about-us",
+    canonical: "https://www.skynicemobilecardetailing.com.au/about-us",
   },
 };
 

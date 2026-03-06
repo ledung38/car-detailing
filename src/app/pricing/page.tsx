@@ -16,11 +16,11 @@ export const metadata: Metadata = {
     title: "Pricing - Sky Nice Mobile Car Detailing Services",
     description:
       "Transparent, affordable pricing for all mobile car detailing services. Free quotes available.",
-    url: "https://www.skynicemobiledetailing.com.au/pricing",
+    url: "https://www.skynicemobilecardetailing.com.au/pricing",
     type: "website",
     images: [
       {
-        url: "https://www.skynicemobiledetailing.com.au/og-pricing.png",
+        url: "https://www.skynicemobilecardetailing.com.au/og-pricing.png",
         width: 1200,
         height: 630,
         alt: "Sky Nice Mobile Car Detailing - Pricing",
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     ],
   },
   alternates: {
-    canonical: "https://www.skynicemobiledetailing.com.au/pricing",
+    canonical: "https://www.skynicemobilecardetailing.com.au/pricing",
   },
 };
 

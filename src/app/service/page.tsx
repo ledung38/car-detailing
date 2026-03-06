@@ -22,11 +22,11 @@ export const metadata: Metadata = {
     title: "Our Services - Sky Nice Mobile Car Detailing",
     description:
       "Explore our comprehensive mobile car detailing services in Sydney. Full detail, interior cleaning, ceramic coating, and more.",
-    url: "https://www.skynicemobiledetailing.com.au/service",
+    url: "https://www.skynicemobilecardetailing.com.au/service",
     type: "website",
     images: [
       {
-        url: "https://www.skynicemobiledetailing.com.au/og-services.png",
+        url: "https://www.skynicemobilecardetailing.com.au/og-services.png",
         width: 1200,
         height: 630,
         alt: "Sky Nice Mobile Car Detailing - Services",
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     ],
   },
   alternates: {
-    canonical: "https://www.skynicemobiledetailing.com.au/service",
+    canonical: "https://www.skynicemobilecardetailing.com.au/service",
   },
 };
 

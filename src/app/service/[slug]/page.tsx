@@ -8,7 +8,7 @@ export async function generateMetadata({ params }) {
   const { slug } = await params;
   const siteUrl =
     process.env.NEXT_PUBLIC_SITE_URL ||
-    "https://www.skynicemobiledetailing.com.au";
+    "https://www.skynicemobilecardetailing.com.au";
   const service = SERVICES[slug];
 
   // Nếu slug không tồn tại -> fallback metadata an toàn

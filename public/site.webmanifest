@@ -2,7 +2,7 @@
   "name": "SKY NICE Mobile Car Detailing Sydney | Premium Auto Care",
   "short_name": "SKY NICE Mobile Car Detailing",
   "description": "SKY NICE offers professional mobile car detailing in Sydney. We come to you with premium products & certified detailers. Full detail, interior clean, ceramic coating & more. 500+ happy clients. 5-star rated. 5 years of experience.",
-  "start_url": "https://www.skynicemobiledetailing.com.au",
+  "start_url": "https://www.skynicemobilecardetailing.com.au",
   "scope": "/",
   "display": "standalone",
   "orientation": "portrait-primary",
@@ -64,7 +64,7 @@
       "name": "Book Cleaning",
       "short_name": "Booking",
       "description": "Quick access to booking page",
-      "url": "https://www.skynicemobiledetailing.com.au/booking",
+      "url": "https://www.skynicemobilecardetailing.com.au/booking",
       "icons": [
         {
           "src": "/shortcut-booking.png",
@@ -76,7 +76,7 @@
       "name": "Pricing",
       "short_name": "Pricing",
       "description": "Quick access to pricing page",
-      "url": "https://www.skynicemobiledetailing.com.au/pricing",
+      "url": "https://www.skynicemobilecardetailing.com.au/pricing",
       "icons": [
         {
           "src": "/shortcut-pricing.png",

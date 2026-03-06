@@ -17,8 +17,8 @@ Disallow: /*?*filter=
 Crawl-delay: 1
 
 # Sitemaps
-Sitemap: https://www.skynicemobiledetailing.com.au/sitemap.xml
-Sitemap: https://www.skynicemobiledetailing.com.au/sitemap-services.xml
+Sitemap: https://www.skynicemobilecardetailing.com.au/sitemap.xml
+Sitemap: https://www.skynicemobilecardetailing.com.au/sitemap-services.xml
 
 # Specific rules for different crawlers
 User-agent: Googlebot

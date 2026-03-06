@@ -4,7 +4,7 @@
 
 A modern, production-ready landing page for SKY NICE Mobile Car Detailing Sydney, built with Next.js 15, React 19, and Framer Motion.
 
-**Live URL:** https://www.skynicemobiledetailing.com.au
+**Live URL:** https://www.skynicemobilecardetailing.com.au
 
 ---
 

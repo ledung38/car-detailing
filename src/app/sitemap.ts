@@ -1,7 +1,7 @@
 import { MetadataRoute } from "next";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = "https://www.skynicemobiledetailing.com.au";
+  const baseUrl = "https://www.skynicemobilecardetailing.com.au";
 
   const routes = [
     {

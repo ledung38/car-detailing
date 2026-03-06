@@ -4,7 +4,7 @@
 
 export const SITE_CONFIG = {
   name: "Sky Nice Mobile Car Detailing",
-  url: "https://www.skynicemobiledetailing.com.au",
+  url: "https://www.skynicemobilecardetailing.com.au",
   description:
     "Professional mobile car detailing services in Sydney. We come to you with premium eco-friendly products & certified detailers. Full detail, interior clean, ceramic coating & more. 500+ happy clients, 5-star rated.",
   email: "skynicecardetailing102@gmail.com",

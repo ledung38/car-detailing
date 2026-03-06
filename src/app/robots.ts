@@ -22,6 +22,6 @@ export default function robots(): MetadataRoute.Robots {
         disallow: ["/"],
       },
     ],
-    sitemap: "https://www.skynicemobiledetailing.com.au/sitemap.xml",
+    sitemap: "https://www.skynicemobilecardetailing.com.au/sitemap.xml",
   };
 }

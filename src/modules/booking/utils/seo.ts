@@ -7,9 +7,9 @@ export const generateBookingStructuredData = (serviceName?: string) => {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
     name: "Sky Nice Mobile Car Detailing",
-    image: "https://www.skynicemobiledetailing.com.au/logo.png",
+    image: "https://www.skynicemobilecardetailing.com.au/logo.png",
     description: "Professional mobile car detailing service in Sydney",
-    url: "https://www.skynicemobiledetailing.com.au",
+    url: "https://www.skynicemobilecardetailing.com.au",
     telephone: "+61XXXXXXXXX", // Update with actual phone
     address: {
       "@type": "PostalAddress",
@@ -28,7 +28,7 @@ export const generateBookingStructuredData = (serviceName?: string) => {
       offers: {
         "@type": "Offer",
         name: serviceName,
-        url: "https://www.skynicemobiledetailing.com.au/booking",
+        url: "https://www.skynicemobilecardetailing.com.au/booking",
       },
     }),
   };
@@ -56,7 +56,7 @@ export const generateServiceSchema = (service: {
       "@type": "City",
       name: "Sydney",
     },
-    url: "https://www.skynicemobiledetailing.com.au/booking",
+    url: "https://www.skynicemobilecardetailing.com.au/booking",
   };
 };
 
@@ -72,19 +72,19 @@ export const generateBreadcrumbSchema = () => {
         "@type": "ListItem",
         position: 1,
         name: "Home",
-        item: "https://www.skynicemobiledetailing.com.au",
+        item: "https://www.skynicemobilecardetailing.com.au",
       },
       {
         "@type": "ListItem",
         position: 2,
         name: "Services",
-        item: "https://www.skynicemobiledetailing.com.au/service",
+        item: "https://www.skynicemobilecardetailing.com.au/service",
       },
       {
         "@type": "ListItem",
         position: 3,
         name: "Booking",
-        item: "https://www.skynicemobiledetailing.com.au/booking",
+        item: "https://www.skynicemobilecardetailing.com.au/booking",
       },
     ],
   };

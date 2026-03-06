@@ -19,7 +19,7 @@ const geistMono = Geist_Mono({
 });
 
 // Base metadata
-const baseUrl = "https://www.skynicemobiledetailing.com.au";
+const baseUrl = "https://www.skynicemobilecardetailing.com.au";
 const siteName = "SKY NICE Mobile Car Detailing Sydney";
 const description =
   "SKY NICE offers professional mobile car detailing in Sydney. We come to you with premium eco-friendly products & certified detailers. Full detail, interior clean, ceramic coating & more. 500+ happy clients, 5-star rated. 5 years of experience.";
