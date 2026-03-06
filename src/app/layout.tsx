@@ -157,7 +157,7 @@ export default function RootLayout({
         {/* Google tag (gtag.js) - Deferred */}
         <Script
           strategy="afterInteractive"
-          src="https://www.googletagmanager.com/gtag/js?id=G-HWPMP7DHGW1"
+          src="https://www.googletagmanager.com/gtag/js?id=G-H8X1B7B4M6"
         ></Script>
         <Script
           id="ga4-init"
@@ -167,7 +167,7 @@ export default function RootLayout({
               window.dataLayer = window.dataLayer || [];
               function gtag(){dataLayer.push(arguments);}
               gtag('js', new Date());
-              gtag('config', 'G-HWPMP7DHGW1');
+              gtag('config', 'G-H8X1B7B4M6');
             `,
           }}
         />
