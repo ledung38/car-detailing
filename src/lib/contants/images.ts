@@ -22,30 +22,39 @@ import image21 from "@/lib/assets/images/home01/img21.jpg";
 import image22 from "@/lib/assets/images/home01/img22.jpg";
 import image23 from "@/lib/assets/images/home01/img23.jpg";
 import image24 from "@/lib/assets/images/home01/img24.jpg";
+import image25 from "@/lib/assets/images/home01/img25.jpg";
 
 export const imgBeforeAfter = [
+  //car outside
   image1,
-  image2,
-  image3,
-  image6,
-  image7,
-  image4,
-  image13,
-  image5,
-  image8,
+  // image13,
   image9,
+  image24,
+  image22,
+  image18,
+
+  // noi that
   image11,
   image12,
-  image10,
-  image21,
-  image14,
-  image16,
-  image15,
-  image17,
-  image18,
-  image19,
+  image2,
   image20,
-  image22,
+  image15,
+  image10,
+  image14,
+
+  //before after
+  image3,
+  image4,
+  image5,
+  image16,
+  image17,
+  image19,
+  image21,
+  image25,
+
+  // lop
+  image6,
+  image8,
+  image7,
   image23,
-  image24,
 ];
