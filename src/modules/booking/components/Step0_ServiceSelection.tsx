@@ -160,7 +160,7 @@ export const Step0_ServiceSelection: React.FC<StepProps> = ({
                           whileHover={{ scale: 1.05, y: -4 }}
                           whileTap={{ scale: 0.95 }}
                           onClick={() => field.onChange(size)}
-                          className={`p-5 rounded-xl border-2 transition-all duration-300 text-center relative overflow-hidden ${
+                          className={`p-2 sm:p-5 rounded-xl border-2 transition-all duration-300 text-center relative overflow-hidden ${
                             field.value === size
                               ? "border-blue-400 bg-gradient-to-br from-blue-50 to-cyan-50 ring-2 ring-blue-200 shadow-lg"
                               : "border-slate-200/80 bg-white/80 hover:border-blue-300 hover:shadow-md"

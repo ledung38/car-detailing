@@ -47,7 +47,7 @@ const HeroSection = () => {
       </div>
       <Container>
         <AnimateDiv
-          className="h-full flex gap-2 flex-col items-center pb-4"
+          className="h-full flex gap-2 flex-col items-center pb-4 max-sm:mb-[43px]"
           variants={containerVariants}
           initial="hidden"
           animate="visible"
@@ -80,7 +80,7 @@ const HeroSection = () => {
             </motion.h1> */}
           <AnimateH1
             variants={itemVariants}
-            className="text-5xl relative lg:text-6xl xl:text-7xl font-bold tracking-tight"
+            className="text-[32px] relative lg:text-6xl xl:text-7xl font-bold tracking-tight"
           >
             <span className="text-foreground">MOBILE CAR DETAILING </span>
             <span className="bg-gradient-to-r from-primary italic via-accent to-primary bg-clip-text text-transparent">

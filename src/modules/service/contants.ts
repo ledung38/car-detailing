@@ -127,7 +127,7 @@ export const SERVICES: Service[] = [
       "Headlight restoration ($70/pair)",
       "Excessive dirt, mud, or pet hair removal (from $30)",
       "Sticker removal",
-      "Car headliner cleaning",
+      // "Car headliner cleaning",
     ],
   },
 ];
