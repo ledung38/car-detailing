@@ -171,7 +171,7 @@ const AboutUs = () => {
             <div className="grid md:grid-cols-2 gap-12 items-center">
               {/* Vision Content */}
               <AnimateDiv
-                className="space-y-6 z-10 ml-20"
+                className="space-y-6 z-10 sm:ml-20"
                 variants={containerVariants}
                 initial="hidden"
                 whileInView="visible"
@@ -401,7 +401,7 @@ const AboutUs = () => {
             {/* Quick Contact Info */}
             <AnimateDiv
               variants={containerVariants}
-              className="grid md:grid-cols-3 gap-6 pt-8 border-t border-border"
+              className="grid md:grid-cols-3 sm:gap-6 pt-8 border-t border-border"
             >
               <AnimateA
                 variants={itemVariants}

@@ -142,7 +142,7 @@ const ServiceComponent = ({ data, slug }: ServiceComponentProps) => {
                   </p>
                   <p className="text-3xl font-bold text-primary">${prices.S}</p>
                 </div>
-                <div className="text-center p-4 rounded-lg bg-background/50 border border-primary/50 ring-1 ring-primary/30">
+                <div className="text-center p-2 sm:p-4 rounded-lg bg-background/50 border border-primary/50 ring-1 ring-primary/30">
                   <p className="text-xs uppercase text-foreground/50 mb-2 font-semibold">
                     Medium
                   </p>
@@ -178,7 +178,7 @@ const ServiceComponent = ({ data, slug }: ServiceComponentProps) => {
 
       {/* Highlights Section */}
       <section className="py-8 sm:py-12 bg-card/30 border-b border-border/40">
-        <Container className="grid grid-cols-2 items-center">
+        <Container className="grid grid-cols-1 sm:grid-cols-2 gap-10 sm:gap-0 items-center">
           <AnimateDiv
             className=" col-span-1 "
             variants={containerVariants}
@@ -359,7 +359,7 @@ const ServiceComponent = ({ data, slug }: ServiceComponentProps) => {
 
       {/* Related Services */}
       {relatedServices.length > 0 && (
-        <section className="py-16 md:py-24">
+        <section className="py-12 pt-0 md:py-24">
           <Container>
             <AnimateDiv
               className="mb-12"
