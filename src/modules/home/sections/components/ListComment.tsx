@@ -1,20 +1,22 @@
 "use client";
 import { DecorQuote } from "@/components/icons";
+import { memo, useEffect, useRef, useState } from "react";
+import Flex from "@/components/ui/Flex";
+import { Text } from "@/components/ui/Text";
+import { NextAvatar } from "@/components/ui/Avatar";
 import {
   Carousel,
   CarouselApi,
   CarouselContent,
   CarouselItem,
-  Container,
-  NextAvatar,
+} from "@/components/ui/Carousel";
+import {
   Pagination,
   PaginationContent,
   PaginationItem,
   PaginationLink,
-  Text,
-} from "@/components/ui";
-import Flex from "@/components/ui/Flex";
-import { memo, useEffect, useRef, useState } from "react";
+} from "@/components/ui/Pagination";
+import { Container } from "@/components/ui/Container";
 
 const Item = ({ item }: { item: any }) => {
   return (

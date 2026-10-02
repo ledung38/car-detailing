@@ -1,6 +1,6 @@
 import { AnimateDiv, AnimateH2, AnimateP } from "@/components/common/Animate";
 import SectionTitle from "@/components/common/SectionTitle";
-import { Container } from "@/components/ui";
+import { Container } from "@/components/ui/Container";
 import { ratingsExample } from "@/modules/home/contants";
 import ListComment from "@/modules/home/sections/components/ListComment";
 

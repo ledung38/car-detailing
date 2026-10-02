@@ -1,7 +1,7 @@
 import { AnimateDiv } from "@/components/common/Animate";
 import SectionTitle from "@/components/common/SectionTitle";
 import { ArrowRightIcon, CheckIcon, TickIcon } from "@/components/icons";
-import { Container } from "@/components/ui";
+import { Container } from "@/components/ui/Container";
 import extensionDetailImg from "@/lib/assets/images/extension-detail.png";
 import { Routes } from "@/lib/enum/routes";
 import { SERVICES, videoServices } from "@/modules/service/contants";

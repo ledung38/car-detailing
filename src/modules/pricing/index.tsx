@@ -1,7 +1,7 @@
 import { AnimateDiv, AnimateH1, AnimateP } from "@/components/common/Animate";
 import SectionTitle from "@/components/common/SectionTitle";
 import { ArrowRightIcon, TickIcon } from "@/components/icons";
-import { Container } from "@/components/ui";
+import { Container } from "@/components/ui/Container";
 import { Routes } from "@/lib/enum/routes";
 import { SERVICES } from "@/modules/service/contants";
 import { CheckCircle2, Clock } from "lucide-react";

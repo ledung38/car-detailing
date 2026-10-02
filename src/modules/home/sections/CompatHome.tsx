@@ -3,7 +3,7 @@ import React from "react";
 import { ArrowRightIcon } from "@/components/icons";
 import { Routes } from "@/lib/enum/routes";
 import Image from "next/image";
-import { Container } from "@/components/ui";
+import { Container } from "@/components/ui/Container";
 import { AnimateDiv, AnimateH3, AnimateP } from "@/components/common/Animate";
 import Link from "next/link";
 
@@ -14,7 +14,7 @@ export const CompatHome = () => {
       {/* Background Image - Right Side */}
       <div className="absolute inset-0">
         <Image
-          src={"/compat_home4.png"}
+          src={"/compat_home4.webp"}
           width={1920}
           height={1080}
           alt="Professional car detailing service background"
@@ -70,6 +70,7 @@ export const CompatHome = () => {
             <Link
               className="inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/40 px-8 py-3 text-white font-bold text-sm uppercase tracking-wider transition-all duration-300 hover:border-white/60"
               href={Routes.BOOKING}
+              prefetch={false}
             >
               <span>Book Your Detail</span>
               <ArrowRightIcon className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />

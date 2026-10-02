@@ -1,7 +1,7 @@
 import React from "react";
 import { AnimateDiv } from "@/components/common/Animate";
 import SectionTitle from "@/components/common/SectionTitle";
-import { Container } from "@/components/ui";
+import { Container } from "@/components/ui/Container";
 
 export const BookingHeader: React.FC = () => {
   return (

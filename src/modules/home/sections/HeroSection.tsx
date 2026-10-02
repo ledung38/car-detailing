@@ -5,9 +5,8 @@ import {
   AnimateSpan,
 } from "@/components/common/Animate";
 import { ArrowCircleRightIcon } from "@/components/icons";
-import { Container } from "@/components/ui";
+import { Container } from "@/components/ui/Container";
 import { Routes } from "@/lib/enum/routes";
-import { motion } from "motion/react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -132,7 +131,11 @@ const HeroSection = () => {
             variants={itemVariants}
             className="flex flex-col sm:flex-row gap-4 pt-4"
           >
-            <Link href={Routes.BOOKING} className="w-full sm:w-auto">
+            <Link
+              href={Routes.BOOKING}
+              prefetch={false}
+              className="w-full sm:w-auto"
+            >
               <button
                 // whileHover={{ scale: 1.05, translateY: -2 }}
                 // whileTap={{ scale: 0.95 }}

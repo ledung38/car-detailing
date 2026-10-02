@@ -6,7 +6,7 @@ import {
 } from "@/components/common/Animate";
 import SectionTitle from "@/components/common/SectionTitle";
 import { TextGradient } from "@/components/common/TextGradient";
-import { Container } from "@/components/ui";
+import { Container } from "@/components/ui/Container";
 import aboutUsImg from "@/lib/assets/images/about-us/vision.png";
 import ceramicCoatingImg from "@/lib/assets/images/ceramic-coating-package.png";
 import { Routes } from "@/lib/enum/routes";
@@ -88,7 +88,7 @@ const AboutUs = () => {
         <div className="absolute inset-0 -z-10">
           {/* background image  */}
           <Image
-            src="/about-us-bg.png"
+            src="/about-us-bg.webp"
             width={1920}
             height={1080}
             alt="background"

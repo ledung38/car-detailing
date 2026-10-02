@@ -1,5 +1,4 @@
 import { Metadata } from "next";
-import { Routes } from "@/lib/enum/routes";
 import ServiceComponent from "@/modules/service";
 import { SERVICES } from "@/modules/service/contants";
 

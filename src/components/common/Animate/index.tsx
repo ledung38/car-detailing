@@ -1,6 +1,7 @@
 "use client";
-import { Container, Text } from "@/components/ui";
+import Container from "@/components/ui/Container";
 import Flex from "@/components/ui/Flex";
+import { Text } from "@/components/ui/Text";
 import { motion } from "motion/react";
 import Link from "next/link";
 
