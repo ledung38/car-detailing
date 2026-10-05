@@ -31,7 +31,18 @@ const HeroSection = () => {
   return (
     <section className="relative min-h-screen w-full flex items-end justify-center overflow-hidden pb-0">
       <div className="sm:hidden absolute inset-0 top-20 bg-primary/20 -z-8" />
-      <HeroBackground />
+      {/* <HeroBackground /> */}
+      <div className="absolute inset-0 -z-10 overflow-hidden brightness-50 bg-gradient-to-b from-slate-900 to-slate-950">
+        <iframe
+          className="w-full h-full scale-125 object-cover pointer-events-none transition-opacity duration-700 animate-in fade-in"
+          src="https://www.youtube-nocookie.com/embed/iM_xmlP0cLg?autoplay=1&mute=1&loop=1&playlist=iM_xmlP0cLg&controls=0&rel=0&modestbranding=1&showinfo=0&fs=0&iv_load_policy=3&color=white&playsinline=1&disablekb=1"
+          title="Sky Nice Car Detailing Sydney | Mobile Car Wash & Detailing Service"
+          allow="autoplay; encrypted-media; picture-in-picture"
+          referrerPolicy="strict-origin-when-cross-origin"
+          tabIndex={-1}
+          aria-hidden="true"
+        />
+      </div>
       <Container>
         <AnimateDiv
           className="h-full flex gap-2 flex-col items-center pb-4 max-sm:mb-[43px]"
