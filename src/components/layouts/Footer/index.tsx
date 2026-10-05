@@ -177,6 +177,9 @@ const Footer = () => {
                       <li key={linkIndex}>
                         <AnimateLink
                           href={link.href}
+                          prefetch={
+                            link.href === Routes.BOOKING ? false : undefined
+                          }
                           target={
                             link.href.startsWith("http") ? "_blank" : undefined
                           }

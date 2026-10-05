@@ -27,7 +27,7 @@ const SectionTitle: React.FC<SectionTitleProps> = ({
     >
       {title}
       <Image
-        src="/line-title.png"
+        src="/line-title.webp"
         alt="Line title decoration"
         width={1200}
         height={3}

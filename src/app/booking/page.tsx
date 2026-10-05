@@ -1,6 +1,11 @@
 import { Metadata } from "next";
+import dynamic from "next/dynamic";
 import LayoutComponents from "@/components/layouts/LayoutComponents";
-import BookingWizard from "@/modules/booking";
+
+const BookingWizard = dynamic(() => import("@/modules/booking"), {
+  ssr: true,
+  loading: () => <div className="min-h-[600px]" />,
+});
 import {
   generateBookingStructuredData,
   generateBreadcrumbSchema,

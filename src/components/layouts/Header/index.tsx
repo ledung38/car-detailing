@@ -55,6 +55,7 @@ const MobileMenuItem = ({
       ) : (
         <Link
           href={`${item.key}`}
+          prefetch={item.key === Routes.BOOKING ? false : undefined}
           onClick={onClose}
           className="block px-4 py-3.5 text-white font-semibold hover:bg-white/15 hover:translate-x-1 rounded-lg transition-all duration-200"
         >
@@ -215,6 +216,7 @@ export const Header = () => {
                   <AnimateDiv key={item.key}>
                     <NavLink
                       href={`${item.key}`}
+                      prefetch={item.key === Routes.BOOKING ? false : undefined}
                       isActive={active === item.key}
                     >
                       {item.label}

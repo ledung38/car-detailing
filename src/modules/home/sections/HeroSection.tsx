@@ -1,3 +1,5 @@
+"use client";
+
 import {
   AnimateDiv,
   AnimateH1,
@@ -9,8 +11,41 @@ import { Container } from "@/components/ui/Container";
 import { Routes } from "@/lib/enum/routes";
 import Image from "next/image";
 import Link from "next/link";
+import React, { useEffect, useState } from "react";
+import HeroBackground from "./HeroBackground";
 
 const HeroSection = () => {
+  const [loadVideo, setLoadVideo] = useState(false);
+
+  useEffect(() => {
+    // Delay loading heavy YouTube iframe to avoid blocking critical LCP & TBT
+    const timer = setTimeout(() => {
+      setLoadVideo(true);
+    }, 1500);
+
+    const onInteract = () => {
+      setLoadVideo(true);
+      cleanup();
+    };
+
+    const cleanup = () => {
+      clearTimeout(timer);
+      window.removeEventListener("scroll", onInteract);
+      window.removeEventListener("touchstart", onInteract);
+    };
+
+    window.addEventListener("scroll", onInteract, {
+      passive: true,
+      once: true,
+    });
+    window.addEventListener("touchstart", onInteract, {
+      passive: true,
+      once: true,
+    });
+
+    return cleanup;
+  }, []);
+
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -33,17 +68,8 @@ const HeroSection = () => {
 
   return (
     <section className="relative min-h-screen w-full flex items-end justify-center overflow-hidden pb-0">
-      <div className="sm:hidden absolute inset-0 top-20  bg-primary/20  -z-8" />
-      <div className="absolute inset-0 -z-10 brightness-50 scale-120">
-        <iframe
-          className="w-full h-full"
-          src="https://www.youtube.com/embed/iM_xmlP0cLg?autoplay=1&mute=1&loop=1&playlist=iM_xmlP0cLg&controls=0&rel=0&modestbranding=1&showinfo=0&fs=0&iv_load_policy=3&color=white&playsinline=1"
-          title="Sky Nice Car Detailing Sydney | Mobile Car Wash & Detailing Service"
-          allow="autoplay; encrypted-media; picture-in-picture"
-          referrerPolicy="strict-origin-when-cross-origin"
-          allowFullScreen
-        ></iframe>
-      </div>
+      <div className="sm:hidden absolute inset-0 top-20 bg-primary/20 -z-8" />
+      <HeroBackground />
       <Container>
         <AnimateDiv
           className="h-full flex gap-2 flex-col items-center pb-4 max-sm:mb-[43px]"
@@ -87,7 +113,7 @@ const HeroSection = () => {
             </span>
 
             <Image
-              src="/line-title.png"
+              src="/line-title.webp"
               alt="Line title decoration"
               width={1200}
               height={3}
