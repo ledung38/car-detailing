@@ -5,40 +5,33 @@ export default function HeroBackground() {
   const [loadVideo, setLoadVideo] = useState(false);
 
   useEffect(() => {
-    let timer: NodeJS.Timeout;
-    let idleId: number;
-
     const startLoading = () => {
       setLoadVideo(true);
       cleanup();
     };
 
-    // Chỉ load khi trình duyệt rảnh tay sau tối thiểu 1.5s - 2s
-    if ("requestIdleCallback" in window) {
-      idleId = window.requestIdleCallback(
-        () => {
-          timer = setTimeout(startLoading, 1500);
-        },
-        { timeout: 3000 },
-      );
-    } else {
-      timer = setTimeout(startLoading, 1500);
-    }
-
     const cleanup = () => {
-      clearTimeout(timer);
-      if (idleId && "cancelIdleCallback" in window) {
-        window.cancelIdleCallback(idleId);
-      }
       window.removeEventListener("scroll", startLoading);
       window.removeEventListener("touchstart", startLoading);
+      window.removeEventListener("pointerdown", startLoading);
+      window.removeEventListener("mousemove", startLoading);
     };
 
+    // Chỉ load iframe YouTube khi người dùng thực sự tương tác (cuộn trang, chạm màn hình, di chuột)
+    // Loại bỏ hoàn toàn 873ms CPU blocking của YouTube player trong lúc trang tải ban đầu (giảm mạnh TBT)
     window.addEventListener("scroll", startLoading, {
       passive: true,
       once: true,
     });
     window.addEventListener("touchstart", startLoading, {
+      passive: true,
+      once: true,
+    });
+    window.addEventListener("pointerdown", startLoading, {
+      passive: true,
+      once: true,
+    });
+    window.addEventListener("mousemove", startLoading, {
       passive: true,
       once: true,
     });
@@ -61,7 +54,7 @@ export default function HeroBackground() {
         }`}
       />
 
-      {/* 2. YouTube Iframe mount sau khi main-thread đã rảnh */}
+      {/* 2. YouTube Iframe mount sau khi người dùng tương tác */}
       {loadVideo && (
         <iframe
           className="w-full h-full scale-125 object-cover pointer-events-none transition-opacity duration-700 animate-in fade-in"
