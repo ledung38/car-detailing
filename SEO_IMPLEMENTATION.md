@@ -201,12 +201,8 @@ public/
 SITE_CONFIG = {
   email: "info@spotlesscleaning.com.au", // ✓ Done
   phone: "+61-2-XXXX-XXXX", // TODO: Add actual phone
-  address: {
-    /* ✓ Done */
-  },
-  socialLinks: {
-    /* ✓ Done */
-  },
+  address: {/* ✓ Done */},
+  socialLinks: {/* ✓ Done */},
 };
 ```
 

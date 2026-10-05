@@ -1,25 +1,10 @@
 import { AnimateDiv, AnimateH2, AnimateP } from "@/components/common/Animate";
 import SectionTitle from "@/components/common/SectionTitle";
 import { ArrowRightIcon } from "@/components/icons";
-import { Container } from "@/components/ui";
+import { Container } from "@/components/ui/Container";
 import { SERVICES } from "@/modules/service/contants";
 import Image, { StaticImageData } from "next/image";
 import Link from "next/link";
-
-interface ServicePackage {
-  id: string;
-  icon: React.ReactNode;
-  name: string;
-  duration: string;
-  description: string;
-  prices: {
-    s: number;
-    m: number;
-    l: number;
-  };
-  features: string[];
-  highlight?: boolean;
-}
 
 interface ServiceCardProps {
   path: StaticImageData;
@@ -227,7 +212,11 @@ const ServicesOverview = () => {
                 </div>
               </div>
 
-              <Link href="/booking" className="w-full">
+              <Link
+                href={Routes.BOOKING}
+                prefetch={false}
+                className="w-full"
+              >
                 <Button
                   className={`w-full font-semibold rounded-lg transition-all ${
                     service.highlight

@@ -1,7 +1,7 @@
 import { AnimateDiv, AnimateH2, AnimateP } from "@/components/common/Animate";
 import SectionTitle from "@/components/common/SectionTitle";
 import { TickIcon } from "@/components/icons";
-import { Container } from "@/components/ui";
+import { Container } from "@/components/ui/Container";
 import ceramicCoatingPackage from "@/lib/assets/images/ceramic-coating-package.png";
 import enhancementPackage from "@/lib/assets/images/enhancement-package.png";
 import fullDetail from "@/lib/assets/images/full-detail-package.png";
@@ -267,7 +267,7 @@ const WhyChooseUs = () => {
           <div
             className="absolute top-0 left-0 w-full h-full bg-cover bg-top -z-1 rounded-2xl"
             style={{
-              backgroundImage: "url('/compat_home.png')",
+              backgroundImage: "url('/compat_home.webp')",
               filter: "brightness(0.6) contrast(1.1)",
             }}
           />

@@ -8,7 +8,8 @@
     "build": "next build --turbopack",
     "start": "next start",
     "prettier:fix": "prettier --write .",
-    "lint": "next lint"
+    "lint": "next lint",
+    "analyze": "cross-env ANALYZE=true next build"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.2.2",
@@ -57,10 +58,12 @@
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
+    "@next/bundle-analyzer": "^16.3.8",
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "cross-env": "^10.1.0",
     "eslint": "^9.39.1",
     "eslint-config-next": "15.5.4",
     "husky": "^9.1.7",

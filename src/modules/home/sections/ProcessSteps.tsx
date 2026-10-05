@@ -1,4 +1,4 @@
-import { Container } from "@/components/ui";
+import { Container } from "@/components/ui/Container";
 import { motion } from "motion/react";
 import { CheckCircle2, Clock, MapPin, Smartphone } from "lucide-react";
 import SectionTitle from "@/components/common/SectionTitle";

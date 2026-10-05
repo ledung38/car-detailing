@@ -1,6 +1,5 @@
 import Link from "next/link";
 import { Facebook, Instagram, Phone, Mail, MapPin } from "lucide-react";
-import { Container, NextAvatar } from "@/components/ui";
 import { Routes } from "@/lib/enum/routes";
 import logo from "@/lib/assets/images/logo.webp";
 import { TikTokIcon } from "@/components/icons";
@@ -178,6 +177,9 @@ const Footer = () => {
                       <li key={linkIndex}>
                         <AnimateLink
                           href={link.href}
+                          prefetch={
+                            link.href === Routes.BOOKING ? false : undefined
+                          }
                           target={
                             link.href.startsWith("http") ? "_blank" : undefined
                           }

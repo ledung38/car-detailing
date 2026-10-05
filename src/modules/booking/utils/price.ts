@@ -8,7 +8,6 @@ export const generateBookingSummary = (
   selectedService: any,
   selectedCarSize: "S" | "M" | "L",
   selectedExtensions: string[],
-  priceRange?: string,
 ) => {
   const price = selectedService?.priceRange
     ? extractPrice(selectedService.priceRange, selectedCarSize)

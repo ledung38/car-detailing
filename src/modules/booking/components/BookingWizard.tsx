@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import { AnimatePresence } from "motion/react";
 import { Form } from "@/components/ui/Form";
-import { Container } from "@/components/ui";
+import { Container } from "@/components/ui/Container";
 import { toast as message } from "sonner";
 import { generateEmailHTML } from "@/lib/utils/email";
 import { SERVICES } from "@/modules/service/contants";

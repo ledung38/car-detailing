@@ -1,7 +1,7 @@
 import { AnimateDiv } from "@/components/common/Animate";
 import SectionTitle from "@/components/common/SectionTitle";
 import { ArrowRightIcon, CheckIcon, TickIcon } from "@/components/icons";
-import { Container } from "@/components/ui";
+import { Container } from "@/components/ui/Container";
 import extensionDetailImg from "@/lib/assets/images/extension-detail.png";
 import { Routes } from "@/lib/enum/routes";
 import { SERVICES, videoServices } from "@/modules/service/contants";
@@ -156,7 +156,11 @@ const ServiceComponent = ({ data, slug }: ServiceComponentProps) => {
                 </div>
               </div>
 
-              <Link href={Routes.BOOKING} className="w-full block">
+              <Link
+                href={Routes.BOOKING}
+                prefetch={false}
+                className="w-full block"
+              >
                 <button className="w-full py-4 px-6 bg-gradient-to-r from-primary to-accent text-white font-bold rounded-xl hover:shadow-lg hover:shadow-primary/30 transition-all duration-300 flex items-center justify-center gap-2 group">
                   <span>Book Now</span>
                   <ArrowRightIcon className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
@@ -437,7 +441,7 @@ const ServiceComponent = ({ data, slug }: ServiceComponentProps) => {
               </p>
             </div>
 
-            <Link href={Routes.BOOKING}>
+            <Link href={Routes.BOOKING} prefetch={false}>
               <button className="px-10 py-4 bg-gradient-to-r from-primary to-accent text-white font-bold rounded-xl hover:shadow-xl hover:shadow-primary/30 transition-all duration-300 flex items-center justify-center gap-2 group mx-auto">
                 <span>Get Instant Quote</span>
                 <ArrowRightIcon className="w-5 h-5 group-hover:translate-x-1 transition-transform" />

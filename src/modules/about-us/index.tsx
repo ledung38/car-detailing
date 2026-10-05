@@ -6,7 +6,7 @@ import {
 } from "@/components/common/Animate";
 import SectionTitle from "@/components/common/SectionTitle";
 import { TextGradient } from "@/components/common/TextGradient";
-import { Container } from "@/components/ui";
+import { Container } from "@/components/ui/Container";
 import aboutUsImg from "@/lib/assets/images/about-us/vision.png";
 import ceramicCoatingImg from "@/lib/assets/images/ceramic-coating-package.png";
 import { Routes } from "@/lib/enum/routes";
@@ -88,7 +88,7 @@ const AboutUs = () => {
         <div className="absolute inset-0 -z-10">
           {/* background image  */}
           <Image
-            src="/about-us-bg.png"
+            src="/about-us-bg.webp"
             width={1920}
             height={1080}
             alt="background"
@@ -153,6 +153,7 @@ const AboutUs = () => {
             <AnimateDiv variants={itemVariants} className="pt-6">
               <Link
                 href={Routes.BOOKING}
+                prefetch={false}
                 className="inline-flex items-center gap-2 px-8 py-4 rounded-lg bg-primary hover:bg-primary/90 text-primary-foreground font-semibold transition-colors text-lg"
               >
                 Book Your Service
@@ -335,9 +336,9 @@ const AboutUs = () => {
                     <div className="text-4xl mb-4">{process.icon}</div>
 
                     {/* Step Title */}
-                    <h4 className="text-xl font-bold text-foreground mb-3">
+                    <h3 className="text-xl font-bold text-foreground mb-3">
                       {process.title}
-                    </h4>
+                    </h3>
 
                     {/* Step Description */}
                     <p className="text-foreground leading-relaxed text-sm">
@@ -380,6 +381,7 @@ const AboutUs = () => {
               <AnimateDiv variants={itemVariants}>
                 <Link
                   href={Routes.BOOKING}
+                  prefetch={false}
                   className="inline-flex items-center gap-2 px-8 py-4 rounded-lg bg-primary hover:bg-primary/90 text-primary-foreground font-semibold transition-colors"
                 >
                   Book Now

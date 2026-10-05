@@ -1,6 +1,6 @@
 "use client";
 import SectionTitle from "@/components/common/SectionTitle";
-import { Container } from "@/components/ui";
+import { Container } from "@/components/ui/Container";
 import { imgBeforeAfter } from "@/lib/contants/images";
 import { ArrowDown, ArrowUp } from "lucide-react";
 import { motion } from "motion/react";

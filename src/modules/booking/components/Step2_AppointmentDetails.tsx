@@ -45,7 +45,7 @@ export const Step2_AppointmentDetails: React.FC<StepProps> = ({ form }) => {
           <FormField
             control={form.control}
             name="date"
-            render={({ field }) => (
+            render={() => (
               <FormItem>
                 <FormLabel className="flex items-center gap-2 text-slate-800 font-semibold">
                   <Calendar className="w-5 h-5 text-blue-500" />

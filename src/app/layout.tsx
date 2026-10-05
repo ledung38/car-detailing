@@ -142,26 +142,18 @@ export default function RootLayout({
   return (
     <html lang="en-AU" suppressHydrationWarning>
       <head>
-        {/* Critical resources */}
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link
-          rel="preconnect"
-          href="https://fonts.gstatic.com"
-          crossOrigin="anonymous"
-        />
-
         {/* DNS Prefetch */}
         <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
         <link rel="dns-prefetch" href="https://www.google-analytics.com" />
 
-        {/* Google tag (gtag.js) - Deferred */}
+        {/* Google tag (gtag.js) - Defer until browser is idle */}
         <Script
-          strategy="afterInteractive"
+          strategy="lazyOnload"
           src="https://www.googletagmanager.com/gtag/js?id=G-H8X1B7B4M6"
-        ></Script>
+        />
         <Script
           id="ga4-init"
-          strategy="afterInteractive"
+          strategy="lazyOnload"
           dangerouslySetInnerHTML={{
             __html: `
               window.dataLayer = window.dataLayer || [];

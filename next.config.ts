@@ -1,4 +1,9 @@
 import type { NextConfig } from "next";
+import withBundleAnalyzer from "@next/bundle-analyzer";
+
+const withAnalyzer = withBundleAnalyzer({
+  enabled: process.env.ANALYZE === "true",
+});
 
 const nextConfig: NextConfig = {
   // Image optimization - Aggressive quality reduction
@@ -144,9 +149,6 @@ const nextConfig: NextConfig = {
   // Production source maps (disable for smaller builds)
   productionBrowserSourceMaps: false,
 
-  // Swc minify
-  swcMinify: true,
-
   // Incremental static regeneration
   onDemandEntries: {
     maxInactiveAge: 60 * 1000,
@@ -160,16 +162,30 @@ const nextConfig: NextConfig = {
       "https://www.skynicemobilecardetailing.com.au",
   },
 
-  // Turbopack for faster builds
+  // Turbopack configuration
+  turbopack: {
+    resolveAlias: {},
+  },
+
+  // Experimental optimizations
   experimental: {
-    // Enable turbopack for faster builds in dev
-    turbo: {
-      resolveAlias: {},
-    },
+    optimizePackageImports: [
+      "lucide-react",
+      "motion",
+      "date-fns",
+      "lodash",
+      "@radix-ui/react-accordion",
+      "@radix-ui/react-avatar",
+      "@radix-ui/react-dialog",
+      "@radix-ui/react-dropdown-menu",
+      "@radix-ui/react-popover",
+      "@radix-ui/react-select",
+      "@radix-ui/react-tooltip",
+    ],
   },
   typescript: {
     ignoreBuildErrors: true,
   },
 };
 
-export default nextConfig;
+export default withAnalyzer(nextConfig);

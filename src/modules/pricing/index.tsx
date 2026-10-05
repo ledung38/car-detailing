@@ -1,7 +1,7 @@
 import { AnimateDiv, AnimateH1, AnimateP } from "@/components/common/Animate";
 import SectionTitle from "@/components/common/SectionTitle";
 import { ArrowRightIcon, TickIcon } from "@/components/icons";
-import { Container } from "@/components/ui";
+import { Container } from "@/components/ui/Container";
 import { Routes } from "@/lib/enum/routes";
 import { SERVICES } from "@/modules/service/contants";
 import { CheckCircle2, Clock } from "lucide-react";
@@ -215,7 +215,11 @@ export const Pricing: React.FC = () => {
                       </div>
 
                       {/* CTA Button */}
-                      <Link href={Routes.BOOKING} className="w-full block">
+                      <Link
+                        href={Routes.BOOKING}
+                        prefetch={false}
+                        className="w-full block"
+                      >
                         <button
                           className={`w-full py-3 px-4 rounded-lg font-bold transition-all duration-300 flex items-center justify-center gap-2 group/btn ${
                             isPopular
@@ -318,7 +322,7 @@ export const Pricing: React.FC = () => {
             </AnimateDiv>
 
             <AnimateDiv variants={itemVariants} className="flex justify-center">
-              <Link href={Routes.BOOKING}>
+              <Link href={Routes.BOOKING} prefetch={false}>
                 <button className="px-8 py-4 bg-gradient-to-r from-primary to-accent text-white font-bold rounded-xl hover:shadow-xl hover:shadow-primary/30 transition-all duration-300 flex items-center gap-2 group">
                   <span>Get Your Instant Quote</span>
                   <ArrowRightIcon className="w-5 h-5 group-hover:translate-x-1 transition-transform" />

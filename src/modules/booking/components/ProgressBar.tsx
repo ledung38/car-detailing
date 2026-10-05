@@ -1,6 +1,6 @@
 import React from "react";
 import { AnimateDiv } from "@/components/common/Animate";
-import { Container } from "@/components/ui";
+import { Container } from "@/components/ui/Container";
 
 interface ProgressBarProps {
   currentStep: number;

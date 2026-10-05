@@ -1,11 +1,19 @@
-import CompatHome from "@/modules/home/sections/CompatHome";
-import HomeAreas from "@/modules/home/sections/ServiceAreas";
 import React from "react";
-import BeforeAfterGallery from "./sections/BeforeAfterGallery";
+import dynamic from "next/dynamic";
 import HeroSection from "./sections/HeroSection";
 import ServicesOverview from "./sections/ServicesOverview";
-import Testimonials from "./sections/Testimonials";
 import WhyChooseUs from "./sections/WhyChooseUs";
+import CompatHome from "@/modules/home/sections/CompatHome";
+import HomeAreas from "@/modules/home/sections/ServiceAreas";
+
+// Dynamically load below-the-fold sections to reduce initial First Load JS
+const BeforeAfterGallery = dynamic(
+  () => import("./sections/BeforeAfterGallery"),
+  { ssr: true },
+);
+const Testimonials = dynamic(() => import("./sections/Testimonials"), {
+  ssr: true,
+});
 
 export const Home: React.FC = () => {
   return (
