@@ -38,12 +38,13 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
         {/* Nội dung */}
         <div>
           <Image
-            src={path.src}
+            src={path}
             alt={title}
             width={path.width}
             height={path.height}
+            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
             className="w-full h-65 object-cover"
-            quality={75}
+            quality={80}
           />
           <div className="relative z-10 p-6 bg-gradient-to-t from-background via-card/50 to-card/0">
             <h3 className="text-xl font-semibold text-center text-foreground mb-3 group-hover:text-primary transition-colors">

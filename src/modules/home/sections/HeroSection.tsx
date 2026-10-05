@@ -1,68 +1,30 @@
 "use client";
 
-import {
-  AnimateDiv,
-  AnimateH1,
-  AnimateP,
-  AnimateSpan,
-} from "@/components/common/Animate";
+import { AnimateDiv, AnimateP, AnimateSpan } from "@/components/common/Animate";
 import { ArrowCircleRightIcon } from "@/components/icons";
 import { Container } from "@/components/ui/Container";
 import { Routes } from "@/lib/enum/routes";
 import Image from "next/image";
 import Link from "next/link";
-import React, { useEffect, useState } from "react";
 import HeroBackground from "./HeroBackground";
 
 const HeroSection = () => {
-  const [loadVideo, setLoadVideo] = useState(false);
-
-  useEffect(() => {
-    // Delay loading heavy YouTube iframe to avoid blocking critical LCP & TBT
-    const timer = setTimeout(() => {
-      setLoadVideo(true);
-    }, 1500);
-
-    const onInteract = () => {
-      setLoadVideo(true);
-      cleanup();
-    };
-
-    const cleanup = () => {
-      clearTimeout(timer);
-      window.removeEventListener("scroll", onInteract);
-      window.removeEventListener("touchstart", onInteract);
-    };
-
-    window.addEventListener("scroll", onInteract, {
-      passive: true,
-      once: true,
-    });
-    window.addEventListener("touchstart", onInteract, {
-      passive: true,
-      once: true,
-    });
-
-    return cleanup;
-  }, []);
-
   const containerVariants = {
-    hidden: { opacity: 0 },
+    hidden: {},
     visible: {
-      opacity: 1,
       transition: {
         staggerChildren: 0.15,
-        delayChildren: 0.2,
+        delayChildren: 0.1,
       },
     },
   };
 
   const itemVariants = {
-    hidden: { opacity: 1, y: 30 },
+    hidden: { opacity: 0, y: 24 },
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.3 },
+      transition: { duration: 0.4 },
     },
   };
 
@@ -76,37 +38,9 @@ const HeroSection = () => {
           variants={containerVariants}
           initial="hidden"
           animate="visible"
-          viewport={{ once: true }}
         >
-          {/* Left Content */}
-          {/* Badge */}
-          {/* <AnimateDiv
-              variants={itemVariants}
-              className="flex items-center gap-2"
-            >
-              <div className="flex items-center gap-2 px-4 py-2 rounded-full border border-primary/30 bg-primary/10 backdrop-blur-sm">
-                <Sparkles className="w-4 h-4 text-primary" />
-                <span className="text-sm font-medium text-foreground">
-                  Premium Mobile Car Detailing
-                </span>
-              </div>
-            </AnimateDiv> */}
-
-          {/* Heading */}
-          {/* <motion.h1
-              variants={itemVariants}
-              className="text-5xl lg:text-6xl xl:text-7xl font-bold tracking-tight"
-            >
-              <span className="text-foreground">We Come To You</span>
-              <br />
-              <span className="bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent">
-                Professional Car Care
-              </span>
-            </motion.h1> */}
-          <AnimateH1
-            variants={itemVariants}
-            className="text-[32px] relative lg:text-6xl xl:text-7xl font-bold tracking-tight"
-          >
+          {/* Heading - Rendered directly as static HTML to eliminate LCP Element Render Delay */}
+          <h1 className="text-[32px] relative lg:text-6xl xl:text-7xl font-bold tracking-tight">
             <span className="text-foreground">MOBILE CAR DETAILING </span>
             <span className="bg-gradient-to-r from-primary italic via-accent to-primary bg-clip-text text-transparent">
               SYDNEY
@@ -117,9 +51,10 @@ const HeroSection = () => {
               alt="Line title decoration"
               width={1200}
               height={3}
+              priority
               className="absolute left-1/2 -bottom-2 h-[3px] w-[95%] -translate-x-1/2"
             />
-          </AnimateH1>
+          </h1>
 
           {/* Subheading */}
           <AnimateP
@@ -162,11 +97,7 @@ const HeroSection = () => {
               prefetch={false}
               className="w-full sm:w-auto"
             >
-              <button
-                // whileHover={{ scale: 1.05, translateY: -2 }}
-                // whileTap={{ scale: 0.95 }}
-                className="relative px-8 py-4 bg-gradient-to-r from-[oklch(0.62_0.18_250)] to-[oklch(0.55_0.15_250)] text-white font-bold rounded-xl shadow-lg hover:shadow-xl hover:shadow-[oklch(0.62_0.18_250)]/30 transition-all duration-300 group overflow-hidden"
-              >
+              <button className="relative px-8 py-4 bg-gradient-to-r from-[oklch(0.62_0.18_250)] to-[oklch(0.55_0.15_250)] text-white font-bold rounded-xl shadow-lg hover:shadow-xl hover:shadow-[oklch(0.62_0.18_250)]/30 transition-all duration-300 group overflow-hidden">
                 <span className="absolute inset-0 bg-white opacity-0 group-hover:opacity-10 transition-opacity duration-300" />
                 <span className="relative flex items-center gap-2">
                   GET AN INSTANT QUOTE
@@ -190,7 +121,6 @@ const HeroSection = () => {
             className=" font-bold tracking-tight mt-2"
           >
             <span className="text-foreground">We Come To You - </span>
-
             <span className="text-foreground">Professional Car Care</span>
           </AnimateP>
         </AnimateDiv>

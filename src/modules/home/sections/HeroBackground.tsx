@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import Image from "next/image";
 
 export default function HeroBackground() {
   const [loadVideo, setLoadVideo] = useState(false);
@@ -47,13 +48,15 @@ export default function HeroBackground() {
 
   return (
     <div className="absolute inset-0 -z-10 overflow-hidden brightness-50 bg-gradient-to-b from-slate-900 to-slate-950">
-      {/* 1. Ảnh Poster làm LCP anchor: Tải ngay lập tức để điểm LCP xanh lét */}
-      <img
+      {/* 1. Ảnh Poster làm LCP anchor: Tải ngay lập tức để điểm LCP tối ưu */}
+      <Image
         src="/home_thumb.webp"
         alt="Sky Nice Car Detailing Sydney background"
-        fetchPriority="high"
-        decoding="async"
-        className={`absolute inset-0 w-full h-full object-cover scale-110 transition-opacity duration-1000 ${
+        fill
+        priority
+        sizes="100vw"
+        quality={85}
+        className={`object-cover scale-110 transition-opacity duration-1000 ${
           loadVideo ? "opacity-0 pointer-events-none" : "opacity-100"
         }`}
       />

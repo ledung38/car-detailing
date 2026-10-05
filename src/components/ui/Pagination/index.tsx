@@ -35,26 +35,44 @@ function PaginationItem({ ...props }: React.ComponentProps<"li">) {
 type PaginationLinkProps = {
   isActive?: boolean;
 } & Pick<React.ComponentProps<typeof Button>, "size"> &
-  React.ComponentProps<"a">;
+  React.ComponentProps<"a"> &
+  React.ComponentProps<"button">;
 
 function PaginationLink({
   className,
   isActive,
   size = "icon",
+  href,
   ...props
 }: PaginationLinkProps) {
+  const commonClassName = cn(
+    `border-border-color cursor-pointer border text-sm font-normal ${
+      isActive ? "bg-primary border-primary text-white" : ""
+    }`,
+    className,
+  );
+
+  if (href) {
+    return (
+      <a
+        href={href}
+        aria-current={isActive ? "page" : undefined}
+        data-slot="pagination-link"
+        data-active={isActive}
+        className={commonClassName}
+        {...(props as React.ComponentProps<"a">)}
+      />
+    );
+  }
+
   return (
-    <a
+    <button
+      type="button"
       aria-current={isActive ? "page" : undefined}
       data-slot="pagination-link"
       data-active={isActive}
-      className={cn(
-        `border-border-color cursor-pointer border text-sm font-normal ${
-          isActive ? "bg-primary border-primary text-white" : ""
-        }`,
-        className,
-      )}
-      {...props}
+      className={commonClassName}
+      {...(props as React.ComponentProps<"button">)}
     />
   );
 }

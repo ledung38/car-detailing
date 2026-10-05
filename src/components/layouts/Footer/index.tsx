@@ -223,19 +223,9 @@ const Footer = () => {
               © {currentYear} Sky Nice Mobile Car Detailing. All Rights
               Reserved.
             </p>
-            <div className="flex gap-6">
-              <a
-                href="#"
-                className="hover:text-primary transition-colors cursor-pointer text-white "
-              >
-                Privacy Policy
-              </a>
-              <a
-                href="#"
-                className="hover:text-primary transition-colors cursor-pointer text-white"
-              >
-                Terms of Service
-              </a>
+            <div className="flex gap-6 text-white/70 text-sm">
+              <span>Privacy Policy</span>
+              <span>Terms of Service</span>
             </div>
           </AnimateDiv>
         </div>

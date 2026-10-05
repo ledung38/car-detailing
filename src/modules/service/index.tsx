@@ -2,7 +2,7 @@ import { AnimateDiv } from "@/components/common/Animate";
 import SectionTitle from "@/components/common/SectionTitle";
 import { ArrowRightIcon, CheckIcon, TickIcon } from "@/components/icons";
 import { Container } from "@/components/ui/Container";
-import extensionDetailImg from "@/lib/assets/images/extension-detail.png";
+import extensionDetailImg from "@/lib/assets/images/extension-detail.webp";
 import { Routes } from "@/lib/enum/routes";
 import { SERVICES, videoServices } from "@/modules/service/contants";
 import { Clock, Zap } from "lucide-react";
@@ -254,6 +254,7 @@ const ServiceComponent = ({ data, slug }: ServiceComponentProps) => {
                 src={extensionDetailImg}
                 alt="Extension Details"
                 fill
+                sizes="(max-width: 768px) 100vw, 50vw"
                 className="object-cover"
                 quality={85}
               />
@@ -400,8 +401,9 @@ const ServiceComponent = ({ data, slug }: ServiceComponentProps) => {
                         src={service.avatar}
                         alt={service.title}
                         fill
+                        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                         className="object-cover group-hover:scale-105 transition-transform duration-500"
-                        quality={75}
+                        quality={80}
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-background via-background/20 to-transparent" />
                       <div className="absolute inset-x-0 bottom-0 p-6">

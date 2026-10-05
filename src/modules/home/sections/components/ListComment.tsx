@@ -152,6 +152,7 @@ const ListComment = ({ data }: { data: any }) => {
                 <PaginationItem key={groupIndex}>
                   <PaginationLink
                     isActive={isActiveGroup}
+                    aria-label={`Go to review page ${groupIndex + 1}`}
                     onClick={() => {
                       api?.scrollTo(firstSlideInGroup);
                     }}
@@ -160,7 +161,7 @@ const ListComment = ({ data }: { data: any }) => {
                         ? "bg-primary"
                         : "bg-secondary hover:bg-secondary"
                     }`}
-                  ></PaginationLink>
+                  />
                 </PaginationItem>
               );
             })}

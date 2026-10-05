@@ -2,11 +2,12 @@ import { AnimateDiv, AnimateH2, AnimateP } from "@/components/common/Animate";
 import SectionTitle from "@/components/common/SectionTitle";
 import { TickIcon } from "@/components/icons";
 import { Container } from "@/components/ui/Container";
-import ceramicCoatingPackage from "@/lib/assets/images/ceramic-coating-package.png";
-import enhancementPackage from "@/lib/assets/images/enhancement-package.png";
-import fullDetail from "@/lib/assets/images/full-detail-package.png";
-import miniPackage from "@/lib/assets/images/mini-package.png";
+import ceramicCoatingPackage from "@/lib/assets/images/ceramic-coating-package.webp";
+import enhancementPackage from "@/lib/assets/images/enhancement-package.webp";
+import fullDetail from "@/lib/assets/images/full-detail-package.webp";
+import miniPackage from "@/lib/assets/images/mini-package.webp";
 import { Clock, TrendingUp, Trophy, Users } from "lucide-react";
+import Image from "next/image";
 
 const ImageBg = [
   miniPackage,
@@ -232,16 +233,20 @@ const WhyChooseUs = () => {
               return (
                 <AnimateDiv
                   key={idx}
-                  className="p-6 rounded-xl z-10  relative text-center bg-accent/30"
+                  className="p-6 rounded-xl z-10 relative text-center bg-accent/30 overflow-hidden"
                   whileHover={{ scale: 1.05 }}
                 >
-                  <div
-                    className="absolute inset-0 rounded-xl bg-center bg-cover -z-10"
+                  <Image
+                    src={ImageBg[idx]}
+                    alt={stat.label}
+                    fill
+                    sizes="(max-width: 640px) 50vw, (max-width: 1024px) 25vw, 20vw"
+                    className="object-cover rounded-xl -z-10"
                     style={{
-                      backgroundImage: `url(${ImageBg[idx].src})`,
                       filter: "brightness(0.5) contrast(1.1)",
                     }}
-                  ></div>
+                    quality={85}
+                  />
 
                   <div className="p-3 bg-black/20 rounded-lg w-fit mx-auto mb-3">
                     <IconComponent className="w-6 h-6 text-white" />

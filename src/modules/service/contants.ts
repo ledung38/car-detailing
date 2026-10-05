@@ -1,9 +1,9 @@
-import miniPackage from "@/lib/assets/images/mini-package.png";
-import interiorPackage from "@/lib/assets/images/interior-package.png";
-import fullDetail from "@/lib/assets/images/full-detail-package.png";
-import extensionDetail from "@/lib/assets/images/extension-detail.png";
-import enhancementPackage from "@/lib/assets/images/enhancement-package.png";
-import ceramicCoatingPackage from "@/lib/assets/images/ceramic-coating-package.png";
+import miniPackage from "@/lib/assets/images/mini-package.webp";
+import interiorPackage from "@/lib/assets/images/interior-package.webp";
+import fullDetail from "@/lib/assets/images/full-detail-package.webp";
+import extensionDetail from "@/lib/assets/images/extension-detail.webp";
+import enhancementPackage from "@/lib/assets/images/enhancement-package.webp";
+import ceramicCoatingPackage from "@/lib/assets/images/ceramic-coating-package.webp";
 import { StaticImageData } from "next/image";
 
 // constants/services.ts

@@ -7,8 +7,8 @@ import {
 import SectionTitle from "@/components/common/SectionTitle";
 import { TextGradient } from "@/components/common/TextGradient";
 import { Container } from "@/components/ui/Container";
-import aboutUsImg from "@/lib/assets/images/about-us/vision.png";
-import ceramicCoatingImg from "@/lib/assets/images/ceramic-coating-package.png";
+import aboutUsImg from "@/lib/assets/images/about-us/vision.webp";
+import ceramicCoatingImg from "@/lib/assets/images/ceramic-coating-package.webp";
 import { Routes } from "@/lib/enum/routes";
 import {
   ArrowRight,
@@ -222,7 +222,9 @@ const AboutUs = () => {
                     src={aboutUsImg}
                     alt="Vision"
                     fill
+                    sizes="(max-width: 768px) 100vw, 50vw"
                     className="object-cover object-right"
+                    quality={100}
                   />
                 </div>
               </AnimateDiv>
@@ -245,7 +247,9 @@ const AboutUs = () => {
                     src={ceramicCoatingImg}
                     alt="Mission"
                     fill
+                    sizes="(max-width: 768px) 100vw, 50vw"
                     className="object-cover"
+                    quality={100}
                   />
                 </div>
               </AnimateDiv>
